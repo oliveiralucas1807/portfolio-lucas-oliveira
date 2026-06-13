@@ -1,0 +1,48 @@
+{
+  "id": "coimbra",
+  "label": "Case disponível",
+  "title": "Coimbra — Campanhas Promocionais para Varejo",
+  "subtitle": "Design gráfico, campanhas digitais e materiais promocionais para comunicação comercial.",
+  "context": "Projeto desenvolvido para comunicação promocional de uma rede varejista do segmento de equipamentos, ferramentas e produtos técnicos. As peças foram criadas para apoiar campanhas recorrentes, divulgação de ofertas, produtos e ações sazonais em diferentes canais digitais.",
+  "challenge": "Desenvolver materiais com forte apelo comercial, mantendo clareza nas informações, consistência visual entre campanhas e adaptação para diferentes formatos, como posts, banners, cards promocionais, anúncios e peças de apoio para redes sociais.",
+  "deliverables": [
+    "Posts para redes sociais",
+    "Cards promocionais",
+    "Banners digitais",
+    "Peças para campanhas sazonais",
+    "Materiais para tráfego/anúncios",
+    "Adaptação de formatos",
+    "Comunicação visual para varejo"
+  ],
+  "highlights": [
+    "Campanhas recorrentes",
+    "Comunicação de varejo",
+    "Alto volume de peças",
+    "Organização visual",
+    "Clareza promocional",
+    "Adaptação para múltiplos formatos",
+    "Agilidade de produção",
+    "Consistência de campanha"
+  ],
+  "process": [
+    "Recebimento do briefing e das ofertas",
+    "Organização das informações e dos produtos",
+    "Criação da linha visual da campanha",
+    "Adaptação para diferentes formatos",
+    "Revisão e entrega final"
+  ],
+  "closing": "Este case representa minha experiência com comunicação visual para varejo, campanhas recorrentes e criação de peças digitais com foco em clareza, impacto visual e adaptação comercial.",
+  "metrics": [
+    { "value": "48", "label": "peças otimizadas" },
+    { "value": "16", "label": "grupos de campanha" },
+    { "value": "Web", "label": "formatos leves para site" },
+    { "value": "A4", "label": "pronto para PDF" }
+  ],
+  "palette": {
+    "className": "case-coimbra",
+    "base": "#171512",
+    "surface": "#fff7e8",
+    "accent": "#ff9f1c",
+    "accentAlt": "#f4c430"
+  }
+}

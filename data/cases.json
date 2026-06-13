@@ -1,0 +1,846 @@
+{
+  "updated": "2026-06-12",
+  "owner": "Lucas Oliveira da Silva",
+  "cases": [
+    {
+      "id": "coimbra",
+      "client": "Coimbra",
+      "type": "Varejo, campanhas promocionais e social media",
+      "title": "Campanhas promocionais para varejo técnico",
+      "subtitle": "Peças digitais para ofertas, produtos e ações sazonais.",
+      "context": "Projeto desenvolvido para comunicação promocional de uma rede varejista do segmento de equipamentos, ferramentas e produtos técnicos. As peças foram criadas para apoiar campanhas recorrentes, divulgação de ofertas, produtos e ações sazonais em diferentes canais digitais.",
+      "deliveries": [
+        "cards para redes sociais",
+        "stories promocionais",
+        "banners digitais",
+        "peças de oferta",
+        "campanhas sazonais"
+      ],
+      "period": "Março a junho de 2026",
+      "imageCount": 20,
+      "note": "A amostra prioriza variedade de ofertas, formatos verticais e peças de campanha recorrente.",
+      "images": [
+        {
+          "src": "assets/cases/coimbra/01-23-escalcao-campea-feed-copa-cta1.jpg",
+          "alt": "Arte para 23 Escalção campeã",
+          "campaign": "23 Escalção campeã",
+          "modified": "2026-06-02"
+        },
+        {
+          "src": "assets/cases/coimbra/02-20-mega-mes-do-trabalhador-feed-mmt-cta.jpg",
+          "alt": "Arte para 20 MEGA MÊS DO TRABALHADOR",
+          "campaign": "20 MEGA MÊS DO TRABALHADOR",
+          "modified": "2026-05-02"
+        },
+        {
+          "src": "assets/cases/coimbra/03-14-mes-do-serralheiro-feed-ms-cta.jpg",
+          "alt": "Arte para 14 MES DO SERRALHEIRO",
+          "campaign": "14 MES DO SERRALHEIRO",
+          "modified": "2026-03-31"
+        },
+        {
+          "src": "assets/cases/coimbra/04-18-dia-das-maes-feed-1005coimbra.jpg",
+          "alt": "Arte para 18 Dia das mães",
+          "campaign": "18 Dia das mães",
+          "modified": "2026-05-08"
+        },
+        {
+          "src": "assets/cases/coimbra/05-16-dia-do-serralheiro-feed2304.jpg",
+          "alt": "Arte para 16 Dia do serralheiro",
+          "campaign": "16 Dia do serralheiro",
+          "modified": "2026-04-22"
+        },
+        {
+          "src": "assets/cases/coimbra/06-boi-piranha-feed-stihl-re-80xboi-piranha.jpg",
+          "alt": "Arte para Boi piranha",
+          "campaign": "Boi piranha",
+          "modified": "2026-03-28"
+        },
+        {
+          "src": "assets/cases/coimbra/07-17-ofertas-imperdiveis-feed-martelete.jpg",
+          "alt": "Arte para 17 OFERTAS IMPERDIVEIS",
+          "campaign": "17 OFERTAS IMPERDIVEIS",
+          "modified": "2026-05-12"
+        },
+        {
+          "src": "assets/cases/coimbra/08-13-dia-do-consumidor-feed1503.jpg",
+          "alt": "Arte para 13 dia do consumidor",
+          "campaign": "13 dia do consumidor",
+          "modified": "2026-03-13"
+        },
+        {
+          "src": "assets/cases/coimbra/09-12-cards-trafego-geral-feed3x4-rocadeira.jpg",
+          "alt": "Arte para 12 CARDS TRAFEGO GERAL",
+          "campaign": "12 CARDS TRAFEGO GERAL",
+          "modified": "2026-03-10"
+        },
+        {
+          "src": "assets/cases/coimbra/10-11-card-honda-feed-200.jpg",
+          "alt": "Arte para 11 CARD HONDA",
+          "campaign": "11 CARD HONDA",
+          "modified": "2026-03-10"
+        },
+        {
+          "src": "assets/cases/coimbra/11-16-pascoa-feed0504.jpg",
+          "alt": "Arte para 16 Páscoa",
+          "campaign": "16 Páscoa",
+          "modified": "2026-04-03"
+        },
+        {
+          "src": "assets/cases/coimbra/12-10-dia-da-mulher-feed0803.jpg",
+          "alt": "Arte para 10 dia da mulher",
+          "campaign": "10 dia da mulher",
+          "modified": "2026-03-04"
+        },
+        {
+          "src": "assets/cases/coimbra/13-19-dia-do-trabalhador-feed-0105coimbra.jpg",
+          "alt": "Arte para 19 Dia do Trabalhador",
+          "campaign": "19 Dia do Trabalhador",
+          "modified": "2026-05-01"
+        },
+        {
+          "src": "assets/cases/coimbra/14-ja-feed-disco-tyrolitpara.jpg",
+          "alt": "Arte para ja",
+          "campaign": "ja",
+          "modified": "2026-04-01"
+        },
+        {
+          "src": "assets/cases/coimbra/15-22-dia-de-corpus-christi-feed-0406coimbra.jpg",
+          "alt": "Arte para 22 Dia de Corpus Christi",
+          "campaign": "22 Dia de Corpus Christi",
+          "modified": "2026-06-04"
+        },
+        {
+          "src": "assets/cases/coimbra/16-boi-piranha-feed-esab-bantam-3-2boi-piranha.jpg",
+          "alt": "Arte para Boi piranha",
+          "campaign": "Boi piranha",
+          "modified": "2026-03-28"
+        },
+        {
+          "src": "assets/cases/coimbra/17-3-feed-esmeri-m9507bmmt.jpg",
+          "alt": "Arte para 3",
+          "campaign": "3",
+          "modified": "2026-05-20"
+        },
+        {
+          "src": "assets/cases/coimbra/18-ja-feed-serra-marmore-bosch-gdc-15-para.jpg",
+          "alt": "Arte para ja",
+          "campaign": "ja",
+          "modified": "2026-04-01"
+        },
+        {
+          "src": "assets/cases/coimbra/19-2-feed-tupiammt.jpg",
+          "alt": "Arte para 2",
+          "campaign": "2",
+          "modified": "2026-05-19"
+        },
+        {
+          "src": "assets/cases/coimbra/20-23-escalcao-campea-feeedcopacta2.jpg",
+          "alt": "Arte para 23 Escalção campeã",
+          "campaign": "23 Escalção campeã",
+          "modified": "2026-06-03"
+        }
+      ]
+    },
+    {
+      "id": "tacolibre",
+      "client": "Taco Libre",
+      "type": "Gastronomia, campanha visual e social media",
+      "title": "Comunicação digital para gastronomia",
+      "subtitle": "Peças com apelo visual forte para divulgação de produtos e ações.",
+      "context": "Projeto com foco em criação de peças digitais para comunicação visual, redes sociais e campanhas recorrentes. A seleção abaixo reúne uma amostra dos materiais desenvolvidos, priorizando variedade de formatos, campanhas e aplicações visuais.",
+      "deliveries": [
+        "cards promocionais",
+        "stories",
+        "peças para redes sociais",
+        "divulgação de produtos",
+        "campanhas recorrentes"
+      ],
+      "period": "Março a junho de 2026",
+      "imageCount": 20,
+      "note": "A seleção equilibra peças promocionais, chamadas de produto e variações visuais.",
+      "images": [
+        {
+          "src": "assets/cases/tacolibre/01-61-dia-dos-namorados-feed11206.jpg",
+          "alt": "Arte para 61 DIA DOS NAMORADOS",
+          "campaign": "61 DIA DOS NAMORADOS",
+          "modified": "2026-06-12"
+        },
+        {
+          "src": "assets/cases/tacolibre/02-59-album-copa-feed1figurinhas.jpg",
+          "alt": "Arte para 59 ALBUM COPA",
+          "campaign": "59 ALBUM COPA",
+          "modified": "2026-06-07"
+        },
+        {
+          "src": "assets/cases/tacolibre/03-60-promo-album-feed-5figurinhas.jpg",
+          "alt": "Arte para 60 promo album",
+          "campaign": "60 promo album",
+          "modified": "2026-06-08"
+        },
+        {
+          "src": "assets/cases/tacolibre/04-62-transmissao-do-jogo-feed2transmissao.jpg",
+          "alt": "Arte para 62 Transmissão do jogo",
+          "campaign": "62 Transmissão do jogo",
+          "modified": "2026-06-07"
+        },
+        {
+          "src": "assets/cases/tacolibre/05-29-festival-do-burrito-feed-30406burrito.jpg",
+          "alt": "Arte para 29 Festival do burrito",
+          "campaign": "29 Festival do burrito",
+          "modified": "2026-05-27"
+        },
+        {
+          "src": "assets/cases/tacolibre/06-57-dia-do-hamburguer-feed22705diado.jpg",
+          "alt": "Arte para 57 DIA DO HAMBURGUER",
+          "campaign": "57 DIA DO HAMBURGUER",
+          "modified": "2026-05-27"
+        },
+        {
+          "src": "assets/cases/tacolibre/07-52-taco-em-dobro-feed12605dobro.jpg",
+          "alt": "Arte para 52 TACO EM DOBRO",
+          "campaign": "52 TACO EM DOBRO",
+          "modified": "2026-05-27"
+        },
+        {
+          "src": "assets/cases/tacolibre/08-56-ainn-neymar-feed-1ainn-neymar.jpg",
+          "alt": "Arte para 56 AInn neymar",
+          "campaign": "56 AInn neymar",
+          "modified": "2026-05-20"
+        },
+        {
+          "src": "assets/cases/tacolibre/09-55-dia-do-chef-de-cozinha-feed-21305-chef-de.jpg",
+          "alt": "Arte para 55 Dia do Chef de cozinha",
+          "campaign": "55 Dia do Chef de cozinha",
+          "modified": "2026-05-13"
+        },
+        {
+          "src": "assets/cases/tacolibre/10-54-combo-la-fiesta-feed-2como-la-fies.jpg",
+          "alt": "Arte para 54 Combo La Fiesta",
+          "campaign": "54 Combo La Fiesta",
+          "modified": "2026-05-13"
+        },
+        {
+          "src": "assets/cases/tacolibre/11-50-dia-das-maes-feed10-de-mayo.jpg",
+          "alt": "Arte para 50 DIA DAS MÃES",
+          "campaign": "50 DIA DAS MÃES",
+          "modified": "2026-05-07"
+        },
+        {
+          "src": "assets/cases/tacolibre/12-49-5-de-mayo-feed-05-de-mayo.jpg",
+          "alt": "Arte para 49 5 de MAYO",
+          "campaign": "49 5 de MAYO",
+          "modified": "2026-05-05"
+        },
+        {
+          "src": "assets/cases/tacolibre/13-48-dia-do-trabalhador-feed0105.jpg",
+          "alt": "Arte para 48 Dia do trabalhador",
+          "campaign": "48 Dia do trabalhador",
+          "modified": "2026-04-30"
+        },
+        {
+          "src": "assets/cases/tacolibre/14-23-musica-ao-vivo-feed2504.jpg",
+          "alt": "Arte para 23 - música ao vivo",
+          "campaign": "23 - música ao vivo",
+          "modified": "2026-04-18"
+        },
+        {
+          "src": "assets/cases/tacolibre/15-46-pascoa-feed0204.jpg",
+          "alt": "Arte para 46 PÁSCOA",
+          "campaign": "46 PÁSCOA",
+          "modified": "2026-04-02"
+        },
+        {
+          "src": "assets/cases/tacolibre/16-45-dia-del-burrito-feed0204.jpg",
+          "alt": "Arte para 45 DIA DEL BURRITO",
+          "campaign": "45 DIA DEL BURRITO",
+          "modified": "2026-04-02"
+        },
+        {
+          "src": "assets/cases/tacolibre/17-43-dia-do-consumidor-feed1503taco.jpg",
+          "alt": "Arte para 43 DIA DO CONSUMIDOR",
+          "campaign": "43 DIA DO CONSUMIDOR",
+          "modified": "2026-03-13"
+        },
+        {
+          "src": "assets/cases/tacolibre/18-47-estou-a-isso-aqui-feedjo-ken-po.jpg",
+          "alt": "Arte para 47 estou a isso aqui",
+          "campaign": "47 estou a isso aqui",
+          "modified": "2026-04-06"
+        },
+        {
+          "src": "assets/cases/tacolibre/19-39-meme-feedzoom.jpg",
+          "alt": "Arte para 39 MEME",
+          "campaign": "39 MEME",
+          "modified": "2026-03-26"
+        },
+        {
+          "src": "assets/cases/tacolibre/20-41-reserva-feedreserva-1.jpg",
+          "alt": "Arte para 41 RESERVA",
+          "campaign": "41 RESERVA",
+          "modified": "2026-03-03"
+        }
+      ]
+    },
+    {
+      "id": "natura",
+      "client": "Natura",
+      "type": "Beleza, varejo e campanhas digitais",
+      "title": "Materiais digitais para campanhas de beleza",
+      "subtitle": "Amostra de peças para divulgação recorrente e sazonal.",
+      "context": "Projeto com foco em criação de peças digitais para comunicação visual, redes sociais e campanhas recorrentes. A seleção abaixo reúne uma amostra dos materiais desenvolvidos, priorizando variedade de formatos, campanhas e aplicações visuais.",
+      "deliveries": [
+        "cards de campanha",
+        "peças para redes sociais",
+        "divulgação de produtos",
+        "materiais promocionais",
+        "variações de formato"
+      ],
+      "period": "Dezembro a junho de 2026",
+      "imageCount": 20,
+      "note": "O case mostra volume de comunicação recorrente com foco em produto e campanha.",
+      "images": [
+        {
+          "src": "assets/cases/natura/01-semana-do-consumidor-feedkit-kaiak.jpg",
+          "alt": "Arte para Semana do consumidor",
+          "campaign": "Semana do consumidor",
+          "modified": "2026-03-13"
+        },
+        {
+          "src": "assets/cases/natura/02-semana-do-consumidor-feedconsumimanau.jpg",
+          "alt": "Arte para Semana do consumidor",
+          "campaign": "Semana do consumidor",
+          "modified": "2026-03-13"
+        },
+        {
+          "src": "assets/cases/natura/03-dia-das-maes-impressionar-7revista.jpg",
+          "alt": "Arte para Dia das Mães",
+          "campaign": "Dia das Mães",
+          "modified": "2026-04-24"
+        },
+        {
+          "src": "assets/cases/natura/04-corpus-christi-feed0406natu.jpg",
+          "alt": "Arte para Corpus Christi",
+          "campaign": "Corpus Christi",
+          "modified": "2026-06-03"
+        },
+        {
+          "src": "assets/cases/natura/05-dia-dos-namorados-feed2natura-40.jpg",
+          "alt": "Arte para Dia dos namorados",
+          "campaign": "Dia dos namorados",
+          "modified": "2026-06-03"
+        },
+        {
+          "src": "assets/cases/natura/06-dia-do-trabalhador-feed0105.jpg",
+          "alt": "Arte para Dia do trabalhador",
+          "campaign": "Dia do trabalhador",
+          "modified": "2026-04-30"
+        },
+        {
+          "src": "assets/cases/natura/07-promo-pascoa-feed0504pascoa.jpg",
+          "alt": "Arte para PROMO PASCOA",
+          "campaign": "PROMO PASCOA",
+          "modified": "2026-04-02"
+        },
+        {
+          "src": "assets/cases/natura/08-cta-feedcta.jpg",
+          "alt": "Arte para cta",
+          "campaign": "cta",
+          "modified": "2025-12-20"
+        },
+        {
+          "src": "assets/cases/natura/09-dia-da-mulher-feed0803mao.jpg",
+          "alt": "Arte para Dia da Mulher",
+          "campaign": "Dia da Mulher",
+          "modified": "2026-03-05"
+        },
+        {
+          "src": "assets/cases/natura/10-carnaval-natura-feed-2exclusivas.jpg",
+          "alt": "Arte para Carnaval natura",
+          "campaign": "Carnaval natura",
+          "modified": "2026-01-30"
+        },
+        {
+          "src": "assets/cases/natura/11-semana-do-consumidor-feedpromomao.jpg",
+          "alt": "Arte para Semana do consumidor",
+          "campaign": "Semana do consumidor",
+          "modified": "2026-02-20"
+        },
+        {
+          "src": "assets/cases/natura/12-entrega-feedentrega.jpg",
+          "alt": "Arte para ENTREGA",
+          "campaign": "ENTREGA",
+          "modified": "2026-01-08"
+        },
+        {
+          "src": "assets/cases/natura/13-carnaval-natura-feedbatons.jpg",
+          "alt": "Arte para Carnaval natura",
+          "campaign": "Carnaval natura",
+          "modified": "2026-02-04"
+        },
+        {
+          "src": "assets/cases/natura/14-dia-das-maes-feed1005natu.jpg",
+          "alt": "Arte para Dia das Mães",
+          "campaign": "Dia das Mães",
+          "modified": "2026-05-07"
+        },
+        {
+          "src": "assets/cases/natura/15-natal-feedano-novo.jpg",
+          "alt": "Arte para natal",
+          "campaign": "natal",
+          "modified": "2025-12-27"
+        },
+        {
+          "src": "assets/cases/natura/16-flor-branca-feedrosa.jpg",
+          "alt": "Arte para Flor Branca",
+          "campaign": "Flor Branca",
+          "modified": "2025-12-20"
+        },
+        {
+          "src": "assets/cases/natura/17-inauguracao-feedinauguracao.jpg",
+          "alt": "Arte para Inauguração",
+          "campaign": "Inauguração",
+          "modified": "2025-12-23"
+        },
+        {
+          "src": "assets/cases/natura/18-pit-stop-feed.jpg",
+          "alt": "Arte para Pit Stop",
+          "campaign": "Pit Stop",
+          "modified": "2026-05-04"
+        },
+        {
+          "src": "assets/cases/natura/19-carnaval-natura-feedsentiir.jpg",
+          "alt": "Arte para Carnaval natura",
+          "campaign": "Carnaval natura",
+          "modified": "2026-01-29"
+        },
+        {
+          "src": "assets/cases/natura/20-dia-dos-namorados-feednatura-week.jpg",
+          "alt": "Arte para Dia dos namorados",
+          "campaign": "Dia dos namorados",
+          "modified": "2026-05-22"
+        }
+      ]
+    },
+    {
+      "id": "cultura-inglesa",
+      "client": "Cultura Inglesa",
+      "type": "Educação, institucional e social media",
+      "title": "Comunicação visual para educação",
+      "subtitle": "Peças digitais para presença de marca, cursos e ações recorrentes.",
+      "context": "Projeto com foco em criação de peças digitais para comunicação visual, redes sociais e campanhas recorrentes. A seleção abaixo reúne uma amostra dos materiais desenvolvidos, priorizando variedade de formatos, campanhas e aplicações visuais.",
+      "deliveries": [
+        "cards institucionais",
+        "posts para redes sociais",
+        "peças de campanha",
+        "materiais informativos",
+        "formatos digitais"
+      ],
+      "period": "Março a maio de 2026",
+      "imageCount": 20,
+      "note": "A curadoria valoriza consistência visual e variedade de temas institucionais.",
+      "images": [
+        {
+          "src": "assets/cases/cultura-inglesa/01-st-patrick-day-feedpatricks.jpg",
+          "alt": "Arte para ST. PATRICK DAY",
+          "campaign": "ST. PATRICK DAY",
+          "modified": "2026-03-16"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/02-feedbacks-feedfeedbacks2.jpg",
+          "alt": "Arte para FEEDBACKS",
+          "campaign": "FEEDBACKS",
+          "modified": "2026-05-13"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/03-dica-de-ingles-feeddica-ingles.jpg",
+          "alt": "Arte para DICA DE INGLêS",
+          "campaign": "DICA DE INGLêS",
+          "modified": "2026-05-14"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/04-cta-buiseness-interno-feedcta.jpg",
+          "alt": "Arte para CTA BUISENESS INTERNO",
+          "campaign": "CTA BUISENESS INTERNO",
+          "modified": "2026-05-28"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/05-dia-da-maes-feed-2cult-0803.jpg",
+          "alt": "Arte para DIA DA MÃES",
+          "campaign": "DIA DA MÃES",
+          "modified": "2026-03-04"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/06-aguarde-cta-2-semestre-feedcta.jpg",
+          "alt": "Arte para AGUARDE CTA 2° SEMESTRE",
+          "campaign": "AGUARDE CTA 2° SEMESTRE",
+          "modified": "2026-05-13"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/07-pascoa-feed0504pascoa.jpg",
+          "alt": "Arte para PÁSCOA",
+          "campaign": "PÁSCOA",
+          "modified": "2026-04-03"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/08-campanha-interna-a3.jpg",
+          "alt": "Arte para campanha interna",
+          "campaign": "campanha interna",
+          "modified": "2026-05-05"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/09-aqui-seu-filho-aprende-feed-copiarfilho-aprend.jpg",
+          "alt": "Arte para AQUI SEU FILHO APRENDE",
+          "campaign": "AQUI SEU FILHO APRENDE",
+          "modified": "2026-04-28"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/10-campanha-exames-cambridge-feedcertificacoe.jpg",
+          "alt": "Arte para CAMPANHA EXAMES CAMBRIDGE",
+          "campaign": "CAMPANHA EXAMES CAMBRIDGE",
+          "modified": "2026-03-26"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/11-campanha-exames-cambridge-feed-copiar-2certificacoe.jpg",
+          "alt": "Arte para CAMPANHA EXAMES CAMBRIDGE",
+          "campaign": "CAMPANHA EXAMES CAMBRIDGE",
+          "modified": "2026-03-26"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/12-cultura-inglesa-36-anos-feedniver-cultur.jpg",
+          "alt": "Arte para Cultura inglesa 36 anos",
+          "campaign": "Cultura inglesa 36 anos",
+          "modified": "2026-05-28"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/13-camapanha-2-trismestre-feedmatriculas-1.jpg",
+          "alt": "Arte para Camapanha 2° Trismestre",
+          "campaign": "Camapanha 2° Trismestre",
+          "modified": "2026-05-12"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/14-dia-das-maes-feedmother-day.jpg",
+          "alt": "Arte para Dia das mães",
+          "campaign": "Dia das mães",
+          "modified": "2026-04-29"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/15-doa-do-trabalhador-feedlabor-day.jpg",
+          "alt": "Arte para Doa do trabalhador",
+          "campaign": "Doa do trabalhador",
+          "modified": "2026-04-28"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/16-cursos-feedcursos.jpg",
+          "alt": "Arte para CURSOS",
+          "campaign": "CURSOS",
+          "modified": "2026-03-20"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/17-reforcos-feedreforco.jpg",
+          "alt": "Arte para REFORÇOS",
+          "campaign": "REFORÇOS",
+          "modified": "2026-03-03"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/18-summer-school-feedintercambio.jpg",
+          "alt": "Arte para summer school",
+          "campaign": "summer school",
+          "modified": "2026-03-31"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/19-feedbacks-feedfeedbacks.jpg",
+          "alt": "Arte para FEEDBACKS",
+          "campaign": "FEEDBACKS",
+          "modified": "2026-04-08"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/20-adulto-que-deixa-pra-la-feedculturaingle.jpg",
+          "alt": "Arte para ADULTO QUE DEIXA PRA LÁ",
+          "campaign": "ADULTO QUE DEIXA PRA LÁ",
+          "modified": "2026-03-18"
+        }
+      ]
+    },
+    {
+      "id": "otica-murano",
+      "client": "Ótica Murano",
+      "type": "Ótica, varejo e social media",
+      "title": "Peças digitais para comunicação de ótica",
+      "subtitle": "Materiais para produto, varejo e presença recorrente nas redes.",
+      "context": "Projeto com foco em criação de peças digitais para comunicação visual, redes sociais e campanhas recorrentes. A seleção abaixo reúne uma amostra dos materiais desenvolvidos, priorizando variedade de formatos, campanhas e aplicações visuais.",
+      "deliveries": [
+        "cards de produto",
+        "stories",
+        "campanhas promocionais",
+        "peças para redes sociais",
+        "comunicação de varejo"
+      ],
+      "period": "Março a junho de 2026",
+      "imageCount": 20,
+      "note": "A amostra prioriza variedade de campanhas, produtos e composições de vitrine digital.",
+      "images": [
+        {
+          "src": "assets/cases/otica-murano/01-13-carrossel-mes-da-maes-feedcar-mdm-mura.jpg",
+          "alt": "Arte para 13 carrossel mes da mães",
+          "campaign": "13 carrossel mes da mães",
+          "modified": "2026-04-28"
+        },
+        {
+          "src": "assets/cases/otica-murano/02-09-diabo-veste-prato-feeddbvp20x30.jpg",
+          "alt": "Arte para 09 Diabo veste prato",
+          "campaign": "09 Diabo veste prato",
+          "modified": "2026-04-28"
+        },
+        {
+          "src": "assets/cases/otica-murano/03-09-diabo-veste-prato-1dbvp20x30.jpg",
+          "alt": "Arte para 09 Diabo veste prato",
+          "campaign": "09 Diabo veste prato",
+          "modified": "2026-04-28"
+        },
+        {
+          "src": "assets/cases/otica-murano/04-09-diabo-veste-prato-2dbvp20x30.jpg",
+          "alt": "Arte para 09 Diabo veste prato",
+          "campaign": "09 Diabo veste prato",
+          "modified": "2026-04-28"
+        },
+        {
+          "src": "assets/cases/otica-murano/05-09-diabo-veste-prato-3dbvp20x30.jpg",
+          "alt": "Arte para 09 Diabo veste prato",
+          "campaign": "09 Diabo veste prato",
+          "modified": "2026-04-28"
+        },
+        {
+          "src": "assets/cases/otica-murano/06-14-camp-junho-feed3.jpg",
+          "alt": "Arte para 14 CAMP JUNHO",
+          "campaign": "14 CAMP JUNHO",
+          "modified": "2026-05-28"
+        },
+        {
+          "src": "assets/cases/otica-murano/07-07-lentes-feed17.jpg",
+          "alt": "Arte para 07 lentes",
+          "campaign": "07 lentes",
+          "modified": "2026-04-15"
+        },
+        {
+          "src": "assets/cases/otica-murano/08-15-prova-social-feedlencos.jpg",
+          "alt": "Arte para 15 Prova social",
+          "campaign": "15 Prova social",
+          "modified": "2026-06-10"
+        },
+        {
+          "src": "assets/cases/otica-murano/09-08-mes-das-maes-murano-feed-mdm.jpg",
+          "alt": "Arte para 08 Mês das mães Murano",
+          "campaign": "08 Mês das mães Murano",
+          "modified": "2026-04-27"
+        },
+        {
+          "src": "assets/cases/otica-murano/10-11-dia-do-oftal-feed0705-murano.jpg",
+          "alt": "Arte para 11 Dia do Oftal",
+          "campaign": "11 Dia do Oftal",
+          "modified": "2026-04-28"
+        },
+        {
+          "src": "assets/cases/otica-murano/11-10-dia-do-trabalhador-feed0105-murano.jpg",
+          "alt": "Arte para 10 Dia do trabalhador",
+          "campaign": "10 Dia do trabalhador",
+          "modified": "2026-04-28"
+        },
+        {
+          "src": "assets/cases/otica-murano/12-18-dia-dos-namorados-feednamorados.jpg",
+          "alt": "Arte para 18 Dia dos namorados",
+          "campaign": "18 Dia dos namorados",
+          "modified": "2026-06-10"
+        },
+        {
+          "src": "assets/cases/otica-murano/13-17-look-de-torcedor-feed.jpg",
+          "alt": "Arte para 17 Look de torcedor",
+          "campaign": "17 Look de torcedor",
+          "modified": "2026-06-10"
+        },
+        {
+          "src": "assets/cases/otica-murano/14-04-dia-do-consumidor-feeddiaconsumido.jpg",
+          "alt": "Arte para 04 Dia do Consumidor",
+          "campaign": "04 Dia do Consumidor",
+          "modified": "2026-03-14"
+        },
+        {
+          "src": "assets/cases/otica-murano/15-03-mes-da-mulher-feedmulherdia.jpg",
+          "alt": "Arte para 03 MES DA MULHER",
+          "campaign": "03 MES DA MULHER",
+          "modified": "2026-03-06"
+        },
+        {
+          "src": "assets/cases/otica-murano/16-12-dia-das-maes-feeddia-das-maes.jpg",
+          "alt": "Arte para 12 Dia das mães",
+          "campaign": "12 Dia das mães",
+          "modified": "2026-04-28"
+        },
+        {
+          "src": "assets/cases/otica-murano/17-06-abril-marromm-feedabril-marrom.jpg",
+          "alt": "Arte para 06 ABRIL MARROMM",
+          "campaign": "06 ABRIL MARROMM",
+          "modified": "2026-04-08"
+        },
+        {
+          "src": "assets/cases/otica-murano/18-05-pascoa-feedpascoa.jpg",
+          "alt": "Arte para 05 Páscoa",
+          "campaign": "05 Páscoa",
+          "modified": "2026-04-03"
+        },
+        {
+          "src": "assets/cases/otica-murano/19-02-cuidados-feedhabitos.jpg",
+          "alt": "Arte para 02 CUIDADOS",
+          "campaign": "02 CUIDADOS",
+          "modified": "2026-02-25"
+        },
+        {
+          "src": "assets/cases/otica-murano/20-14-camp-junho-feed.jpg",
+          "alt": "Arte para 14 CAMP JUNHO",
+          "campaign": "14 CAMP JUNHO",
+          "modified": "2026-05-19"
+        }
+      ]
+    },
+    {
+      "id": "la-pizza",
+      "client": "La Pizza",
+      "type": "Gastronomia, varejo e social media",
+      "title": "Comunicação visual para gastronomia",
+      "subtitle": "Peças para redes sociais, ofertas e presença digital.",
+      "context": "Projeto com foco em criação de peças digitais para comunicação visual, redes sociais e campanhas recorrentes. A seleção abaixo reúne uma amostra dos materiais desenvolvidos, priorizando variedade de formatos, campanhas e aplicações visuais.",
+      "deliveries": [
+        "cards promocionais",
+        "posts de produto",
+        "stories",
+        "campanhas recorrentes",
+        "materiais digitais"
+      ],
+      "period": "Março a junho de 2026",
+      "imageCount": 20,
+      "note": "A seleção combina peças de produto, campanhas e variações de formato para redes sociais.",
+      "images": [
+        {
+          "src": "assets/cases/la-pizza/01-36-dia-da-familia-feedfamilia2.jpg",
+          "alt": "Arte para 36 Dia da Família",
+          "campaign": "36 Dia da Família",
+          "modified": "2026-05-14"
+        },
+        {
+          "src": "assets/cases/la-pizza/02-26-cardapio-post-feed50-off.jpg",
+          "alt": "Arte para 26 cardápio post",
+          "campaign": "26 cardápio post",
+          "modified": "2026-03-31"
+        },
+        {
+          "src": "assets/cases/la-pizza/03-41-dia-dos-namorados-feed-21206.jpg",
+          "alt": "Arte para 41 Dia dos namorados",
+          "campaign": "41 Dia dos namorados",
+          "modified": "2026-06-12"
+        },
+        {
+          "src": "assets/cases/la-pizza/04-40-reservas-feed-3reservas.jpg",
+          "alt": "Arte para 40 RESERVAS",
+          "campaign": "40 RESERVAS",
+          "modified": "2026-06-08"
+        },
+        {
+          "src": "assets/cases/la-pizza/05-39-fim-de-jogoo-feedaviso-sobre.jpg",
+          "alt": "Arte para 39 FIM DE JOGOO",
+          "campaign": "39 FIM DE JOGOO",
+          "modified": "2026-06-08"
+        },
+        {
+          "src": "assets/cases/la-pizza/06-37-pedimos-desculpas-feeddesculpas.jpg",
+          "alt": "Arte para 37 Pedimos desculpas",
+          "campaign": "37 Pedimos desculpas",
+          "modified": "2026-05-19"
+        },
+        {
+          "src": "assets/cases/la-pizza/07-35-dia-das-maes-feed5.jpg",
+          "alt": "Arte para 35 Dia das mães",
+          "campaign": "35 Dia das mães",
+          "modified": "2026-05-07"
+        },
+        {
+          "src": "assets/cases/la-pizza/08-34-dia-do-trabalhador-feed0105pizza.jpg",
+          "alt": "Arte para 34 Dia do trabalhador",
+          "campaign": "34 Dia do trabalhador",
+          "modified": "2026-04-30"
+        },
+        {
+          "src": "assets/cases/la-pizza/09-27-pascoa-feed05-04.jpg",
+          "alt": "Arte para 27 PÁSCOA",
+          "campaign": "27 PÁSCOA",
+          "modified": "2026-04-02"
+        },
+        {
+          "src": "assets/cases/la-pizza/10-09-no-ifood-feed-2delivery.jpg",
+          "alt": "Arte para 09 no ifood",
+          "campaign": "09 no ifood",
+          "modified": "2026-03-05"
+        },
+        {
+          "src": "assets/cases/la-pizza/11-20-dia-da-mulher-feed0803.jpg",
+          "alt": "Arte para 20 DIA DA MULHER",
+          "campaign": "20 DIA DA MULHER",
+          "modified": "2026-03-02"
+        },
+        {
+          "src": "assets/cases/la-pizza/12-32-dia-do-beijo-feed-copiardia-do-beijo.jpg",
+          "alt": "Arte para 32 Dia do beijo",
+          "campaign": "32 Dia do beijo",
+          "modified": "2026-04-13"
+        },
+        {
+          "src": "assets/cases/la-pizza/13-38-qual-pedido-hoje-feedqual-pedido.jpg",
+          "alt": "Arte para 38 QUAL PEDIDO HOJE",
+          "campaign": "38 QUAL PEDIDO HOJE",
+          "modified": "2026-05-27"
+        },
+        {
+          "src": "assets/cases/la-pizza/14-31-de-outro-mundo-feedde-outro-mun.jpg",
+          "alt": "Arte para 31 De outro mundo",
+          "campaign": "31 De outro mundo",
+          "modified": "2026-04-10"
+        },
+        {
+          "src": "assets/cases/la-pizza/15-28-sextala-pizza-feedsexta.jpg",
+          "alt": "Arte para 28 SEXTALÁ PIZZA",
+          "campaign": "28 SEXTALÁ PIZZA",
+          "modified": "2026-04-02"
+        },
+        {
+          "src": "assets/cases/la-pizza/16-24-dois-sabores-feeddoislsabores.jpg",
+          "alt": "Arte para 24 DOIS SABORES",
+          "campaign": "24 DOIS SABORES",
+          "modified": "2026-03-17"
+        },
+        {
+          "src": "assets/cases/la-pizza/17-21-incentivo-a-reserva-feedaniversario.jpg",
+          "alt": "Arte para 21 INCENTIVO A RESERVA",
+          "campaign": "21 INCENTIVO A RESERVA",
+          "modified": "2026-03-12"
+        },
+        {
+          "src": "assets/cases/la-pizza/18-19-terca-na-la-pizza-feeddelivery.jpg",
+          "alt": "Arte para 19 terça na la pizza",
+          "campaign": "19 terça na la pizza",
+          "modified": "2026-03-03"
+        },
+        {
+          "src": "assets/cases/la-pizza/19-25-tava-comendo-pizza-feedsonheicvc.jpg",
+          "alt": "Arte para 25 TAVA COMENDO PIZZA",
+          "campaign": "25 TAVA COMENDO PIZZA",
+          "modified": "2026-03-21"
+        },
+        {
+          "src": "assets/cases/la-pizza/20-23-checklist-feedchecklist.jpg",
+          "alt": "Arte para 23 checklist",
+          "campaign": "23 checklist",
+          "modified": "2026-03-12"
+        }
+      ]
+    }
+  ]
+}

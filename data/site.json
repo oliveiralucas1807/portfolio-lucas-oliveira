@@ -1,0 +1,34 @@
+{
+  "person": {
+    "name": "Lucas Oliveira da Silva",
+    "role": "Designer Gráfico | Design Digital | Social Media",
+    "intro": "Designer gráfico com atuação desde 2019 em agências, gráfica, editorial, redes sociais e campanhas promocionais. Trabalho com criação de peças digitais e impressas, campanhas para varejo, materiais para redes sociais, vídeos curtos e identidade visual aplicada à comunicação comercial.",
+    "email": "Oliveira.Lucas1807@gmail.com",
+    "instagram": "@callmelusca",
+    "instagramUrl": "https://www.instagram.com/callmelusca",
+    "photo": "/assets/foto-lucas.jpg",
+    "resume": "/assets/documents/curriculo-lucas-oliveira.pdf"
+  },
+  "navigation": [
+    { "label": "Início", "href": "#inicio" },
+    { "label": "Cases", "href": "#cases" },
+    { "label": "Sobre", "href": "#sobre" },
+    { "label": "Contato", "href": "#contato" }
+  ],
+  "stats": [
+    { "value": "2019", "label": "início da atuação profissional" },
+    { "value": "360°", "label": "peças online e offline" },
+    { "value": "Varejo", "label": "campanhas comerciais e promocionais" },
+    { "value": "Social", "label": "conteúdo, cards e vídeos curtos" }
+  ],
+  "skills": [
+    "Design gráfico",
+    "Social media",
+    "Campanhas digitais",
+    "Materiais promocionais",
+    "Editorial",
+    "Peças impressas",
+    "Vídeos curtos",
+    "Comunicação de varejo"
+  ]
+}
