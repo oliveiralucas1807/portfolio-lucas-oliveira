@@ -349,6 +349,7 @@ h3 {
 .gallery {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
   gap: 12px;
 }
 
@@ -358,13 +359,12 @@ h3 {
   overflow: hidden;
   border-radius: var(--radius);
   background: #f1dfcf;
-  aspect-ratio: 3 / 4;
   box-shadow: 0 10px 28px rgba(22, 22, 22, 0.08);
 }
 
 .gallery-button {
+  display: block;
   width: 100%;
-  height: 100%;
   padding: 0;
   border: 0;
   background: transparent;
@@ -373,8 +373,7 @@ h3 {
 
 .gallery-item img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: auto;
   transition: transform 0.25s ease;
 }
 
@@ -722,10 +721,6 @@ address {
   .gallery {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
-  }
-
-  .gallery-item {
-    aspect-ratio: 3 / 4;
   }
 
   .footer {
