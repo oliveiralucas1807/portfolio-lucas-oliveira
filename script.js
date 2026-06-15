@@ -1,5 +1,8 @@
 const caseCards = document.querySelector("#caseCards");
 const caseSections = document.querySelector("#caseSections");
+const contactModal = document.querySelector("[data-contact-modal]");
+const lightbox = document.querySelector("[data-lightbox]");
+let lastFocusedElement = null;
 
 function createElement(tag, className, text) {
   const element = document.createElement(tag);
@@ -25,13 +28,18 @@ function renderGallery(images) {
 
   images.forEach((image) => {
     const figure = createElement("figure", "gallery-item");
+    const button = document.createElement("button");
+    button.className = "gallery-button";
+    button.type = "button";
+    button.setAttribute("aria-label", `Ampliar ${image.alt}`);
     const img = document.createElement("img");
     img.src = image.src;
     img.alt = image.alt;
     img.loading = "lazy";
     img.decoding = "async";
 
-    figure.append(img);
+    button.append(img);
+    figure.append(button);
     gallery.append(figure);
   });
 
@@ -83,3 +91,56 @@ async function loadCases() {
 }
 
 loadCases();
+
+function openContactModal() {
+  lastFocusedElement = document.activeElement;
+  contactModal.hidden = false;
+  document.body.classList.add("modal-open");
+  contactModal.querySelector("[data-contact-close]").focus();
+}
+
+function closeContactModal() {
+  contactModal.hidden = true;
+  document.body.classList.remove("modal-open");
+  if (lastFocusedElement) lastFocusedElement.focus();
+}
+
+function openLightbox(image) {
+  const lightboxImage = lightbox.querySelector("img");
+  lightboxImage.src = image.src;
+  lightboxImage.alt = image.alt;
+  lightbox.hidden = false;
+  document.body.classList.add("modal-open");
+  lightbox.querySelector("[data-lightbox-close]").focus();
+}
+
+function closeLightbox() {
+  lightbox.hidden = true;
+  lightbox.querySelector("img").src = "";
+  document.body.classList.remove("modal-open");
+}
+
+document.addEventListener("click", (event) => {
+  const contactButton = event.target.closest("[data-contact-open]");
+  if (contactButton) openContactModal();
+
+  if (event.target.matches("[data-contact-close]") || event.target === contactModal) {
+    closeContactModal();
+  }
+
+  const galleryButton = event.target.closest(".gallery-button");
+  if (galleryButton) {
+    const image = galleryButton.querySelector("img");
+    openLightbox(image);
+  }
+
+  if (event.target.matches("[data-lightbox-close]") || event.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+  if (!contactModal.hidden) closeContactModal();
+  if (!lightbox.hidden) closeLightbox();
+});

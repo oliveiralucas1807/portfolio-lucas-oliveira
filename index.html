@@ -4,8 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lucas Oliveira da Silva | Portfólio</title>
-    <meta name="description" content="Portfólio light de Lucas Oliveira da Silva, designer gráfico com atuação em campanhas promocionais, peças digitais, materiais impressos e comunicação visual.">
-    <link rel="stylesheet" href="styles.css?v=20260613">
+    <meta name="description" content="Portfólio de Lucas Oliveira da Silva, designer gráfico com atuação em campanhas promocionais, peças digitais, materiais impressos e comunicação visual.">
+    <link rel="canonical" href="https://oliveiralucas1807.github.io/portfolio-lucas-oliveira/">
+    <meta property="og:title" content="Lucas Oliveira da Silva | Portfólio">
+    <meta property="og:description" content="Seleção de trabalhos em design gráfico, campanhas promocionais, redes sociais e comunicação visual.">
+    <meta property="og:url" content="https://oliveiralucas1807.github.io/portfolio-lucas-oliveira/">
+    <link rel="stylesheet" href="styles.css?v=20260615">
   </head>
   <body>
     <header class="site-header" aria-label="Navegação principal">
@@ -32,8 +36,8 @@
           </p>
           <div class="hero-actions" aria-label="Ações principais">
             <a class="button primary" href="#cases">Ver cases</a>
-            <a class="button" href="assets/curriculo-lucas-oliveira.pdf">Baixar currículo</a>
-            <a class="button ghost" href="mailto:oliveira.lucas217@gmail.com">Entrar em contato</a>
+            <a class="button" href="https://oliveiralucas1807.github.io/curriculo/" target="_blank" rel="noopener noreferrer">Ver currículo</a>
+            <button class="button ghost" type="button" data-contact-open>Entrar em contato</button>
           </div>
         </div>
         <div class="hero-visual" aria-label="Espaço para imagem principal do portfólio"></div>
@@ -43,8 +47,9 @@
         <div class="section-heading">
           <h2>Cases selecionados</h2>
           <p>
-            Amostra enxuta de trabalhos recentes, organizada a partir dos clientes
-            com mais material visual e variedade de campanhas nos últimos meses.
+            Uma seleção de trabalhos recentes desenvolvidos para diferentes segmentos,
+            reunindo campanhas promocionais, peças para redes sociais, materiais
+            digitais e soluções visuais aplicadas à comunicação de marcas.
           </p>
         </div>
         <div class="case-grid" id="caseCards" aria-live="polite"></div>
@@ -62,6 +67,8 @@
           na área desde 2019. Tenho experiência com criação de materiais digitais
           e impressos, campanhas promocionais, peças para redes sociais, vídeos
           curtos, editorial e comunicação visual para diferentes nichos de clientes.
+          Também venho aplicando recursos de IA em fluxos criativos, geração de
+          imagem e otimização de processos de design.
         </p>
       </section>
 
@@ -72,14 +79,41 @@
           <p>Designer Gráfico</p>
         </div>
         <address>
-          <a href="mailto:oliveira.lucas217@gmail.com">oliveira.lucas217@gmail.com</a>
+          <a href="mailto:Oliveira.Lucas1807@gmail.com">Oliveira.Lucas1807@gmail.com</a>
           <span>Manaus, AM</span>
         </address>
       </section>
     </main>
 
+    <div class="contact-modal" data-contact-modal hidden>
+      <div class="contact-modal__panel" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title" aria-describedby="contact-modal-description">
+        <button class="contact-modal__close" type="button" aria-label="Fechar opções de contato" data-contact-close>×</button>
+        <p class="eyebrow">Contato</p>
+        <h2 id="contact-modal-title">Como você prefere entrar em contato?</h2>
+        <p id="contact-modal-description">
+          Escolha uma das opções abaixo para falar comigo sobre oportunidades, projetos ou propostas profissionais.
+        </p>
+        <div class="contact-options">
+          <a class="contact-option" href="mailto:Oliveira.Lucas1807@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio&body=Ol%C3%A1%2C%20Lucas%21%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20uma%20oportunidade%20ou%20projeto.">
+            <span>E-mail</span>
+            <strong>Oliveira.Lucas1807@gmail.com</strong>
+          </a>
+          <a class="contact-option" href="https://wa.me/5592988484334?text=Ol%C3%A1%2C%20Lucas%21%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20uma%20oportunidade%20ou%20projeto." target="_blank" rel="noopener noreferrer">
+            <span>WhatsApp</span>
+            <strong>+55 (92) 98848-4334</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="image-lightbox" data-lightbox hidden>
+      <button class="image-lightbox__close" type="button" aria-label="Fechar imagem ampliada" data-lightbox-close>×</button>
+      <img src="" alt="">
+    </div>
+
     <footer class="footer">
       <span>Portfólio light para processos seletivos.</span>
+      <a href="https://oliveiralucas1807.github.io/portfolio-lucas-oliveira/">Link público</a>
       <a href="#top">Voltar ao topo</a>
     </footer>
 

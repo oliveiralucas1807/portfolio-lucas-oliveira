@@ -25,7 +25,8 @@ Abrir o `index.html` direto no navegador pode bloquear o carregamento de `data/c
 - `script.js`: carrega os cases a partir do JSON.
 - `data/cases.json`: textos e lista de imagens dos cases.
 - `assets/cases/`: imagens copiadas para cada mini-case.
-- `assets/foto-lucas.jpg`: foto de apresentação.
+- `assets/foto-lucas-desktop.jpg`: imagem principal do hero em desktop.
+- `assets/foto-lucas-mobile.jpg`: imagem principal do hero em mobile.
 - `relatorio-curadoria.md`: resumo da seleção dos clientes e imagens.
 
 ## Como trocar imagens
@@ -47,27 +48,29 @@ Os textos dos cases ficam em `data/cases.json`.
 
 Textos fixos da home, sobre e contato ficam em `index.html`.
 
-O e-mail de contato atual é `oliveira.lucas217@gmail.com`.
+O e-mail de contato atual é `Oliveira.Lucas1807@gmail.com`.
 
 ## Currículo
 
 O botão de currículo aponta para:
 
 ```text
-assets/curriculo-lucas-oliveira.pdf
+https://oliveiralucas1807.github.io/curriculo/
 ```
 
-Se o arquivo ainda não existir, coloque o PDF final nesse caminho antes de publicar.
+O portfólio publicado fica em:
+
+```text
+https://oliveiralucas1807.github.io/portfolio-lucas-oliveira/
+```
 
 ## Publicar no GitHub Pages
 
-1. Crie um repositório no GitHub.
-2. Envie os arquivos desta versão light para o repositório.
-3. No GitHub, entre em `Settings > Pages`.
-4. Em `Source`, escolha `Deploy from a branch`.
-5. Selecione a branch `main`.
-6. Selecione a pasta `/root`.
-7. Salve e aguarde o link gerado pelo GitHub Pages.
+1. Faça commit das alterações.
+2. Envie para a branch `main`.
+3. No GitHub, mantenha `Settings > Pages` como `Deploy from a branch`.
+4. Use a branch `main` e a pasta `/root`.
+5. Aguarde o GitHub Pages atualizar o link público.
 
 Como esta versão não usa Vite nem build, o `index.html` deve ficar na raiz do repositório.
 
