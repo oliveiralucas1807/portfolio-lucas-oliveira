@@ -46,13 +46,16 @@ a {
 }
 
 .site-header {
-  position: sticky;
+  position: absolute;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 20;
   padding: 0 clamp(18px, 4vw, 48px);
-  background: rgba(255, 247, 239, 0.92);
-  border-bottom: 1px solid rgba(22, 22, 22, 0.08);
-  backdrop-filter: blur(16px);
+  color: var(--paper);
+  background: transparent;
+  border-bottom: 0;
+  backdrop-filter: none;
 }
 
 .site-header-inner {
@@ -61,7 +64,7 @@ a {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 24px;
 }
 
@@ -85,12 +88,18 @@ li,
 }
 
 .brand {
-  font-weight: 800;
-  letter-spacing: 0;
+  width: min(65vw, 760px);
+  display: block;
+  font-size: clamp(0.68rem, 0.82vw, 0.88rem);
+  font-weight: 500;
+  letter-spacing: 0.68em;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.32);
 }
 
 .nav {
-  display: flex;
+  display: none;
   align-items: center;
   gap: clamp(14px, 3vw, 30px);
   color: var(--muted);
@@ -110,7 +119,7 @@ address a:hover {
 }
 
 .hero.section {
-  min-height: calc(92vh - 70px);
+  min-height: 92vh;
   display: grid;
   grid-template-columns: minmax(0, 0.68fr) minmax(260px, 0.32fr);
   align-items: center;
@@ -123,7 +132,7 @@ address a:hover {
   padding-inline: max(clamp(24px, 5vw, 72px), calc((100vw - var(--max)) / 2 + 24px));
   background:
     linear-gradient(90deg, rgba(13, 13, 13, 0.78) 0%, rgba(13, 13, 13, 0.5) 38%, rgba(13, 13, 13, 0.06) 66%),
-    url("assets/foto-lucas-desktop.jpg") center right / cover no-repeat,
+    url("assets/foto-lucas-desktop-original.png") center right / cover no-repeat,
     var(--gold);
 }
 
@@ -556,20 +565,20 @@ address {
 @media (max-width: 768px) {
   .hero.section {
     width: 100%;
-    min-height: calc(92svh - 74px);
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
     align-items: stretch;
-    padding: clamp(38px, 8vw, 58px) clamp(22px, 5vw, 42px) calc(34px + env(safe-area-inset-bottom));
+    padding: clamp(70px, 16vw, 88px) clamp(22px, 5vw, 42px) calc(34px + env(safe-area-inset-bottom));
     background:
-      linear-gradient(180deg, rgba(13, 13, 13, 0.24) 0%, rgba(13, 13, 13, 0.08) 28%, rgba(13, 13, 13, 0.02) 48%, rgba(13, 13, 13, 0.62) 100%),
-      url("assets/foto-lucas-mobile.jpg") 68% 42% / auto 108% no-repeat,
+      linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, rgba(13, 13, 13, 0) 58%, rgba(13, 13, 13, 0.56) 100%),
+      url("assets/foto-lucas-mobile-v2-original.png") center top / cover no-repeat,
       var(--gold);
   }
 
   .hero-copy {
-    min-height: calc(92svh - 74px - 92px);
+    min-height: calc(100svh - 104px);
     display: flex;
     flex-direction: column;
     max-width: 100%;
@@ -580,11 +589,16 @@ address {
     display: none;
   }
 
+  .hero-copy h1,
+  .hero-copy .role {
+    display: none;
+  }
+
   .hero-actions {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     margin-top: auto;
-    padding-top: 30vh;
+    padding-top: 56vh;
     gap: 8px;
   }
 
@@ -592,11 +606,6 @@ address {
     grid-column: 1 / -1;
     justify-self: center;
     width: min(100%, 360px);
-  }
-
-  .role {
-    margin-bottom: 0;
-    color: var(--paper);
   }
 
   .mobile-intro-card {
@@ -620,20 +629,29 @@ address {
 
 @media (max-width: 640px) {
   .site-header {
-    position: static;
+    position: absolute;
     padding-inline: 18px;
+    background: transparent;
   }
 
   .site-header-inner {
     min-height: auto;
-    padding: 18px 0;
-    align-items: flex-start;
-    flex-direction: column;
+    padding: 18px 0 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .brand {
+    width: 70vw;
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.44em;
+    white-space: nowrap;
   }
 
   .nav {
-    width: 100%;
-    justify-content: space-between;
+    display: none;
   }
 
   .section {
@@ -648,20 +666,20 @@ address {
 
   .hero.section {
     width: 100%;
-    min-height: calc(92svh - 118px);
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
     align-items: stretch;
-    padding: clamp(24px, 6vw, 34px) 22px calc(26px + env(safe-area-inset-bottom));
+    padding: clamp(70px, 16vw, 88px) 22px calc(26px + env(safe-area-inset-bottom));
     background:
-      linear-gradient(180deg, rgba(13, 13, 13, 0.24) 0%, rgba(13, 13, 13, 0.08) 28%, rgba(13, 13, 13, 0.02) 48%, rgba(13, 13, 13, 0.62) 100%),
-      url("assets/foto-lucas-mobile.jpg") 68% 42% / auto 108% no-repeat,
+      linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, rgba(13, 13, 13, 0) 58%, rgba(13, 13, 13, 0.56) 100%),
+      url("assets/foto-lucas-mobile-v2-original.png") center top / cover no-repeat,
       var(--gold);
   }
 
   .hero-copy {
-    min-height: calc(92svh - 118px - 60px);
+    min-height: calc(100svh - 98px);
     display: flex;
     flex-direction: column;
     max-width: 100%;
@@ -672,23 +690,11 @@ address {
     display: none;
   }
 
-  h1 {
-    max-width: 9ch;
-    margin-bottom: 10px;
-    font-size: clamp(2.9rem, 13.9vw, 4.18rem);
-    line-height: 0.94;
-  }
-
-  .role {
-    margin-bottom: 0;
-    color: var(--paper);
-  }
-
   .hero-actions {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     margin-top: auto;
-    padding-top: 30vh;
+    padding-top: 48vh;
     gap: 8px;
   }
 
@@ -729,11 +735,11 @@ address {
 
 @media (max-width: 380px) {
   .hero.section {
-    background-position: 68% 42%;
+    background-position: center top;
   }
 
   .hero-actions {
-    padding-top: 26vh;
+    padding-top: 44vh;
   }
 
   .gallery {
@@ -743,7 +749,7 @@ address {
 
 @media (min-width: 381px) and (max-width: 430px) {
   .hero.section {
-    background-position: 68% 42%;
+    background-position: center top;
   }
 }
 
