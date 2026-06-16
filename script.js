@@ -1,6 +1,7 @@
 const caseCards = document.querySelector("#caseCards");
 const caseSections = document.querySelector("#caseSections");
 const contactModal = document.querySelector("[data-contact-modal]");
+const resumeModal = document.querySelector("[data-resume-modal]");
 const lightbox = document.querySelector("[data-lightbox]");
 let lastFocusedElement = null;
 
@@ -105,6 +106,19 @@ function closeContactModal() {
   if (lastFocusedElement) lastFocusedElement.focus();
 }
 
+function openResumeModal() {
+  lastFocusedElement = document.activeElement;
+  resumeModal.hidden = false;
+  document.body.classList.add("modal-open");
+  resumeModal.querySelector("[data-resume-close]").focus();
+}
+
+function closeResumeModal() {
+  resumeModal.hidden = true;
+  document.body.classList.remove("modal-open");
+  if (lastFocusedElement) lastFocusedElement.focus();
+}
+
 function openLightbox(image) {
   const lightboxImage = lightbox.querySelector("img");
   lightboxImage.src = image.src;
@@ -124,8 +138,15 @@ document.addEventListener("click", (event) => {
   const contactButton = event.target.closest("[data-contact-open]");
   if (contactButton) openContactModal();
 
+  const resumeButton = event.target.closest("[data-resume-open]");
+  if (resumeButton) openResumeModal();
+
   if (event.target.matches("[data-contact-close]") || event.target === contactModal) {
     closeContactModal();
+  }
+
+  if (event.target.matches("[data-resume-close]") || event.target === resumeModal) {
+    closeResumeModal();
   }
 
   const galleryButton = event.target.closest(".gallery-button");
@@ -142,5 +163,6 @@ document.addEventListener("click", (event) => {
 document.addEventListener("keydown", (event) => {
   if (event.key !== "Escape") return;
   if (!contactModal.hidden) closeContactModal();
+  if (!resumeModal.hidden) closeResumeModal();
   if (!lightbox.hidden) closeLightbox();
 });

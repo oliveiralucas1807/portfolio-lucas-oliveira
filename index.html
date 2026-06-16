@@ -9,7 +9,7 @@
     <meta property="og:title" content="Lucas Oliveira da Silva | Portfólio">
     <meta property="og:description" content="Seleção de trabalhos em design gráfico, campanhas promocionais, redes sociais e comunicação visual.">
     <meta property="og:url" content="https://oliveiralucas1807.github.io/portfolio-lucas-oliveira/">
-    <link rel="stylesheet" href="styles.css?v=20260615-gallery-ratio">
+    <link rel="stylesheet" href="styles.css?v=20260615-curriculo-gallery">
   </head>
   <body>
     <header class="site-header" aria-label="Navegação principal">
@@ -35,9 +35,18 @@
             vídeos curtos e comunicação visual aplicada a marcas e negócios.
           </p>
           <div class="hero-actions" aria-label="Ações principais">
-            <a class="button primary" href="#cases">Ver cases</a>
-            <a class="button" href="https://oliveiralucas1807.github.io/curriculo/" target="_blank" rel="noopener noreferrer">Ver currículo</a>
-            <button class="button ghost" type="button" data-contact-open>Entrar em contato</button>
+            <a class="button primary" href="#cases">
+              <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v4H4zM4 11h7v8H4zM13 11h7v8h-7z"/></svg>
+              <span>Ver cases</span>
+            </a>
+            <button class="button" type="button" data-resume-open>
+              <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v6h5M9 13h8M9 17h8"/></svg>
+              <span>Currículo</span>
+            </button>
+            <button class="button ghost" type="button" data-contact-open>
+              <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H7l-3 3zM7 8h10M7 12h7"/></svg>
+              <span>Entrar em contato</span>
+            </button>
           </div>
         </div>
         <div class="hero-visual" aria-label="Espaço para imagem principal do portfólio"></div>
@@ -110,6 +119,27 @@
           <a class="contact-option" href="https://wa.me/5592988484334?text=Ol%C3%A1%2C%20Lucas%21%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20uma%20oportunidade%20ou%20projeto." target="_blank" rel="noopener noreferrer">
             <span>WhatsApp</span>
             <strong>+55 (92) 98848-4334</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-modal" data-resume-modal hidden>
+      <div class="contact-modal__panel" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title" aria-describedby="resume-modal-description">
+        <button class="contact-modal__close" type="button" aria-label="Fechar opções de currículo" data-resume-close>×</button>
+        <p class="eyebrow">Currículo</p>
+        <h2 id="resume-modal-title">Como você prefere acessar?</h2>
+        <p id="resume-modal-description">
+          Você pode visualizar o currículo online ou baixar a versão em PDF.
+        </p>
+        <div class="contact-options">
+          <a class="contact-option" href="https://oliveiralucas1807.github.io/curriculo/" target="_blank" rel="noopener noreferrer">
+            <span>Visualizar online</span>
+            <strong>Abre o currículo em uma nova aba</strong>
+          </a>
+          <a class="contact-option" href="https://oliveiralucas1807.github.io/curriculo/curriculo-lucas-oliveira.pdf" target="_blank" rel="noopener noreferrer" download>
+            <span>Baixar PDF</span>
+            <strong>curriculo-lucas-oliveira.pdf</strong>
           </a>
         </div>
       </div>
