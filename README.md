@@ -2,7 +2,7 @@
 
 Esta é a fonte publicada do portfólio.
 
-- Pasta local: `D:\portfolio-coimbra\_github-pages-site-20260613`
+- Pasta local: `D:\portfolio-coimbra\portfolio ativo online`
 - Repositório: `https://github.com/oliveiralucas1807/portfolio-lucas-oliveira`
 - URL: `https://oliveiralucas1807.github.io/portfolio-lucas-oliveira/`
 - Deploy: GitHub Pages pela branch `main`, pasta `/`, sem etapa de build.
@@ -91,18 +91,23 @@ Como esta versão não usa Vite nem build, o `index.html` deve ficar na raiz do 
 O teste reutilizável fica fora deste repositório, em:
 
 ```text
-D:\portfolio-coimbra\qa\verify-sites.mjs
+D:\portfolio-coimbra\validacao-sites\validar-sites.mjs
 ```
 
-Consulte `D:\portfolio-coimbra\qa\RUNBOOK-VALIDACAO-SITES.md`. O teste sobe
-servidores locais temporários, verifica desktop/mobile, links, 120 imagens,
-console, respostas HTTP e gera screenshots.
+Consulte
+`D:\portfolio-coimbra\validacao-sites\runbook-validacao-sites.md`. O teste
+sobe servidores locais temporários, verifica desktop/mobile, links, 120
+imagens, console, respostas HTTP e gera screenshots.
 
-## Pastas legadas dentro do repositório
+## Arquivo de versões antigas
 
-As pastas `backup-*` são checkpoints antigos já versionados. Elas não são
-carregadas pela home atual. Não editar, mover ou apagar sem uma limpeza
-planejada e validada.
+As pastas `backup-*`, os três assets sem referência e os JSONs modulares antigos
+foram retirados da árvore publicada em 2026-07-26. Eles permanecem recuperáveis
+no histórico Git e também em:
+
+```text
+D:\portfolio-coimbra\_arquivo-versoes-antigas\03-itens-retirados-do-repositorio-ativo
+```
 
 ## Gerar PDF pelo navegador
 
