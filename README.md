@@ -2,13 +2,14 @@
 
 Esta é a fonte publicada do portfólio.
 
-- Pasta local: `D:\portfolio-coimbra\portfolio ativo online`
+- Pasta local: `D:\portfolio site git hub online\portfolio ativo online`
 - Repositório: `https://github.com/oliveiralucas1807/portfolio-lucas-oliveira`
 - URL: `https://oliveiralucas1807.github.io/portfolio-lucas-oliveira/`
 - Deploy: GitHub Pages pela branch `main`, pasta `/`, sem etapa de build.
 
-Não edite a cópia estática na raiz de `D:\portfolio-coimbra` esperando que ela
-seja publicada.
+Não edite o material arquivado em
+`D:\portfolio site git hub online\_arquivo-versoes-antigas` esperando que ele
+seja publicado.
 
 ## Como rodar localmente
 
@@ -91,11 +92,11 @@ Como esta versão não usa Vite nem build, o `index.html` deve ficar na raiz do 
 O teste reutilizável fica fora deste repositório, em:
 
 ```text
-D:\portfolio-coimbra\validacao-sites\validar-sites.mjs
+D:\portfolio site git hub online\validacao-sites\validar-sites.mjs
 ```
 
 Consulte
-`D:\portfolio-coimbra\validacao-sites\runbook-validacao-sites.md`. O teste
+`D:\portfolio site git hub online\validacao-sites\runbook-validacao-sites.md`. O teste
 sobe servidores locais temporários, verifica desktop/mobile, links, 120
 imagens, console, respostas HTTP e gera screenshots.
 
@@ -106,7 +107,7 @@ foram retirados da árvore publicada em 2026-07-26. Eles permanecem recuperávei
 no histórico Git e também em:
 
 ```text
-D:\portfolio-coimbra\_arquivo-versoes-antigas\03-itens-retirados-do-repositorio-ativo
+D:\portfolio site git hub online\_arquivo-versoes-antigas\03-itens-retirados-do-repositorio-ativo
 ```
 
 ## Gerar PDF pelo navegador

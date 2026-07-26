@@ -6,5 +6,5 @@ A documentação canônica da versão publicada está em `README.md`, nesta mesm
 pasta. O mapa geral dos dois projetos está em:
 
 ```text
-D:\portfolio-coimbra\MAPA-DO-PROJETO.md
+D:\portfolio site git hub online\MAPA-DO-PROJETO.md
 ```
