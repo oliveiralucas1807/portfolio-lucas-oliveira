@@ -1,6 +1,14 @@
 # Portfólio light | Lucas Oliveira da Silva
 
-Versão HTML/CSS/JS simples do portfólio, pronta para publicação em GitHub Pages.
+Esta é a fonte publicada do portfólio.
+
+- Pasta local: `D:\portfolio-coimbra\_github-pages-site-20260613`
+- Repositório: `https://github.com/oliveiralucas1807/portfolio-lucas-oliveira`
+- URL: `https://oliveiralucas1807.github.io/portfolio-lucas-oliveira/`
+- Deploy: GitHub Pages pela branch `main`, pasta `/`, sem etapa de build.
+
+Não edite a cópia estática na raiz de `D:\portfolio-coimbra` esperando que ela
+seja publicada.
 
 ## Como rodar localmente
 
@@ -25,9 +33,13 @@ Abrir o `index.html` direto no navegador pode bloquear o carregamento de `data/c
 - `script.js`: carrega os cases a partir do JSON.
 - `data/cases.json`: textos e lista de imagens dos cases.
 - `assets/cases/`: imagens copiadas para cada mini-case.
-- `assets/foto-lucas-desktop.jpg`: imagem principal do hero em desktop.
-- `assets/foto-lucas-mobile.jpg`: imagem principal do hero em mobile.
+- `assets/foto-lucas-desktop-original.png`: hero desktop.
+- `assets/foto-lucas-mobile-v2-original.png`: hero mobile.
 - `relatorio-curadoria.md`: resumo da seleção dos clientes e imagens.
+
+O cargo da arte mobile original contém `Designer Gráfico`. O CSS complementa
+visualmente essa linha com `Pleno`, enquanto o HTML mantém
+`Designer Gráfico Pleno` para acessibilidade e conteúdo textual.
 
 ## Como trocar imagens
 
@@ -69,10 +81,28 @@ https://oliveiralucas1807.github.io/portfolio-lucas-oliveira/
 1. Faça commit das alterações.
 2. Envie para a branch `main`.
 3. No GitHub, mantenha `Settings > Pages` como `Deploy from a branch`.
-4. Use a branch `main` e a pasta `/root`.
+4. Use a branch `main` e a pasta `/`.
 5. Aguarde o GitHub Pages atualizar o link público.
 
 Como esta versão não usa Vite nem build, o `index.html` deve ficar na raiz do repositório.
+
+## Validar
+
+O teste reutilizável fica fora deste repositório, em:
+
+```text
+D:\portfolio-coimbra\qa\verify-sites.mjs
+```
+
+Consulte `D:\portfolio-coimbra\qa\RUNBOOK-VALIDACAO-SITES.md`. O teste sobe
+servidores locais temporários, verifica desktop/mobile, links, 120 imagens,
+console, respostas HTTP e gera screenshots.
+
+## Pastas legadas dentro do repositório
+
+As pastas `backup-*` são checkpoints antigos já versionados. Elas não são
+carregadas pela home atual. Não editar, mover ou apagar sem uma limpeza
+planejada e validada.
 
 ## Gerar PDF pelo navegador
 

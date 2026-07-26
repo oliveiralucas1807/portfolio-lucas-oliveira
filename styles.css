@@ -602,9 +602,28 @@ address {
     display: none;
   }
 
-  .hero-copy h1,
-  .hero-copy .role {
+  .hero-copy h1 {
     display: none;
+  }
+
+  .hero-copy .role {
+    position: absolute;
+    top: 29.1svh;
+    left: 52vw;
+    display: block;
+    margin: 0;
+    color: var(--paper);
+    font-size: 0;
+    line-height: 1;
+    text-shadow: none;
+    white-space: nowrap;
+  }
+
+  .hero-copy .role::after {
+    content: "\00a0Pleno";
+    font-family: Montserrat, Inter, Arial, sans-serif;
+    font-size: clamp(0.9rem, 4.4vw, 1.15rem);
+    font-weight: 800;
   }
 
   .hero-actions {
