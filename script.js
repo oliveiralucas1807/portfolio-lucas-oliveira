@@ -59,7 +59,7 @@ function renderCaseSection(item) {
   header.append(label, title, subtitle, context);
 
   const aside = createElement("aside", "deliveries");
-  aside.append(createElement("h3", "", "Entregas prováveis"));
+  aside.append(createElement("h3", "", "Principais entregas"));
   const list = createElement("ul");
   item.deliveries.forEach((delivery) => {
     const li = createElement("li", "", delivery);
