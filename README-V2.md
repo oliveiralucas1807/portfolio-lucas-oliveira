@@ -23,8 +23,11 @@ limites, arquitetura proposta e critérios de validação.
 2. `docs/planejamento/00-CONTEXTO-E-ESCOPO.md`
 3. `docs/planejamento/01-ESTRUTURA-V2.md`
 4. `docs/planejamento/02-V2-VS-PORTFOLIO-DE-CASES.md`
-5. `docs/referencias/REFERENCIAS-VISUAIS-E-TECNICAS.md`
-6. `docs/retomada/CHECKLIST-PARA-INICIAR-A-IMPLEMENTACAO.md`
+5. `docs/planejamento/03-PLANO-DE-ACAO.md`
+6. `docs/planejamento/04-REQUISITOS-TECNICOS-E-DEPENDENCIAS.md`
+7. `docs/referencias/REFERENCIAS-VISUAIS-E-TECNICAS.md`
+8. `docs/referencias/RELATORIO-CURADORIA-TEMPLATES-ASTRO-2026-07-26.md`
+9. `docs/retomada/CHECKLIST-PARA-INICIAR-A-IMPLEMENTACAO.md`
 
 ## Estado de publicação
 
@@ -34,4 +37,3 @@ A publicação continua vindo exclusivamente de:
 
 Esta pasta não deve publicar nada enquanto Lucas não aprovar a implementação,
 os testes e a troca de versão.
-
