@@ -1,6 +1,10 @@
-# Portfólio light | Lucas Oliveira da Silva
+# Portfólio Light — baseline preservada para a V2
 
-Esta é a fonte publicada do portfólio.
+> Esta pasta não é a fonte publicada. Ela foi clonada do Portfólio Light em
+> 2026-07-26 para preparar a V2, está sem remote e não deve publicar por cima da
+> versão ativa. Leia `README-V2.md` e `AGENTS.md` antes de trabalhar.
+
+Fonte publicada preservada:
 
 - Pasta local: `D:\portfolio site git hub online\portfolio ativo online`
 - Repositório: `https://github.com/oliveiralucas1807/portfolio-lucas-oliveira`
