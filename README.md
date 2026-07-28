@@ -32,6 +32,7 @@ Abrir o `index.html` direto no navegador pode bloquear o carregamento de `data/c
 - `index.html`: estrutura da página.
 - `styles.css`: visual, responsivo e impressão/PDF.
 - `script.js`: carrega os cases a partir do JSON.
+- `i18n.js`: traduz a interface fixa, atualiza metadados e links PT/EN.
 - `data/cases.json`: textos e lista de imagens dos cases.
 - `assets/cases/`: imagens copiadas para cada mini-case.
 - `assets/foto-lucas-desktop-original.png`: hero desktop.
@@ -60,6 +61,15 @@ Use caminhos relativos, por exemplo:
 Os textos dos cases ficam em `data/cases.json`.
 
 Textos fixos da home, sobre e contato ficam em `index.html`.
+
+As traduções inglesas dos cases ficam em `script.js`; os textos fixos em inglês
+ficam em `i18n.js`. Valide sempre os dois idiomas após alterar conteúdo.
+
+Para abrir diretamente a versão inglesa:
+
+```text
+https://oliveiralucas1807.github.io/portfolio-lucas-oliveira/?lang=en
+```
 
 O e-mail de contato atual é `Oliveira.Lucas1807@gmail.com`.
 
@@ -99,6 +109,10 @@ Consulte
 `D:\portfolio site git hub online\validacao-sites\runbook-validacao-sites.md`. O teste
 sobe servidores locais temporários, verifica desktop/mobile, links, 120
 imagens, console, respostas HTTP e gera screenshots.
+
+O QA bilíngue fica em
+`D:\portfolio site git hub online\validacao-sites\validar-i18n-local.mjs`,
+documentado em `runbook-i18n-local.md`.
 
 ## Arquivo de versões antigas
 

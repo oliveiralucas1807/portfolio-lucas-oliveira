@@ -31,6 +31,46 @@ body {
   overflow-x: hidden;
 }
 
+.language-switcher {
+  display: flex;
+  margin-top: 14px;
+}
+
+.language-switcher button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  padding: 4px 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.92);
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 750;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.34);
+  transition: color 160ms ease, gap 160ms ease;
+}
+
+.language-switcher button:hover {
+  gap: 12px;
+  color: #fff;
+}
+
+.language-switcher button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 5px;
+}
+
+@media (max-width: 720px) {
+  .language-switcher {
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+
 body.modal-open {
   overflow: hidden;
 }
