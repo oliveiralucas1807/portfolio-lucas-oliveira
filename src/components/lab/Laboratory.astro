@@ -1,0 +1,30 @@
+---
+import { labFeatures } from '@/data/labFeatures';
+import type { Locale } from '@/i18n/config';
+const { locale } = Astro.props as { locale: Locale };
+---
+<section class="lab-hero section-shell">
+  <p class="eyebrow">R&D / Playground</p>
+  <h1>{locale === 'pt' ? 'Laboratório V2' : 'V2 Laboratory'}</h1>
+  <p>{locale === 'pt' ? 'Recursos isolados para entender o que fazem, como seriam construídos e se merecem entrar na experiência principal.' : 'Isolated features to understand what they do, how they would be built and whether they belong in the main experience.'}</p>
+</section>
+<section class="lab-grid section-shell">
+  {labFeatures.map((feature, index) => (
+    <article class={`lab-card lab-${feature.id}`}>
+      <div class="lab-card-head"><span>{String(index + 1).padStart(2, '0')}</span><span>{feature.status}</span></div>
+      <h2>{feature.title[locale]}</h2><p>{feature.purpose[locale]}</p><small>{feature.implementation[locale]}</small>
+      {feature.id === 'three-d' && <div class="cube-scene" aria-label={locale === 'pt' ? 'Demonstração de cubo 3D' : '3D cube demonstration'}><div class="cube"><span></span><span></span><span></span></div></div>}
+      {feature.id === 'newsletter' && <form class="demo-form" data-demo-form><label>{locale === 'pt' ? 'Seu e-mail' : 'Your email'}<input type="email" required placeholder="nome@email.com" /></label><button type="submit">{locale === 'pt' ? 'Simular inscrição' : 'Simulate signup'}</button><output></output></form>}
+      {feature.id === 'cms' && <div class="cms-demo"><label>Title<input value={feature.title[locale]} readonly /></label><label>Status<select><option>Draft</option><option>Published</option></select></label></div>}
+      {feature.id === 'filters' && <div class="filter-demo"><button type="button">Todos</button><button type="button">Campanha</button><button type="button">Social</button></div>}
+      {feature.id === 'parallax' && <div class="parallax-demo" aria-hidden="true"><span>CAMADA 01</span><strong>MOVE</strong></div>}
+    </article>
+  ))}
+</section>
+<script>
+  document.querySelectorAll<HTMLFormElement>('[data-demo-form]').forEach((form) => form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const output = form.querySelector('output');
+    if (output) output.textContent = document.documentElement.lang.startsWith('pt') ? 'Demonstração local: nenhum dado foi enviado.' : 'Local demo: no data was sent.';
+  }));
+</script>
