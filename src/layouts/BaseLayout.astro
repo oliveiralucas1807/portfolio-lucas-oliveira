@@ -3,12 +3,14 @@ import '@/styles/global.css';
 import Topbar from '@/components/navigation/Topbar.astro';
 import Footer from '@/components/navigation/Footer.astro';
 import CustomCursor from '@/components/islands/CustomCursor';
+import MotionLayer from '@/components/islands/MotionLayer';
 import { localeMeta, ui, type Locale } from '@/i18n/config';
 const { locale, title, description } = Astro.props as { locale: Locale; title: string; description: string };
 const canonicalBase = 'https://oliveiralucas1807.github.io/portfolio-lucas-oliveira';
 const route = Astro.url.pathname;
-const ptPath = route.startsWith('/en/lab') ? '/laboratorio/' : route.startsWith('/en') ? '/' : route;
-const enPath = route.startsWith('/laboratorio') ? '/en/lab/' : route.startsWith('/en') ? route : '/en/';
+const onBlog = route.includes('/blog');
+const ptPath = onBlog ? '/blog/' : '/';
+const enPath = onBlog ? '/en/blog/' : '/en/';
 ---
 <!doctype html>
 <html lang={localeMeta[locale].lang} data-theme="light">
@@ -38,6 +40,7 @@ const enPath = route.startsWith('/laboratorio') ? '/en/lab/' : route.startsWith(
     <a class="skip-link" href="#conteudo">{ui[locale].skip}</a>
     <Topbar locale={locale} />
     <CustomCursor client:load />
+    <MotionLayer client:load />
     <main id="conteudo"><slot /></main>
     <Footer locale={locale} />
   </body>

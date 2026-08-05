@@ -16,5 +16,5 @@ export default function ThemeControl({ label }: { label: string }) {
     setTheme(next);
   }
 
-  return <button className="icon-button" type="button" onClick={toggle} disabled={!ready} aria-label={label} title={label}>{theme === 'dark' ? '☀' : '◐'}</button>;
+  return <button className="icon-button" data-parallax type="button" onClick={toggle} disabled={!ready} aria-label={label} title={label}>{theme === 'dark' ? '☀' : '◐'}</button>;
 }

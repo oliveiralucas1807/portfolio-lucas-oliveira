@@ -2,25 +2,30 @@
 import { ui, type Locale } from '@/i18n/config';
 import { siteConfig } from '@/data/site';
 import Icon from '@/components/ui/Icon.astro';
-import FloatingSpotify from '@/components/islands/FloatingSpotify';
+import AmbientAudioPlayer from '@/components/islands/AmbientAudioPlayer';
 const { locale } = Astro.props as { locale: Locale };
 const t = ui[locale];
+const skills = [
+  ['design', 'Design gráfico'], ['campaign', 'Campanhas digitais'], ['direction', 'Direção de Arte'],
+  ['spark', 'IA generativa'], ['prompt', 'Prompt Engineering'], ['automation', 'Automação criativa'],
+] as const;
 ---
-<section class="about section-shell" id="sobre">
+<section class="about section-shell" id="sobre" data-reveal>
+  <div class="about-heading-line"><p class="eyebrow">{t.aboutEyebrow}</p><span></span></div>
   <div class="about-layout">
-    <figure class="about-portrait"><img src="/assets/hero/foto-lucas-mobile-sem-texto.webp" alt={locale === 'pt' ? 'Retrato de Lucas Oliveira' : 'Portrait of Lucas Oliveira'} loading="lazy" /></figure>
-    <div class="about-content"><p class="eyebrow">{t.aboutEyebrow}</p><h2>{t.aboutTitle}</h2><p class="about-lead">{t.aboutText}</p><div class="experience"><h3>{t.experienceTitle}</h3><p>{t.experienceText}</p></div>
-      <div class="skill-chips"><span class="skill-chip"><Icon name="spark" />Design gráfico</span><span class="skill-chip"><Icon name="spark" />Campanhas digitais</span><span class="skill-chip"><Icon name="spark" />Direção de Arte</span><span class="skill-chip"><Icon name="spark" />IA generativa</span><span class="skill-chip"><Icon name="spark" />Prompt Engineering</span><span class="skill-chip"><Icon name="spark" />Automação criativa</span></div>
+    <figure class="about-portrait"><img src="/assets/about/lucas-oliveira-retrato.webp" alt={locale === 'pt' ? 'Retrato de Lucas Oliveira' : 'Portrait of Lucas Oliveira'} loading="lazy" /></figure>
+    <div class="about-content"><h2>{t.aboutTitle}</h2><p class="about-lead">{t.aboutText}</p><div class="experience"><h3>{t.experienceTitle}</h3><p>{t.experienceText}</p></div>
+      <div class="skill-chips">{skills.map(([icon, label]) => <span class="skill-chip" data-parallax><Icon name={icon} />{label}</span>)}</div>
     </div>
   </div>
 </section>
-<section class="contact section-shell" id="contato">
+<section class="contact section-shell" id="contato" data-reveal>
   <p class="eyebrow">{t.contact}</p><h2>{t.contactTitle}</h2>
   <div class="contact-links">
-    <a href={`mailto:${siteConfig.email}`}><Icon name="mail" /><strong>{t.email}</strong><span>{siteConfig.email}</span></a>
-    <a href={siteConfig.whatsapp} target="_blank" rel="noreferrer"><Icon name="whatsapp" /><strong>{t.whatsapp}</strong><span>+55 92 98848-4334</span></a>
-    {siteConfig.linkedin ? <a href={siteConfig.linkedin} target="_blank" rel="noreferrer"><Icon name="linkedin" /><strong>{t.linkedin}</strong><span>LinkedIn ↗</span></a> : <span class="pending-link">LinkedIn<span>{locale === 'pt' ? 'URL em verificação' : 'URL being verified'}</span></span>}
-    <a href={siteConfig.resume[locale]} target="_blank" rel="noreferrer"><Icon name="file" /><strong>{t.resume}</strong><span>HTML + PDF ↗</span></a>
+    <a href={`mailto:${siteConfig.email}`}><Icon name="mailSolid" /><strong>{t.email}</strong><span>{siteConfig.email}</span></a>
+    <a href={siteConfig.whatsapp} target="_blank" rel="noreferrer"><Icon name="whatsappSolid" /><strong>{t.whatsapp}</strong><span>+55 92 98848-4334</span></a>
+    <a href={siteConfig.linkedin} target="_blank" rel="noreferrer"><Icon name="linkedinSolid" /><strong>{t.linkedin}</strong><span>LinkedIn ↗</span></a>
+    <a href={siteConfig.resume[locale]} target="_blank" rel="noreferrer"><Icon name="fileSolid" /><strong>{t.resume}</strong><span>HTML + PDF ↗</span></a>
   </div>
 </section>
-<FloatingSpotify client:load locale={locale} playlist={siteConfig.spotifyPlaylist} embed={siteConfig.spotifyEmbed} />
+<AmbientAudioPlayer client:load locale={locale} tracks={siteConfig.audioTracks} spotifyUrl={siteConfig.spotifyPlaylist} />

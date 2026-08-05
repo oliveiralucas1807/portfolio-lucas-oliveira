@@ -16,12 +16,12 @@
 
 - `npm test`: seis arquivos e dez testes unitários aprovados.
 - `npm run build`: Astro Check sem erros, avisos ou hints; quatro páginas HTML e `robots.txt` gerados.
-- `npm run test:e2e`: doze cenários aprovados em Chromium desktop e mobile.
+- `npm run test:e2e`: dezesseis cenários aprovados em Chromium desktop e mobile.
 - Rolagem horizontal global: ausente após limitar a máscara da galeria.
 - Screenshots: `docs/processo-v2/screenshots/`.
 - Verificador de links: quatro HTMLs sem links internos ou assets quebrados.
 - Modal de contato: centralização, abertura, Escape, fechamento, ícones e restauração de foco validados.
-- Player flutuante do Spotify: incorporação oficial da playlist, link direto, fechamento e persistência durante a sessão validados. No mobile, o player inicia recolhido para não encobrir os CTAs.
+- Player de áudio ambiente: estado vazio, volume inicial baixo, controles preparados, link externo do Spotify, fechamento e persistência durante a sessão validados.
 - Estrutura de projetos: seis blocos com três artes de abertura e 20 imagens disponíveis por cliente.
 - Galeria cinética: 26 imagens de 20 clientes, com oito novas peças otimizadas em WebP e transição diagonal sobre o hero.
 - Lighthouse local da home: Performance 74, Acessibilidade 100, Boas Práticas 100 e SEO 69.
@@ -35,4 +35,4 @@ Após a revisão editorial e a expansão para 120 artes, a nova auditoria regist
 
 - Nenhum deploy foi realizado.
 - O portfólio atual permanece na pasta e no repositório originais.
-- A playlist oficial foi conectada pelo embed do Spotify. A reprodução permanece sob controle do visitante e das políticas do navegador.
+- O embed do Spotify foi removido porque não garante reprodução integral. O player local está preparado e aguarda arquivos de áudio autorizados.

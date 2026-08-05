@@ -15,10 +15,10 @@ const t = ui[locale];
     <h1 id="hero-title">Lucas Oliveira<br /><span>{t.role}</span></h1>
     <p class="hero-intro">{t.heroIntro}</p>
     <div class="hero-actions">
-      <a class="button button-accent" href="#trabalhos">{t.seeWork} ↘</a>
-      <a class="button" href={siteConfig.resume[locale]} target="_blank" rel="noreferrer">{t.resume}</a>
-      <button class="button button-ghost" type="button" data-modal-open="contact">{t.talk}</button>
+      <a class="button button-accent" data-parallax href="#trabalhos">{t.seeWork} ↘</a>
+      <a class="button" data-parallax href={siteConfig.resume[locale]} target="_blank" rel="noreferrer">{t.resume}</a>
+      <button class="button button-ghost" data-parallax type="button" data-modal-open="contact">{t.talk}</button>
     </div>
-    <a class="language-call" href={localeMeta[locale === 'pt' ? 'en' : 'pt'].home}>{t.language} →</a>
+    <a class="language-call" data-parallax href={localeMeta[locale === 'pt' ? 'en' : 'pt'].home}>{t.language} →</a>
   </div>
 </section>

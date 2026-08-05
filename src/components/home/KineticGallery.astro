@@ -6,7 +6,7 @@ const t = ui[locale];
 const midpoint = Math.ceil(galleryItems.length / 2);
 const rows = [galleryItems.slice(0, midpoint), galleryItems.slice(midpoint)];
 ---
-<section class="kinetic-section" aria-label={t.galleryTitle}>
+<section class="kinetic-section" aria-label={t.galleryTitle} data-reveal>
   <div class="kinetic-shell">
     <div class="kinetic-gallery">
       {rows.map((row, rowIndex) => (

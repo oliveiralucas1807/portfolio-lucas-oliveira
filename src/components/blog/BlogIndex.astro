@@ -1,0 +1,19 @@
+---
+import { blogPosts } from '@/data/blog';
+import { localeMeta, type Locale } from '@/i18n/config';
+const { locale } = Astro.props as { locale: Locale };
+---
+<section class="blog-hero section-shell" data-reveal>
+  <p class="eyebrow">{locale === 'pt' ? 'Atualizações' : 'Updates'}</p>
+  <h1>{locale === 'pt' ? 'O que está acontecendo agora.' : 'What is happening now.'}</h1>
+  <p>{locale === 'pt' ? 'Projetos em andamento, decisões de processo e experimentos que estão transformando meu jeito de criar.' : 'Current projects, process decisions and experiments shaping how I create.'}</p>
+</section>
+<section class="blog-list section-shell" aria-label={locale === 'pt' ? 'Publicações recentes' : 'Recent posts'}>
+  {blogPosts.map((post, index) => <article class:list={['blog-post', { 'is-preparing': post.status === 'preparing' }]} data-reveal>
+    <div class="blog-post-meta"><span>{String(index + 1).padStart(2, '0')}</span><span>{post.category[locale]}</span><span>{post.date}</span></div>
+    <h2>{post.title[locale]}</h2>
+    <p>{post.excerpt[locale]}</p>
+    <span class="blog-post-action">{post.status === 'published' ? (locale === 'pt' ? 'Em desenvolvimento' : 'In development') : (locale === 'pt' ? 'Conteúdo em preparação' : 'Content in preparation')}</span>
+  </article>)}
+</section>
+<nav class="blog-return section-shell"><a href={localeMeta[locale].home}>← {locale === 'pt' ? 'Voltar ao portfólio' : 'Back to portfolio'}</a></nav>

@@ -18,7 +18,9 @@ test('Portuguese home has the complete V2 structure', async ({ page }) => {
   await expect(page.locator('.future-card')).toContainText('Mais cases em breve');
   await expect(page.locator('body')).not.toContainText('Portfólio light para processos seletivos');
   await expect(page.locator('body')).not.toContainText('Cases selecionados');
-  await expect(page.locator('.lab-link')).toBeVisible();
+  await expect(page.locator('.blog-link')).toHaveAttribute('href', '/blog/');
+  await expect(page.locator('.topbar')).not.toContainText('Contato');
+  await expect(page.locator('.topbar')).not.toContainText('Laboratório');
   await expect(page.locator('.hero-art img')).toHaveAttribute('src', '/assets/hero/foto-lucas-desktop.webp');
 });
 
@@ -29,14 +31,14 @@ test('English home is complete and switchable', async ({ page }) => {
   await expect(page.getByText('Ver portfólio em português')).toBeVisible();
 });
 
-test('theme persists and laboratory performs no submit', async ({ page }) => {
-  await page.goto('/laboratorio/');
-  await expect(page.locator('.lab-card')).toHaveCount(6);
-  await expect(page.locator('body')).not.toContainText('Newsletter');
-  await expect(page.locator('body')).not.toContainText('CMS');
+test('theme persists and blog is localized', async ({ page }) => {
+  await page.goto('/blog/');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('O que está acontecendo agora.');
+  await expect(page.locator('.blog-post')).toHaveCount(3);
   await page.getByRole('button', { name: 'Alternar tema' }).click();
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
-  await expect(page.locator('.parallax-concept')).toHaveCount(3);
+  await page.goto('/en/blog/');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('What is happening now.');
 });
 
 test('contact opens a centered accessible modal', async ({ page }) => {
@@ -55,22 +57,42 @@ test('contact opens a centered accessible modal', async ({ page }) => {
 
 });
 
-test('about and floating Spotify player expose the official playlist', async ({ page }) => {
+test('about and prepared ambient player expose the revised assets', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('.about-portrait img')).toBeVisible();
   await expect(page.locator('.skill-chip')).toHaveCount(6);
-  const player = page.locator('[data-floating-spotify]');
+  await expect(page.locator('.skill-chip .ui-icon')).toHaveCount(6);
+  await expect(page.locator('.about-portrait img')).toHaveAttribute('src', '/assets/about/lucas-oliveira-retrato.webp');
+  const player = page.locator('[data-audio-player]');
   await expect(player).toBeVisible();
-  await expect(player.locator('iframe[data-testid="spotify-embed"]')).toHaveAttribute('src', /open\.spotify\.com\/embed\/playlist\/2OfZT7teUPaGjHWRgGqMta/);
-  await expect(player.getByRole('link', { name: /Playlist do Lucas/ })).toHaveAttribute('href', /open\.spotify\.com\/playlist\/2OfZT7teUPaGjHWRgGqMta/);
-  if (page.viewportSize()?.width === 390) {
-    await expect(player.getByRole('button', { name: 'Abrir' })).toBeVisible();
-  }
+  await expect(player).toHaveAttribute('data-initial-volume', '0.18');
+  await expect(player.locator('iframe')).toHaveCount(0);
+  await expect(player.getByRole('button', { name: 'Reproduzir' })).toBeDisabled();
+  await expect(player.getByRole('link', { name: 'Abrir playlist no Spotify' })).toHaveAttribute('href', /2OfZT7teUPaGjHWRgGqMta/);
   await expect(player.getByRole('button', { name: 'Fechar player' })).toBeVisible();
   await player.getByRole('button', { name: 'Fechar player' }).click();
   await expect(player).toBeHidden();
   await page.reload();
   await expect(player).toBeHidden();
+});
+
+test('expanded projects reveal a complete five-row gallery', async ({ page }) => {
+  await page.goto('/');
+  const first = page.locator('.project-more').first();
+  await first.locator('summary').click();
+  await expect(first.locator('.project-gallery img')).toHaveCount(19);
+  await expect(first.locator('.project-gallery-more')).toContainText('E diversos outros cards');
+  await expect(first.locator('.project-gallery > *')).toHaveCount(20);
+});
+
+test('scroll motion reveals content and respects reduced motion', async ({ page }) => {
+  await page.goto('/');
+  const firstProject = page.locator('.project').first();
+  await firstProject.scrollIntoViewIfNeeded();
+  await expect(firstProject).toHaveClass(/is-visible/);
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.reload();
+  await expect(page.locator('.project').first()).toHaveCSS('opacity', '1');
 });
 
 test('mobile layout does not overflow horizontally', async ({ page }) => {

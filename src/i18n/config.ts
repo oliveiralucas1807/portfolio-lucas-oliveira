@@ -1,13 +1,13 @@
 export type Locale = 'pt' | 'en';
 
 export const localeMeta = {
-  pt: { lang: 'pt-BR', home: '/', lab: '/laboratorio/' },
-  en: { lang: 'en', home: '/en/', lab: '/en/lab/' },
+  pt: { lang: 'pt-BR', home: '/', blog: '/blog/' },
+  en: { lang: 'en', home: '/en/', blog: '/en/blog/' },
 } as const;
 
 export const ui = {
   pt: {
-    skip: 'Pular para o conteúdo', work: 'Trabalhos', about: 'Sobre', contact: 'Contato', lab: 'Laboratório V2',
+    skip: 'Pular para o conteúdo', work: 'Trabalhos', about: 'Sobre', contact: 'Contato', blog: 'Blog',
     role: 'Designer Gráfico Pleno', heroIntro: 'Campanhas digitais, direção visual e IA aplicada ao design com clareza, ritmo e repertório de mercado.',
     seeWork: 'Ver trabalhos', resume: 'Currículo', talk: 'Entrar em contato', language: 'View portfolio in English',
     galleryEyebrow: 'Trabalhos em movimento', galleryTitle: 'Seleção de campanhas e peças gráficas.',
@@ -21,7 +21,7 @@ export const ui = {
     footer: 'Design, conteúdo e desenvolvimento por Lucas Oliveira.', backTop: 'Voltar ao topo', theme: 'Alternar tema', cursor: 'Cursor autoral ativo',
   },
   en: {
-    skip: 'Skip to content', work: 'Work', about: 'About', contact: 'Contact', lab: 'V2 Laboratory',
+    skip: 'Skip to content', work: 'Work', about: 'About', contact: 'Contact', blog: 'Blog',
     role: 'Mid-level Graphic Designer', heroIntro: 'Digital campaigns, visual direction and AI applied to design with clarity, rhythm and market experience.',
     seeWork: 'View work', resume: 'Résumé', talk: 'Get in touch', language: 'Ver portfólio em português',
     galleryEyebrow: 'Work in motion', galleryTitle: 'A selection of campaigns and graphic pieces.',
@@ -36,6 +36,6 @@ export const ui = {
   },
 } as const;
 
-export function localePath(locale: Locale, kind: 'home' | 'lab') {
+export function localePath(locale: Locale, kind: 'home' | 'blog') {
   return localeMeta[locale][kind];
 }

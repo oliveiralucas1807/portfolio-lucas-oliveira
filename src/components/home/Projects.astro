@@ -5,13 +5,13 @@ const { locale } = Astro.props as { locale: Locale };
 const t = ui[locale];
 ---
 <section class="projects section-shell" id="trabalhos" aria-labelledby="projects-title">
-  <div class="section-intro projects-intro">
+  <div class="section-intro projects-intro" data-reveal>
     <p class="eyebrow">{t.projectsEyebrow}</p>
     <h2 id="projects-title">{t.projectsTitle}</h2>
   </div>
   <div class="project-list">
     {cases.map((item, index) => (
-      <article class:list={['project', `project-${item.id}`]} id={item.id}>
+      <article class:list={['project', `project-${item.id}`]} id={item.id} data-reveal>
         <div class="project-meta"><span>{String(index + 1).padStart(2, '0')}</span><span>{item.client}</span><span>{locale === 'pt' ? `Amostra de materiais de ${item.period.toLocaleLowerCase()}` : `Material sample from ${item.period}`}</span></div>
         <div class="project-heading"><h3>{item.id === 'coimbra' && locale === 'pt' ? <><span class="title-line">Campanhas promocionais</span><span class="title-line">para varejo técnico</span></> : item.copy.title[locale]}</h3></div>
         <p class="project-context">{item.copy.summary[locale]}</p>
@@ -20,11 +20,11 @@ const t = ui[locale];
           <div><strong>{t.deliveries}</strong><p>{item.deliveriesLocalized[locale].slice(0, 4).join(' · ')}</p></div>
           <div><strong>{locale === 'pt' ? 'Direção aplicada' : 'Applied direction'}</strong><p>{item.copy.solution[locale]}</p></div>
         </div>
-        <div class="project-featured">{item.featured.map((image) => <img src={image.src} alt={locale === 'pt' ? `${item.client}: ${image.alt}` : `${item.client} campaign artwork`} loading="lazy" />)}</div>
+        <div class="project-featured">{item.featured.map((image) => <img data-parallax src={image.src} alt={locale === 'pt' ? `${item.client}: ${image.alt}` : `${item.client} campaign artwork`} loading="lazy" />)}</div>
         <details class="project-more">
           <summary><span class="project-expand-cta">{t.openCase}<b>＋</b></span></summary>
           <p>{item.copy.result[locale]}</p>
-          <div class="project-gallery">{item.images.slice(3).map((image) => <img src={image.src} alt={locale === 'pt' ? `${item.client}: ${image.alt}` : `${item.client} campaign artwork`} loading="lazy" />)}</div>
+          <div class="project-gallery">{item.images.slice(1).map((image, imageIndex) => <img style={`--gallery-index:${imageIndex}`} src={image.src} alt={locale === 'pt' ? `${item.client}: ${image.alt}` : `${item.client} campaign artwork`} loading="lazy" />)}<div class="project-gallery-more" style="--gallery-index:19"><span>LOS®</span><strong>{locale === 'pt' ? 'E diversos outros cards e materiais produzidos.' : 'And many other cards and materials produced.'}</strong></div></div>
         </details>
       </article>
     ))}

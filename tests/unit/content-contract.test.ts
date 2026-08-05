@@ -26,6 +26,10 @@ describe('case content', () => {
     ]));
   });
 
+  it('provides enough source material for nineteen expanded artworks', () => {
+    expect(cases.every((item) => item.images.slice(1).length === 19)).toBe(true);
+  });
+
   it('uses the approved project, process and contact headings', () => {
     expect(ui.pt.projectsTitle).toBe('Projetos e campanhas.');
     expect(ui.pt.projectsIntro).toBe('');

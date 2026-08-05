@@ -22,11 +22,11 @@
 - Foi criado um sistema local de ícones SVG para e-mail, WhatsApp, LinkedIn, currículo, setas, fechar, reprodução, volume e destaques.
 - O modal de contato usa esses ícones, aparece no centro da viewport, preserva o cursor nativo e possui ajuste óptico no título.
 - A seção Sobre ganhou retrato, chips de habilidades e contatos com ícones.
-- O Spotify passou a ser um player oficial flutuante, fechável e persistente durante a sessão, com reprodução, volume e abertura direta controlados pelo próprio Spotify.
+- O experimento com o embed oficial do Spotify foi substituído por um player local preparado, fechável e persistente durante a sessão.
 
 ## Próximas extensões já previstas
 
-- Acompanhar o comportamento do embed do Spotify em produção e ajustar sua presença visual se necessário.
+- Inserir somente arquivos de áudio com autorização de uso e validar a reprodução em produção.
 - Desenvolver o blog em página separada, com a direção editorial “O que está em construção”.
 - Escolher uma das três aplicações de parallax demonstradas no Laboratório: capas de cases, camadas de processo ou transições do blog.
 
