@@ -13,28 +13,13 @@ const { locale } = Astro.props as { locale: Locale };
     <article class={`lab-card lab-${feature.id}`}>
       <div class="lab-card-head"><span>{String(index + 1).padStart(2, '0')}</span><span>{feature.status}</span></div>
       <h2>{feature.title[locale]}</h2><p>{feature.purpose[locale]}</p><small>{feature.implementation[locale]}</small>
-      {feature.id === 'three-d' && <div class="cube-scene" aria-label={locale === 'pt' ? 'Demonstração de cubo 3D' : '3D cube demonstration'}><div class="cube"><span></span><span></span><span></span></div></div>}
-      {feature.id === 'newsletter' && <form class="demo-form" data-demo-form><label>{locale === 'pt' ? 'Seu e-mail' : 'Your email'}<input type="email" required placeholder="nome@email.com" /></label><button type="submit">{locale === 'pt' ? 'Simular inscrição' : 'Simulate signup'}</button><output></output></form>}
-      {feature.id === 'cms' && <div class="cms-demo"><label>Title<input value={feature.title[locale]} readonly /></label><label>Status<select><option>Draft</option><option>Published</option></select></label></div>}
       {feature.id === 'blog' && <div class="blog-demo"><span>04 AGO 2026</span><strong>{locale === 'pt' ? 'Como a V2 ganhou movimento sem perder leitura' : 'How V2 gained motion without losing readability'}</strong><span>5 min →</span></div>}
-      {feature.id === 'filters' && <div class="filter-demo" data-filter-demo><div><button type="button" data-filter="all">Todos</button><button type="button" data-filter="campaign">Campanha</button><button type="button" data-filter="social">Social</button></div><ul><li data-kind="campaign">Coimbra — Campanha</li><li data-kind="social">Cultura Inglesa — Social</li><li data-kind="campaign">Natura — Campanha</li></ul></div>}
       {feature.id === 'carousel-variants' && <div class="mini-carousel" aria-hidden="true"><span>COVEN</span><span>BRASA</span><span>ECOFORTE</span><span>HABANERO</span></div>}
       {feature.id === 'parallax' && <div class="parallax-demo" aria-hidden="true"><span>CAMADA 01</span><strong>MOVE</strong></div>}
     </article>
   ))}
 </section>
 <script>
-  document.querySelectorAll<HTMLFormElement>('[data-demo-form]').forEach((form) => form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const output = form.querySelector('output');
-    if (output) output.textContent = document.documentElement.lang.startsWith('pt') ? 'Demonstração local: nenhum dado foi enviado.' : 'Local demo: no data was sent.';
-  }));
-  document.querySelectorAll<HTMLElement>('[data-filter-demo]').forEach((demo) => {
-    demo.querySelectorAll<HTMLButtonElement>('button').forEach((button) => button.addEventListener('click', () => {
-      const filter = button.dataset.filter;
-      demo.querySelectorAll<HTMLLIElement>('li').forEach((item) => item.hidden = filter !== 'all' && item.dataset.kind !== filter);
-    }));
-  });
   const parallax = document.querySelector<HTMLElement>('.parallax-demo');
   if (parallax && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     parallax.addEventListener('pointermove', (event) => {

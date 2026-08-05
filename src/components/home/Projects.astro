@@ -14,11 +14,8 @@ const t = ui[locale];
     {cases.map((item, index) => (
       <article class="project" id={item.id}>
         <div class="project-meta"><span>{String(index + 1).padStart(2, '0')}</span><span>{item.client}</span><span>{item.period}</span></div>
-        <div class="project-heading">
-          <h3>{item.copy.title[locale]}</h3>
-          <p>{item.copy.summary[locale]}</p>
-        </div>
-        <div class="project-media"><img src={item.cover} alt={`${item.client} — ${item.copy.title[locale]}`} loading="lazy" /></div>
+        <div class="project-heading"><h3>{item.copy.title[locale]}</h3><p>{item.copy.summary[locale]}</p></div>
+        <div class="project-featured">{item.featured.map((image) => <img src={image.src} alt={locale === 'pt' ? `${item.client}: ${image.alt}` : `${item.client} campaign artwork`} loading="lazy" />)}</div>
         <div class="project-details">
           <div><strong>{t.roleLabel}</strong><p>{item.copy.role[locale]}</p></div>
           <div><strong>{t.deliveries}</strong><p>{item.deliveriesLocalized[locale].slice(0, 4).join(' · ')}</p></div>
@@ -27,13 +24,13 @@ const t = ui[locale];
         <details class="project-more">
           <summary>{t.openCase} <span>＋</span></summary>
           <p>{item.copy.result[locale]}</p>
-          <div class="project-gallery">{item.images.slice(1, 5).map((image) => <img src={image.src} alt={locale === 'pt' ? `${item.client}: ${image.alt}` : `${item.client} campaign artwork`} loading="lazy" />)}</div>
+          <div class="project-gallery">{item.images.slice(3).map((image) => <img src={image.src} alt={locale === 'pt' ? `${item.client}: ${image.alt}` : `${item.client} campaign artwork`} loading="lazy" />)}</div>
         </details>
       </article>
     ))}
-    <article class="future-card"><p>07—∞</p><h3>{t.more}</h3><p>{t.moreText}</p></article>
+    <article class="future-card"><p>07+</p><h3>{t.more}</h3><p>{t.moreText}</p></article>
   </div>
   <aside class="deep-bridge">
-    <p class="eyebrow">Processo / Desenvolvimento</p><h3>{t.deepTitle}</h3><p>{t.deepText}</p><span>{t.deepAction} →</span>
+    <p class="eyebrow">Processo / Desenvolvimento</p><div class="deep-bridge-grid"><h3>{t.deepTitle}</h3><div><p>{t.deepText}</p><span>{t.deepAction} →</span></div></div>
   </aside>
 </section>

@@ -6,18 +6,18 @@ const t = ui[locale];
 ---
 <section class="hero" aria-labelledby="hero-title">
   <picture class="hero-art">
-    <source media="(max-width: 700px)" srcset="/assets/hero/foto-lucas-mobile.webp" type="image/webp" />
+    <source media="(max-width: 700px)" srcset="/assets/hero/foto-lucas-mobile-sem-texto.webp" type="image/webp" />
     <img src="/assets/hero/foto-lucas-desktop.webp" alt="Lucas Oliveira, Designer Gráfico Pleno" fetchpriority="high" />
   </picture>
   <div class="hero-overlay"></div>
   <div class="hero-copy">
-    <p class="hero-kicker">Manaus · Brasil · 2019—2026</p>
+    <p class="hero-kicker">Manaus · Brasil · 2019 a 2026</p>
     <h1 id="hero-title">Lucas Oliveira<br /><span>{t.role}</span></h1>
     <p class="hero-intro">{t.heroIntro}</p>
     <div class="hero-actions">
       <a class="button button-accent" href="#trabalhos">{t.seeWork} ↘</a>
       <a class="button" href={siteConfig.resume[locale]} target="_blank" rel="noreferrer">{t.resume}</a>
-      <a class="button button-ghost" href="#contato">{t.talk}</a>
+      <button class="button button-ghost" type="button" data-modal-open="contact">{t.talk}</button>
     </div>
     <a class="language-call" href={localeMeta[locale === 'pt' ? 'en' : 'pt'].home}>{t.language} →</a>
   </div>

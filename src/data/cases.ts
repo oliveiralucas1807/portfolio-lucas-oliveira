@@ -58,13 +58,17 @@ const deliveriesEn: Record<string, string[]> = {
   'la-pizza': ['promotional cards', 'product posts', 'stories', 'recurring campaigns', 'digital materials'],
 };
 
-export const cases = source.cases.map((item: SourceCase, index) => ({
-  ...item,
-  order: index + 1,
-  cover: `/${item.images[0].src.replace(/\.[^.]+$/, '.webp')}`,
-  images: item.images.slice(0, 5).map((image) => ({ ...image, src: `/${image.src.replace(/\.[^.]+$/, '.webp')}` })),
-  deliveriesLocalized: { pt: item.deliveries, en: deliveriesEn[item.id] },
-  copy: copy[item.id],
-}));
+export const cases = source.cases.map((item: SourceCase, index) => {
+  const images = item.images.map((image) => ({ ...image, src: `/${image.src.replace(/\.[^.]+$/, '.webp')}` }));
+  return {
+    ...item,
+    order: index + 1,
+    cover: images[0].src,
+    featured: images.slice(0, 3),
+    images,
+    deliveriesLocalized: { pt: item.deliveries, en: deliveriesEn[item.id] },
+    copy: copy[item.id],
+  };
+});
 
 export type PortfolioCase = (typeof cases)[number];

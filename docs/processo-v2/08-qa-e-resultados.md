@@ -14,12 +14,14 @@
 
 ## Evidências
 
-- `npm test`: seis arquivos de teste aprovados.
+- `npm test`: seis arquivos e oito testes unitários aprovados.
 - `npm run build`: Astro Check sem erros, avisos ou hints; quatro páginas HTML e `robots.txt` gerados.
-- `npm run test:e2e`: oito cenários aprovados em Chromium desktop e mobile.
+- `npm run test:e2e`: dez cenários aprovados em Chromium desktop e mobile.
 - Rolagem horizontal global: ausente após limitar a máscara da galeria.
 - Screenshots: `docs/processo-v2/screenshots/`.
 - Verificador de links: quatro HTMLs sem links internos ou assets quebrados.
+- Modais de contato e Spotify: abertura, Escape, fechamento e restauração de foco validados.
+- Estrutura de projetos: seis blocos com três artes de abertura e 20 imagens disponíveis por cliente.
 - Lighthouse local da home: Performance 74, Acessibilidade 100, Boas Práticas 100 e SEO 69.
 - Métricas Lighthouse: FCP 2,7 s, LCP 5,9 s, TBT 0 ms e CLS 0.
 - O SEO está deliberadamente limitado por `noindex,nofollow` e `robots.txt` enquanto a V2 é uma prévia de desenvolvimento.

@@ -6,11 +6,7 @@ const t = ui[locale];
 const midpoint = Math.ceil(galleryItems.length / 2);
 const rows = [galleryItems.slice(0, midpoint), galleryItems.slice(midpoint)];
 ---
-<section class="kinetic-section" aria-labelledby="gallery-title">
-  <div class="section-intro compact">
-    <p class="eyebrow">{t.galleryEyebrow}</p>
-    <h2 id="gallery-title">{t.galleryTitle}</h2>
-  </div>
+<section class="kinetic-section" aria-label={t.galleryTitle}>
   <div class="kinetic-gallery">
     {rows.map((row, rowIndex) => (
       <div class:list={['marquee-row', rowIndex === 1 && 'reverse']}>

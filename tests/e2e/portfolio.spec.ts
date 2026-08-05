@@ -6,6 +6,8 @@ test('Portuguese home has the complete V2 structure', async ({ page }) => {
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Lucas Oliveira');
   await expect(page.locator('.marquee-row')).toHaveCount(2);
   await expect(page.locator('.project')).toHaveCount(6);
+  await expect(page.locator('.project-featured')).toHaveCount(6);
+  await expect(page.locator('.project-featured').first().locator('img')).toHaveCount(3);
   await expect(page.locator('.future-card')).toContainText('Mais cases em breve');
   await expect(page.locator('body')).not.toContainText('Portfólio light para processos seletivos');
   await expect(page.locator('body')).not.toContainText('Cases selecionados');
@@ -22,14 +24,28 @@ test('English home is complete and switchable', async ({ page }) => {
 
 test('theme persists and laboratory performs no submit', async ({ page }) => {
   await page.goto('/laboratorio/');
-  await expect(page.locator('.lab-card')).toHaveCount(11);
+  await expect(page.locator('.lab-card')).toHaveCount(6);
+  await expect(page.locator('body')).not.toContainText('Newsletter');
+  await expect(page.locator('body')).not.toContainText('CMS');
   await page.getByRole('button', { name: 'Alternar tema' }).click();
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
-  await page.locator('[data-demo-form] input').fill('teste@example.com');
-  await page.getByRole('button', { name: 'Simular inscrição' }).click();
-  await expect(page.locator('[data-demo-form] output')).toContainText('nenhum dado foi enviado');
-  await page.locator('[data-filter="social"]').click();
-  await expect(page.locator('[data-filter-demo] li:visible')).toHaveCount(1);
+});
+
+test('contact and Spotify open accessible modals', async ({ page }) => {
+  await page.goto('/');
+  const contactTrigger = page.getByRole('button', { name: 'Entrar em contato' });
+  await contactTrigger.click();
+  const contactDialog = page.getByRole('dialog', { name: 'Opções de contato' });
+  await expect(contactDialog).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(contactDialog).toBeHidden();
+  await expect(contactTrigger).toBeFocused();
+
+  await page.getByRole('button', { name: 'Abrir informações da playlist' }).click();
+  const spotifyDialog = page.getByRole('dialog', { name: 'Playlist em preparação' });
+  await expect(spotifyDialog).toBeVisible();
+  await page.getByRole('button', { name: 'Fechar janela' }).click();
+  await expect(spotifyDialog).toBeHidden();
 });
 
 test('mobile layout does not overflow horizontally', async ({ page }) => {
