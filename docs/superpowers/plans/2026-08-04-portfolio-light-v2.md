@@ -117,7 +117,7 @@ Expected: FAIL because `package.json` and Vitest configuration do not exist.
     "@types/react": "19.2.18",
     "@types/react-dom": "19.2.4",
     "playwright": "1.62.1",
-    "typescript": "7.0.2",
+    "typescript": "6.0.3",
     "vitest": "4.1.10"
   }
 }
