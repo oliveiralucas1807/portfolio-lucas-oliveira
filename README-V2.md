@@ -29,6 +29,27 @@ limites, arquitetura proposta e critérios de validação.
 8. `docs/referencias/RELATORIO-CURADORIA-TEMPLATES-ASTRO-2026-07-26.md`
 9. `docs/retomada/CHECKLIST-PARA-INICIAR-A-IMPLEMENTACAO.md`
 
+## Desenvolvimento local da V2
+
+```powershell
+npm install
+npm run dev
+npm test
+npm run build
+npm run test:e2e
+```
+
+Rotas locais:
+
+- português: `http://127.0.0.1:4321/`;
+- inglês: `http://127.0.0.1:4321/en/`;
+- Laboratório: `http://127.0.0.1:4321/laboratorio/`;
+- Laboratory: `http://127.0.0.1:4321/en/lab/`.
+
+O build de desenvolvimento usa `noindex`. O Spotify permanece em estado de
+espera até Lucas escolher a playlist. O processo e as evidências do futuro case
+ficam em `docs/processo-v2/`.
+
 ## Estado de publicação
 
 A publicação continua vindo exclusivamente de:
