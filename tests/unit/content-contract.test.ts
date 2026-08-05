@@ -12,7 +12,7 @@ describe('case content', () => {
   it('uses direct copy without editorial em dashes', () => {
     const visibleCopy = JSON.stringify(ui);
     expect(visibleCopy).not.toContain('—');
-    expect(ui.pt.projectsTitle).toBe('Campanhas e soluções visuais para marcas em movimento.');
+    expect(ui.pt.projectsTitle).toBe('Projetos e campanhas.');
     expect(ui.pt.aboutText).toContain('Direção de Arte');
   });
 
@@ -21,8 +21,23 @@ describe('case content', () => {
     expect(cases.every((item) => item.images.length > 5)).toBe(true);
     expect(cases[0].featured.map((image) => image.src)).toEqual(expect.arrayContaining([
       expect.stringContaining('escalcao-campea'),
-      expect.stringContaining('mega-mes-do-trabalhador'),
-      expect.stringContaining('mes-do-serralheiro'),
+      expect.stringContaining('dia-do-trabalhador'),
+      expect.stringContaining('esmeri'),
     ]));
+  });
+
+  it('uses the approved project, process and contact headings', () => {
+    expect(ui.pt.projectsTitle).toBe('Projetos e campanhas.');
+    expect(ui.pt.projectsIntro).toBe('');
+    expect(ui.pt.deepTitle).toBe('Design, IA e processos em construção.');
+    expect(ui.pt.contactTitle).toBe('Vamos conversar.');
+    expect(cases[0].copy.summary.pt).toContain('Conjunto de campanhas promocionais');
+  });
+
+  it('curates the requested featured artworks', () => {
+    const byId = Object.fromEntries(cases.map((item) => [item.id, item]));
+    expect(byId.coimbra.featured.map((image) => image.src).join(' ')).toMatch(/escalcao-campea.*dia-do-trabalhador.*esmeri/);
+    expect(byId['cultura-inglesa'].featured.map((image) => image.src).join(' ')).toMatch(/st-patrick.*pascoa.*dica-de-ingles/);
+    expect(byId['otica-murano'].featured.map((image) => image.src).join(' ')).toMatch(/mes-da-maes.*diabo-veste-prato.*dia-dos-namorados/);
   });
 });

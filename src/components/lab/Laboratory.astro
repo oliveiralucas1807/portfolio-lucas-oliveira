@@ -15,18 +15,18 @@ const { locale } = Astro.props as { locale: Locale };
       <h2>{feature.title[locale]}</h2><p>{feature.purpose[locale]}</p><small>{feature.implementation[locale]}</small>
       {feature.id === 'blog' && <div class="blog-demo"><span>04 AGO 2026</span><strong>{locale === 'pt' ? 'Como a V2 ganhou movimento sem perder leitura' : 'How V2 gained motion without losing readability'}</strong><span>5 min →</span></div>}
       {feature.id === 'carousel-variants' && <div class="mini-carousel" aria-hidden="true"><span>COVEN</span><span>BRASA</span><span>ECOFORTE</span><span>HABANERO</span></div>}
-      {feature.id === 'parallax' && <div class="parallax-demo" aria-hidden="true"><span>CAMADA 01</span><strong>MOVE</strong></div>}
+      {feature.id === 'parallax' && <div class="parallax-concepts"><div class="parallax-concept"><span>01</span><strong>{locale === 'pt' ? 'Capas de cases' : 'Case covers'}</strong></div><div class="parallax-concept"><span>02</span><strong>{locale === 'pt' ? 'Camadas de processo' : 'Process layers'}</strong></div><div class="parallax-concept"><span>03</span><strong>{locale === 'pt' ? 'Transições do blog' : 'Blog transitions'}</strong></div></div>}
     </article>
   ))}
 </section>
 <script>
-  const parallax = document.querySelector<HTMLElement>('.parallax-demo');
-  if (parallax && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    parallax.addEventListener('pointermove', (event) => {
-      const rect = parallax.getBoundingClientRect();
-      parallax.style.setProperty('--parallax-x', `${((event.clientX - rect.left) / rect.width - .5) * 26}px`);
-      parallax.style.setProperty('--parallax-y', `${((event.clientY - rect.top) / rect.height - .5) * 18}px`);
+  document.querySelectorAll<HTMLElement>('.parallax-concept').forEach((card) => {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    card.addEventListener('pointermove', (event) => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--parallax-x', `${((event.clientX - rect.left) / rect.width - .5) * 14}px`);
+      card.style.setProperty('--parallax-y', `${((event.clientY - rect.top) / rect.height - .5) * 10}px`);
     });
-    parallax.addEventListener('pointerleave', () => { parallax.style.removeProperty('--parallax-x'); parallax.style.removeProperty('--parallax-y'); });
-  }
+    card.addEventListener('pointerleave', () => { card.style.removeProperty('--parallax-x'); card.style.removeProperty('--parallax-y'); });
+  });
 </script>

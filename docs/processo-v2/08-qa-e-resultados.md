@@ -14,14 +14,16 @@
 
 ## Evidências
 
-- `npm test`: seis arquivos e oito testes unitários aprovados.
+- `npm test`: seis arquivos e dez testes unitários aprovados.
 - `npm run build`: Astro Check sem erros, avisos ou hints; quatro páginas HTML e `robots.txt` gerados.
-- `npm run test:e2e`: dez cenários aprovados em Chromium desktop e mobile.
+- `npm run test:e2e`: doze cenários aprovados em Chromium desktop e mobile.
 - Rolagem horizontal global: ausente após limitar a máscara da galeria.
 - Screenshots: `docs/processo-v2/screenshots/`.
 - Verificador de links: quatro HTMLs sem links internos ou assets quebrados.
-- Modais de contato e Spotify: abertura, Escape, fechamento e restauração de foco validados.
+- Modal de contato: centralização, abertura, Escape, fechamento, ícones e restauração de foco validados.
+- Player flutuante do Spotify: fechamento e persistência durante a sessão validados; reprodução permanece bloqueada até a playlist real ser definida.
 - Estrutura de projetos: seis blocos com três artes de abertura e 20 imagens disponíveis por cliente.
+- Galeria cinética: 26 imagens de 20 clientes, com oito novas peças otimizadas em WebP e transição diagonal sobre o hero.
 - Lighthouse local da home: Performance 74, Acessibilidade 100, Boas Práticas 100 e SEO 69.
 - Métricas Lighthouse: FCP 2,7 s, LCP 5,9 s, TBT 0 ms e CLS 0.
 - O SEO está deliberadamente limitado por `noindex,nofollow` e `robots.txt` enquanto a V2 é uma prévia de desenvolvimento.
@@ -33,4 +35,4 @@ Após a revisão editorial e a expansão para 120 artes, a nova auditoria regist
 
 - Nenhum deploy foi realizado.
 - O portfólio atual permanece na pasta e no repositório originais.
-- A única definição de conteúdo pendente é a playlist do Spotify; o bloco atual não tenta reproduzir áudio automaticamente.
+- A única definição de conteúdo pendente é a playlist do Spotify; o player atual não tenta reproduzir áudio automaticamente.

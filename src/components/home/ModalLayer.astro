@@ -4,11 +4,11 @@ import { siteConfig } from '@/data/site';
 import { ui, type Locale } from '@/i18n/config';
 const { locale } = Astro.props as { locale: Locale };
 const t = ui[locale];
-const contactLinks = [
-  { href: `mailto:${siteConfig.email}`, label: t.email, detail: siteConfig.email },
-  { href: siteConfig.whatsapp, label: t.whatsapp, detail: '+55 92 98848-4334', external: true },
-  { href: siteConfig.linkedin, label: t.linkedin, detail: 'LinkedIn', external: true },
-  { href: siteConfig.resume[locale], label: t.resume, detail: 'HTML + PDF', external: true },
+const contactLinks: Array<{ href: string; label: string; detail: string; external?: boolean; icon: 'mail' | 'whatsapp' | 'linkedin' | 'file' }> = [
+  { href: `mailto:${siteConfig.email}`, label: t.email, detail: siteConfig.email, icon: 'mail' },
+  { href: siteConfig.whatsapp, label: t.whatsapp, detail: '+55 92 98848-4334', external: true, icon: 'whatsapp' },
+  { href: siteConfig.linkedin, label: t.linkedin, detail: 'LinkedIn', external: true, icon: 'linkedin' },
+  { href: siteConfig.resume[locale], label: t.resume, detail: 'HTML + PDF', external: true, icon: 'file' },
 ];
 ---
 <PortfolioModal
@@ -16,7 +16,5 @@ const contactLinks = [
   contactTitle={locale === 'pt' ? 'Opções de contato' : 'Contact options'}
   contactIntro={locale === 'pt' ? 'Escolha o canal mais conveniente para conversar sobre trabalho, campanhas ou projetos.' : 'Choose the best channel to discuss work, campaigns or projects.'}
   contactLinks={contactLinks}
-  spotifyTitle={t.spotify}
-  spotifyText={locale === 'pt' ? 'A playlist ainda será escolhida por Lucas. Quando estiver pronta, este espaço recebe o acesso direto ao Spotify.' : 'Lucas will choose the playlist later. When it is ready, this space will link directly to Spotify.'}
   closeLabel={locale === 'pt' ? 'Fechar janela' : 'Close window'}
 />

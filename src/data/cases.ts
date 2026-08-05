@@ -7,7 +7,7 @@ type SourceCase = (typeof source.cases)[number];
 const copy: Record<string, { title: Localized; summary: Localized; role: Localized; solution: Localized; result: Localized }> = {
   coimbra: {
     title: { pt: 'Campanhas promocionais para varejo técnico', en: 'Promotional campaigns for technical retail' },
-    summary: { pt: 'Sistemas de peças para transformar calendários comerciais e ofertas técnicas em comunicação rápida para o varejo.', en: 'A system of assets that turns retail calendars and technical offers into fast, readable communication.' },
+    summary: { pt: 'Conjunto de campanhas promocionais e conteúdos de produto criados para comunicar ofertas, datas comerciais e o universo técnico da Coimbra com leitura rápida e presença de marca.', en: 'Promotional campaigns and product content created to communicate offers, retail dates and Coimbra’s technical universe with fast reading and strong brand presence.' },
     role: { pt: 'Criação e adaptação de peças digitais, organização da hierarquia comercial e desdobramento de formatos.', en: 'Digital asset creation and adaptation, commercial hierarchy and multi-format rollout.' },
     solution: { pt: 'Produto, preço e chamada foram tratados como uma sequência visual consistente, permitindo variar campanhas sem perder reconhecimento.', en: 'Product, price and callout follow a consistent visual sequence, allowing campaigns to change without losing recognition.' },
     result: { pt: 'Conjunto curado de campanhas sazonais, ofertas e conteúdos de produto para diferentes formatos digitais.', en: 'A curated set of seasonal campaigns, offers and product content across digital formats.' },
@@ -58,13 +58,20 @@ const deliveriesEn: Record<string, string[]> = {
   'la-pizza': ['promotional cards', 'product posts', 'stories', 'recurring campaigns', 'digital materials'],
 };
 
+const featuredIndexes: Record<string, number[]> = {
+  coimbra: [0, 12, 16],
+  'cultura-inglesa': [0, 6, 2],
+  'otica-murano': [0, 1, 11],
+};
+
 export const cases = source.cases.map((item: SourceCase, index) => {
   const images = item.images.map((image) => ({ ...image, src: `/${image.src.replace(/\.[^.]+$/, '.webp')}` }));
+  const selectedIndexes = featuredIndexes[item.id] ?? [0, 1, 2];
   return {
     ...item,
     order: index + 1,
     cover: images[0].src,
-    featured: images.slice(0, 3),
+    featured: selectedIndexes.map((imageIndex) => images[imageIndex]),
     images,
     deliveriesLocalized: { pt: item.deliveries, en: deliveriesEn[item.id] },
     copy: copy[item.id],

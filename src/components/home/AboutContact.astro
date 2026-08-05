@@ -1,20 +1,26 @@
 ---
 import { ui, type Locale } from '@/i18n/config';
 import { siteConfig } from '@/data/site';
+import Icon from '@/components/ui/Icon.astro';
+import FloatingSpotify from '@/components/islands/FloatingSpotify';
 const { locale } = Astro.props as { locale: Locale };
 const t = ui[locale];
 ---
 <section class="about section-shell" id="sobre">
-  <div class="section-intro"><p class="eyebrow">{t.aboutEyebrow}</p><h2>{t.aboutTitle}</h2></div>
-  <div class="about-grid"><p class="about-lead">{t.aboutText}</p><div class="experience"><h3>{t.experienceTitle}</h3><p>{t.experienceText}</p><ul><li>Design gráfico e digital</li><li>Campanhas promocionais</li><li>IA aplicada ao design</li><li>Prompt Engineering</li><li>Automação criativa</li></ul></div></div>
+  <div class="about-layout">
+    <figure class="about-portrait"><img src="/assets/hero/foto-lucas-mobile-sem-texto.webp" alt={locale === 'pt' ? 'Retrato de Lucas Oliveira' : 'Portrait of Lucas Oliveira'} loading="lazy" /></figure>
+    <div class="about-content"><p class="eyebrow">{t.aboutEyebrow}</p><h2>{t.aboutTitle}</h2><p class="about-lead">{t.aboutText}</p><div class="experience"><h3>{t.experienceTitle}</h3><p>{t.experienceText}</p></div>
+      <div class="skill-chips"><span class="skill-chip"><Icon name="spark" />Design gráfico</span><span class="skill-chip"><Icon name="spark" />Campanhas digitais</span><span class="skill-chip"><Icon name="spark" />Direção de Arte</span><span class="skill-chip"><Icon name="spark" />IA generativa</span><span class="skill-chip"><Icon name="spark" />Prompt Engineering</span><span class="skill-chip"><Icon name="spark" />Automação criativa</span></div>
+    </div>
+  </div>
 </section>
-<section class="spotify section-shell" aria-label="Spotify"><div><p class="eyebrow">Spotify</p><h2>{t.spotify}</h2><p>{t.spotifyText}</p></div><button class="spotify-panel" type="button" data-modal-open="spotify" aria-label={locale === 'pt' ? 'Abrir informações da playlist' : 'Open playlist information'}><span class="spotify-disc" aria-hidden="true"><i>LO</i></span><strong>{locale === 'pt' ? 'Abrir prévia' : 'Open preview'}</strong></button></section>
 <section class="contact section-shell" id="contato">
   <p class="eyebrow">{t.contact}</p><h2>{t.contactTitle}</h2>
   <div class="contact-links">
-    <a href={`mailto:${siteConfig.email}`}>{t.email}<span>{siteConfig.email}</span></a>
-    <a href={siteConfig.whatsapp} target="_blank" rel="noreferrer">{t.whatsapp}<span>+55 92 98848-4334</span></a>
-    {siteConfig.linkedin ? <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">{t.linkedin}<span>LinkedIn ↗</span></a> : <span class="pending-link">LinkedIn<span>{locale === 'pt' ? 'URL em verificação' : 'URL being verified'}</span></span>}
-    <a href={siteConfig.resume[locale]} target="_blank" rel="noreferrer">{t.resume}<span>HTML + PDF ↗</span></a>
+    <a href={`mailto:${siteConfig.email}`}><Icon name="mail" /><strong>{t.email}</strong><span>{siteConfig.email}</span></a>
+    <a href={siteConfig.whatsapp} target="_blank" rel="noreferrer"><Icon name="whatsapp" /><strong>{t.whatsapp}</strong><span>+55 92 98848-4334</span></a>
+    {siteConfig.linkedin ? <a href={siteConfig.linkedin} target="_blank" rel="noreferrer"><Icon name="linkedin" /><strong>{t.linkedin}</strong><span>LinkedIn ↗</span></a> : <span class="pending-link">LinkedIn<span>{locale === 'pt' ? 'URL em verificação' : 'URL being verified'}</span></span>}
+    <a href={siteConfig.resume[locale]} target="_blank" rel="noreferrer"><Icon name="file" /><strong>{t.resume}</strong><span>HTML + PDF ↗</span></a>
   </div>
 </section>
+<FloatingSpotify client:load locale={locale} playlist={siteConfig.spotifyPlaylist} />
