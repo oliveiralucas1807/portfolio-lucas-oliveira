@@ -9,3 +9,5 @@ test-results/
 public/assets/gallery/*
 !public/assets/gallery/*.webp
 docs/processo-v2/screenshots/*.png
+public/assets/hero/*.webp
+docs/processo-v2/lighthouse-*.json

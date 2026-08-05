@@ -61,8 +61,8 @@ const deliveriesEn: Record<string, string[]> = {
 export const cases = source.cases.map((item: SourceCase, index) => ({
   ...item,
   order: index + 1,
-  cover: `/${item.images[0].src}`,
-  images: item.images.map((image) => ({ ...image, src: `/${image.src}` })),
+  cover: `/${item.images[0].src.replace(/\.[^.]+$/, '.webp')}`,
+  images: item.images.slice(0, 5).map((image) => ({ ...image, src: `/${image.src.replace(/\.[^.]+$/, '.webp')}` })),
   deliveriesLocalized: { pt: item.deliveries, en: deliveriesEn[item.id] },
   copy: copy[item.id],
 }));

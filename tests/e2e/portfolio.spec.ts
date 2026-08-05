@@ -10,6 +10,7 @@ test('Portuguese home has the complete V2 structure', async ({ page }) => {
   await expect(page.locator('body')).not.toContainText('Portfólio light para processos seletivos');
   await expect(page.locator('body')).not.toContainText('Cases selecionados');
   await expect(page.locator('.lab-link')).toBeVisible();
+  await expect(page.locator('.hero-art img')).toHaveAttribute('src', '/assets/hero/foto-lucas-desktop.webp');
 });
 
 test('English home is complete and switchable', async ({ page }) => {
@@ -27,6 +28,8 @@ test('theme persists and laboratory performs no submit', async ({ page }) => {
   await page.locator('[data-demo-form] input').fill('teste@example.com');
   await page.getByRole('button', { name: 'Simular inscrição' }).click();
   await expect(page.locator('[data-demo-form] output')).toContainText('nenhum dado foi enviado');
+  await page.locator('[data-filter="social"]').click();
+  await expect(page.locator('[data-filter-demo] li:visible')).toHaveCount(1);
 });
 
 test('mobile layout does not overflow horizontally', async ({ page }) => {

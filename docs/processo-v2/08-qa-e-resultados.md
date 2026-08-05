@@ -19,5 +19,14 @@
 - `npm run test:e2e`: oito cenários aprovados em Chromium desktop e mobile.
 - Rolagem horizontal global: ausente após limitar a máscara da galeria.
 - Screenshots: `docs/processo-v2/screenshots/`.
+- Verificador de links: quatro HTMLs sem links internos ou assets quebrados.
+- Lighthouse local da home: Performance 74, Acessibilidade 100, Boas Práticas 100 e SEO 69.
+- Métricas Lighthouse: FCP 2,7 s, LCP 5,9 s, TBT 0 ms e CLS 0.
+- O SEO está deliberadamente limitado por `noindex,nofollow` e `robots.txt` enquanto a V2 é uma prévia de desenvolvimento.
+- A primeira auditoria registrou 64/96/96/69; fontes locais, favicon, contraste e imagens responsivas elevaram os três primeiros resultados.
 
-Os números finais devem ser atualizados após a última execução integral. Nenhum Lighthouse foi registrado nesta etapa; não há pontuação estimada.
+## Estado de publicação
+
+- Nenhum deploy foi realizado.
+- O portfólio atual permanece na pasta e no repositório originais.
+- A única definição de conteúdo pendente é a playlist do Spotify; o bloco atual não tenta reproduzir áudio automaticamente.

@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react';
 
 export default function ThemeControl({ label }: { label: string }) {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     setTheme(document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light');
+    setReady(true);
   }, []);
 
   function toggle() {
@@ -14,5 +16,5 @@ export default function ThemeControl({ label }: { label: string }) {
     setTheme(next);
   }
 
-  return <button className="icon-button" type="button" onClick={toggle} aria-label={label} title={label}>{theme === 'dark' ? '☀' : '◐'}</button>;
+  return <button className="icon-button" type="button" onClick={toggle} disabled={!ready} aria-label={label} title={label}>{theme === 'dark' ? '☀' : '◐'}</button>;
 }

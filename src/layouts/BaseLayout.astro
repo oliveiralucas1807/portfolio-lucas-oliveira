@@ -17,6 +17,7 @@ const enPath = route.startsWith('/laboratorio') ? '/en/lab/' : route.startsWith(
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="robots" content="noindex,nofollow" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href={`${canonicalBase}${locale === 'pt' ? ptPath : enPath}`} />
     <link rel="alternate" hreflang="pt-BR" href={`${canonicalBase}${ptPath}`} />
     <link rel="alternate" hreflang="en" href={`${canonicalBase}${enPath}`} />
