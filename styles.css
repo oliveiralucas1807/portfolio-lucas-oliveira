@@ -626,7 +626,7 @@ address {
     padding: clamp(70px, 16vw, 88px) clamp(22px, 5vw, 42px) calc(34px + env(safe-area-inset-bottom));
     background:
       linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, rgba(13, 13, 13, 0) 58%, rgba(13, 13, 13, 0.56) 100%),
-      url("assets/foto-lucas-mobile-v2-original.png") center top / cover no-repeat,
+      url("assets/foto-lucas-mobile.png") center top / cover no-repeat,
       var(--gold);
   }
 
@@ -647,23 +647,7 @@ address {
   }
 
   .hero-copy .role {
-    position: absolute;
-    top: 29.1svh;
-    left: 52vw;
-    display: block;
-    margin: 0;
-    color: var(--paper);
-    font-size: 0;
-    line-height: 1;
-    text-shadow: none;
-    white-space: nowrap;
-  }
-
-  .hero-copy .role::after {
-    content: "\00a0Pleno";
-    font-family: Montserrat, Inter, Arial, sans-serif;
-    font-size: clamp(0.9rem, 4.4vw, 1.15rem);
-    font-weight: 800;
+    display: none;
   }
 
   .hero-actions {
@@ -746,7 +730,7 @@ address {
     padding: clamp(70px, 16vw, 88px) 22px calc(26px + env(safe-area-inset-bottom));
     background:
       linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, rgba(13, 13, 13, 0) 58%, rgba(13, 13, 13, 0.56) 100%),
-      url("assets/foto-lucas-mobile-v2-original.png") center top / cover no-repeat,
+      url("assets/foto-lucas-mobile.png") center top / cover no-repeat,
       var(--gold);
   }
 

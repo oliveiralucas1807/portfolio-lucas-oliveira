@@ -36,12 +36,12 @@ Abrir o `index.html` direto no navegador pode bloquear o carregamento de `data/c
 - `data/cases.json`: textos e lista de imagens dos cases.
 - `assets/cases/`: imagens copiadas para cada mini-case.
 - `assets/foto-lucas-desktop-original.png`: hero desktop.
-- `assets/foto-lucas-mobile-v2-original.png`: hero mobile.
+- `assets/foto-lucas-mobile.png`: hero mobile.
 - `relatorio-curadoria.md`: resumo da seleção dos clientes e imagens.
 
-O cargo da arte mobile original contém `Designer Gráfico`. O CSS complementa
-visualmente essa linha com `Pleno`, enquanto o HTML mantém
-`Designer Gráfico Pleno` para acessibilidade e conteúdo textual.
+A arte mobile contém o nome e o cargo completo `Designer Gráfico Pleno`. O
+HTML mantém o mesmo cargo para acessibilidade e conteúdo textual, mas oculta
+essa cópia visual no hero mobile para não sobrepor o texto incorporado à arte.
 
 ## Como trocar imagens
 
