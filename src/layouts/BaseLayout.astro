@@ -1,0 +1,43 @@
+---
+import '@/styles/global.css';
+import Topbar from '@/components/navigation/Topbar.astro';
+import Footer from '@/components/navigation/Footer.astro';
+import CustomCursor from '@/components/islands/CustomCursor';
+import { localeMeta, ui, type Locale } from '@/i18n/config';
+const { locale, title, description } = Astro.props as { locale: Locale; title: string; description: string };
+const canonicalBase = 'https://oliveiralucas1807.github.io/portfolio-lucas-oliveira';
+const route = Astro.url.pathname;
+const ptPath = route.startsWith('/en/lab') ? '/laboratorio/' : route.startsWith('/en') ? '/' : route;
+const enPath = route.startsWith('/laboratorio') ? '/en/lab/' : route.startsWith('/en') ? route : '/en/';
+---
+<!doctype html>
+<html lang={localeMeta[locale].lang} data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="canonical" href={`${canonicalBase}${locale === 'pt' ? ptPath : enPath}`} />
+    <link rel="alternate" hreflang="pt-BR" href={`${canonicalBase}${ptPath}`} />
+    <link rel="alternate" hreflang="en" href={`${canonicalBase}${enPath}`} />
+    <link rel="alternate" hreflang="x-default" href={`${canonicalBase}${ptPath}`} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <title>{title}</title>
+    <script is:inline>
+      (() => {
+        const saved = localStorage.getItem('portfolio-theme');
+        const dark = saved === 'dark' || (!saved && matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      })();
+    </script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#conteudo">{ui[locale].skip}</a>
+    <Topbar locale={locale} />
+    <CustomCursor client:load />
+    <main id="conteudo"><slot /></main>
+    <Footer locale={locale} />
+  </body>
+</html>

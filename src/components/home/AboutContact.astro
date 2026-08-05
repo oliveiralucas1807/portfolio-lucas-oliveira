@@ -1,0 +1,20 @@
+---
+import { ui, type Locale } from '@/i18n/config';
+import { siteConfig } from '@/data/site';
+const { locale } = Astro.props as { locale: Locale };
+const t = ui[locale];
+---
+<section class="about section-shell" id="sobre">
+  <div class="section-intro"><p class="eyebrow">{t.aboutEyebrow}</p><h2>{t.aboutTitle}</h2></div>
+  <div class="about-grid"><p class="about-lead">{t.aboutText}</p><div class="experience"><h3>{t.experienceTitle}</h3><p>{t.experienceText}</p><ul><li>Design gráfico e digital</li><li>Campanhas promocionais</li><li>IA aplicada ao design</li><li>Prompt Engineering</li><li>Automação criativa</li></ul></div></div>
+</section>
+<section class="spotify section-shell" aria-label="Spotify"><div><p class="eyebrow">Spotify</p><h2>{t.spotify}</h2><p>{t.spotifyText}</p></div><div class="spotify-disc" aria-hidden="true"><span>LO</span></div></section>
+<section class="contact section-shell" id="contato">
+  <p class="eyebrow">{t.contact}</p><h2>{t.contactTitle}</h2>
+  <div class="contact-links">
+    <a href={`mailto:${siteConfig.email}`}>{t.email}<span>{siteConfig.email}</span></a>
+    <a href={siteConfig.whatsapp} target="_blank" rel="noreferrer">{t.whatsapp}<span>+55 92 98848-4334</span></a>
+    {siteConfig.linkedin ? <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">{t.linkedin}<span>LinkedIn ↗</span></a> : <span class="pending-link">LinkedIn<span>{locale === 'pt' ? 'URL em verificação' : 'URL being verified'}</span></span>}
+    <a href={siteConfig.resume[locale]} target="_blank" rel="noreferrer">{t.resume}<span>HTML + PDF ↗</span></a>
+  </div>
+</section>

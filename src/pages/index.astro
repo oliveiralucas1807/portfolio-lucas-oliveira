@@ -1,19 +1,10 @@
 ---
-import '@/styles/global.css';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/home/Hero.astro';
+import KineticGallery from '@/components/home/KineticGallery.astro';
+import Projects from '@/components/home/Projects.astro';
+import AboutContact from '@/components/home/AboutContact.astro';
 ---
-
-<!doctype html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Lucas Oliveira — Portfólio V2</title>
-  </head>
-  <body>
-    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-    <main id="conteudo">
-      <h1>Lucas Oliveira</h1>
-      <p>Portfólio V2 em desenvolvimento.</p>
-    </main>
-  </body>
-</html>
+<BaseLayout locale="pt" title="Lucas Oliveira — Designer Gráfico Pleno" description="Design gráfico, campanhas digitais e IA aplicada ao design.">
+  <Hero locale="pt" /><KineticGallery locale="pt" /><Projects locale="pt" /><AboutContact locale="pt" />
+</BaseLayout>

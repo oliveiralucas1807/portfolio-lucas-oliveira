@@ -6,3 +6,6 @@ test-results/
 .env
 .env.*
 !.env.example
+public/assets/gallery/*
+!public/assets/gallery/*.webp
+docs/processo-v2/screenshots/*.png

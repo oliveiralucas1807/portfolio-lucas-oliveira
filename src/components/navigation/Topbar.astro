@@ -1,0 +1,24 @@
+---
+import ThemeControl from '@/components/islands/ThemeControl';
+import { localeMeta, ui, type Locale } from '@/i18n/config';
+import { siteConfig } from '@/data/site';
+const { locale } = Astro.props as { locale: Locale };
+const t = ui[locale];
+const other = locale === 'pt' ? 'en' : 'pt';
+---
+<header class="topbar-wrap">
+  <nav class="topbar" aria-label={locale === 'pt' ? 'Navegação principal' : 'Primary navigation'}>
+    <a class="brand" href={localeMeta[locale].home} aria-label="Lucas Oliveira — home">LO<span>®</span></a>
+    <div class="topbar-links">
+      <a href="#trabalhos">{t.work}</a>
+      <a href="#sobre">{t.about}</a>
+      <a href="#contato">{t.contact}</a>
+      <a class="lab-link" href={localeMeta[locale].lab}>{t.lab}</a>
+    </div>
+    <div class="topbar-actions">
+      {siteConfig.linkedin && <a class="icon-button" href={siteConfig.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>}
+      <a class="locale-chip" href={localeMeta[other].home}>{other.toUpperCase()}</a>
+      <ThemeControl client:load label={t.theme} />
+    </div>
+  </nav>
+</header>
