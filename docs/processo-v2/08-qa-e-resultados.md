@@ -27,6 +27,8 @@
 - O SEO está deliberadamente limitado por `noindex,nofollow` e `robots.txt` enquanto a V2 é uma prévia de desenvolvimento.
 - A primeira auditoria registrou 64/96/96/69; fontes locais, favicon, contraste e imagens responsivas elevaram os três primeiros resultados.
 
+Após a revisão editorial e a expansão para 120 artes, a nova auditoria registrou Performance 73, Acessibilidade 100, Boas Práticas 100 e SEO 69. As métricas foram FCP 2,9 s, LCP 6,0 s, TBT 0 ms e CLS 0. O carregamento das galerias expandidas permanece tardio para não bloquear a abertura da página.
+
 ## Estado de publicação
 
 - Nenhum deploy foi realizado.
