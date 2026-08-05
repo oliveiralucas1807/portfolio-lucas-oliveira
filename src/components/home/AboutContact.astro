@@ -23,4 +23,4 @@ const t = ui[locale];
     <a href={siteConfig.resume[locale]} target="_blank" rel="noreferrer"><Icon name="file" /><strong>{t.resume}</strong><span>HTML + PDF ↗</span></a>
   </div>
 </section>
-<FloatingSpotify client:load locale={locale} playlist={siteConfig.spotifyPlaylist} />
+<FloatingSpotify client:load locale={locale} playlist={siteConfig.spotifyPlaylist} embed={siteConfig.spotifyEmbed} />

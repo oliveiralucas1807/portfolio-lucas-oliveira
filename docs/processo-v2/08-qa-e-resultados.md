@@ -21,7 +21,7 @@
 - Screenshots: `docs/processo-v2/screenshots/`.
 - Verificador de links: quatro HTMLs sem links internos ou assets quebrados.
 - Modal de contato: centralização, abertura, Escape, fechamento, ícones e restauração de foco validados.
-- Player flutuante do Spotify: fechamento e persistência durante a sessão validados; reprodução permanece bloqueada até a playlist real ser definida.
+- Player flutuante do Spotify: incorporação oficial da playlist, link direto, fechamento e persistência durante a sessão validados. No mobile, o player inicia recolhido para não encobrir os CTAs.
 - Estrutura de projetos: seis blocos com três artes de abertura e 20 imagens disponíveis por cliente.
 - Galeria cinética: 26 imagens de 20 clientes, com oito novas peças otimizadas em WebP e transição diagonal sobre o hero.
 - Lighthouse local da home: Performance 74, Acessibilidade 100, Boas Práticas 100 e SEO 69.
@@ -35,4 +35,4 @@ Após a revisão editorial e a expansão para 120 artes, a nova auditoria regist
 
 - Nenhum deploy foi realizado.
 - O portfólio atual permanece na pasta e no repositório originais.
-- A única definição de conteúdo pendente é a playlist do Spotify; o player atual não tenta reproduzir áudio automaticamente.
+- A playlist oficial foi conectada pelo embed do Spotify. A reprodução permanece sob controle do visitante e das políticas do navegador.

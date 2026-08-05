@@ -55,13 +55,17 @@ test('contact opens a centered accessible modal', async ({ page }) => {
 
 });
 
-test('about and floating Spotify preview expose the revised controls', async ({ page }) => {
+test('about and floating Spotify player expose the official playlist', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('.about-portrait img')).toBeVisible();
   await expect(page.locator('.skill-chip')).toHaveCount(6);
   const player = page.locator('[data-floating-spotify]');
   await expect(player).toBeVisible();
-  await expect(player.getByRole('button', { name: 'Reproduzir playlist' })).toBeDisabled();
+  await expect(player.locator('iframe[data-testid="spotify-embed"]')).toHaveAttribute('src', /open\.spotify\.com\/embed\/playlist\/2OfZT7teUPaGjHWRgGqMta/);
+  await expect(player.getByRole('link', { name: /Playlist do Lucas/ })).toHaveAttribute('href', /open\.spotify\.com\/playlist\/2OfZT7teUPaGjHWRgGqMta/);
+  if (page.viewportSize()?.width === 390) {
+    await expect(player.getByRole('button', { name: 'Abrir' })).toBeVisible();
+  }
   await expect(player.getByRole('button', { name: 'Fechar player' })).toBeVisible();
   await player.getByRole('button', { name: 'Fechar player' }).click();
   await expect(player).toBeHidden();
