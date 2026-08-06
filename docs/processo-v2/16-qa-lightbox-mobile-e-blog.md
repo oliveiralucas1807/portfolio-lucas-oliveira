@@ -41,6 +41,10 @@ Na revisão mobile de 06/08/2026, o deslocamento aplicado à fotografia foi remo
 
 O caractere tipográfico `+` do acionador do submenu foi substituído pelo SVG fornecido `menu-principal.svg`, com três barras e dimensões controladas dentro do botão circular. O comportamento de abertura, fechamento, foco, `Esc` e pulso no tema escuro permaneceu inalterado.
 
+## Curadoria da galeria da Ótica Murano
+
+Na revisão de 06/08/2026, a primeira linha expandida concentrava quatro peças da campanha `O Diabo Veste Prada`, incluindo a capa já usada nos destaques. A ordem foi revisada sem alterar os três destaques do case. As posições 1, 2 e 4 passaram a exibir, respectivamente, `Dia do Consumidor`, `Cuidados` e `Abril Marrom`; a posição 3 preserva uma peça editorial de `O Diabo Veste Prada`. As demais peças continuam disponíveis nas linhas seguintes e no visualizador ampliado, tanto no desktop quanto no mobile.
+
 ## Contrato editorial
 
 Cada entrada publicada possui `sourceRef`. O blog não contém posts marcados como “em breve”. Projetos ainda incompletos são descritos como pesquisa ou candidato a case, sem resultados inventados.
