@@ -24,7 +24,7 @@ test('Portuguese home has the complete V2 structure', async ({ page }) => {
   await expect(page.locator('.blog-link')).toHaveText('O que há de novo');
   await expect(page.locator('.blog-link')).toHaveAttribute('data-parallax', '');
   await expect(page.locator('.topbar-links a').first()).toHaveCSS('text-transform', 'uppercase');
-  await expect(page.locator('.locale-chip svg')).toHaveCount(1);
+  await expect(page.locator('.locale-chip img')).toHaveAttribute('src', '/assets/icons/idioma-estados-unidos.svg');
   await expect(page.locator('.hero-kicker')).toHaveText('Manaus · Brasil · Desde 2019');
   await expect(page.locator('.topbar')).not.toContainText('Contato');
   await expect(page.locator('.topbar')).not.toContainText('Laboratório');
@@ -37,10 +37,12 @@ test('English home is complete and switchable', async ({ page }) => {
   await expect(page.locator('.project')).toHaveCount(6);
   await expect(page.getByText('Ver portfólio em português')).toBeVisible();
   await expect(page.locator('.hero-kicker')).toHaveText('Manaus · Brazil · Since 2019');
+  await expect(page.locator('.locale-chip img')).toHaveAttribute('src', '/assets/icons/idioma-brasil.svg');
 });
 
 test('theme persists and blog is localized', async ({ page }) => {
   await page.goto('/blog/');
+  await expect(page.locator('.locale-chip img')).toHaveAttribute('src', '/assets/icons/idioma-estados-unidos.svg');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('O que está acontecendo agora.');
   await expect(page.locator('.blog-post')).toHaveCount(3);
   const firstUpdate = page.locator('.blog-post-details').first();
@@ -50,6 +52,7 @@ test('theme persists and blog is localized', async ({ page }) => {
   await page.getByRole('button', { name: 'Alternar tema' }).click();
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
   await page.goto('/en/blog/');
+  await expect(page.locator('.locale-chip img')).toHaveAttribute('src', '/assets/icons/idioma-brasil.svg');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('What is happening now.');
 });
 

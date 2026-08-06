@@ -4,7 +4,7 @@
 
 **Goal:** Trocar o ícone abstrato do seletor pelos SVGs de destino aprovados.
 
-**Architecture:** Os SVGs ficam em `public/assets/icons`. A topbar escolhe o asset a partir da localidade atual e mantém toda a navegação existente.
+**Architecture:** Os SVGs ficam em `public-site/assets/icons`, diretório público configurado no Astro. A topbar escolhe o asset a partir da localidade atual e mantém toda a navegação existente.
 
 **Tech Stack:** Astro, CSS, Playwright e Vitest.
 
@@ -19,8 +19,8 @@
 ### Task 1: Contrato e assets
 
 **Files:**
-- Create: `public/assets/icons/idioma-estados-unidos.svg`
-- Create: `public/assets/icons/idioma-brasil.svg`
+- Create: `public-site/assets/icons/idioma-estados-unidos.svg`
+- Create: `public-site/assets/icons/idioma-brasil.svg`
 - Modify: `tests/e2e/portfolio.spec.ts`
 
 - [ ] Registrar em Playwright os assets esperados em PT e EN.
