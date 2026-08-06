@@ -6,9 +6,9 @@
 - navegação por botões, teclado e gesto horizontal;
 - fechamento por botão, fundo e `Esc`, com retorno de foco;
 - bloqueio de scroll durante a visualização;
-- botão circular `+` e submenu `TRABALHOS` / `SOBRE`;
+- botão circular com ícone SVG de menu e submenu `TRABALHOS` / `SOBRE`;
 - pulso somente no tema escuro e desativação com movimento reduzido;
-- hero mobile com kicker menor, texto deslocado para cima, foto deslocada para baixo e gradiente concentrado na base;
+- hero mobile com kicker menor, bloco de identidade deslocado para cima, fotografia no eixo original e gradiente concentrado na base;
 - oito atualizações bilíngues baseadas em fontes;
 - três dossiês e um inventário para o futuro Portfólio de Cases.
 
@@ -32,10 +32,15 @@ A inspeção em 390 × 844 confirmou:
 - nome e cargo acima do centro do rosto;
 - topo laranja mais limpo;
 - topbar sem overflow;
-- botão `+` separado do acesso ao blog;
+- botão de menu com três barras separado do acesso ao blog;
 - submenu alinhado ao controle e com identidade da topbar.
+
+## Correção visual do hero e do menu
+
+Na revisão mobile de 06/08/2026, o deslocamento aplicado à fotografia foi removido porque criava uma faixa laranja artificial abaixo da topbar. A composição original da imagem, da introdução, dos botões e do link em inglês foi preservada. Somente o conjunto `Manaus · Brasil · Desde 2019`, `Lucas Oliveira` e `Designer Gráfico Pleno` passou a receber deslocamento visual para cima.
+
+O caractere tipográfico `+` do acionador do submenu foi substituído pelo SVG fornecido `menu-principal.svg`, com três barras e dimensões controladas dentro do botão circular. O comportamento de abertura, fechamento, foco, `Esc` e pulso no tema escuro permaneceu inalterado.
 
 ## Contrato editorial
 
 Cada entrada publicada possui `sourceRef`. O blog não contém posts marcados como “em breve”. Projetos ainda incompletos são descritos como pesquisa ou candidato a case, sem resultados inventados.
-

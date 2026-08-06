@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Locale } from '@/i18n/config';
 
-export default function CompactMenu({ locale, homeLink }: { locale: Locale; homeLink: string }) {
+export default function CompactMenu({ locale, homeLink, iconSrc }: { locale: Locale; homeLink: string; iconSrc: string }) {
   const [open, setOpen] = useState(false);
   const root = useRef<HTMLDivElement | null>(null);
   const trigger = useRef<HTMLButtonElement | null>(null);
@@ -14,7 +14,7 @@ export default function CompactMenu({ locale, homeLink }: { locale: Locale; home
   }, [open]);
   const labels = locale === 'pt' ? { menu: 'Abrir menu', work: 'TRABALHOS', about: 'SOBRE' } : { menu: 'Open menu', work: 'WORK', about: 'ABOUT' };
   return <div className="compact-menu-root" ref={root}>
-    <button ref={trigger} className="icon-button compact-menu-trigger" type="button" data-compact-menu-trigger aria-label={labels.menu} aria-expanded={open} aria-controls="compact-navigation" onClick={() => setOpen((value) => !value)}><span aria-hidden="true">+</span></button>
+    <button ref={trigger} className="icon-button compact-menu-trigger" type="button" data-compact-menu-trigger aria-label={labels.menu} aria-expanded={open} aria-controls="compact-navigation" onClick={() => setOpen((value) => !value)}><img src={iconSrc} alt="" aria-hidden="true" /></button>
     <div id="compact-navigation" className="compact-menu" data-compact-menu hidden={!open}>
       <a href={`${homeLink}#trabalhos`} onClick={() => setOpen(false)}>{labels.work}</a>
       <a href={`${homeLink}#sobre`} onClick={() => setOpen(false)}>{labels.about}</a>
