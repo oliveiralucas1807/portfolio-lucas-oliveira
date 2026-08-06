@@ -2,6 +2,7 @@
 import ThemeControl from '@/components/islands/ThemeControl';
 import { localeMeta, ui, type Locale } from '@/i18n/config';
 import { siteConfig } from '@/data/site';
+import Icon from '@/components/ui/Icon.astro';
 const { locale } = Astro.props as { locale: Locale };
 const t = ui[locale];
 const other = locale === 'pt' ? 'en' : 'pt';
@@ -18,7 +19,7 @@ const homeLink = localeMeta[locale].home;
     </div>
     <div class="topbar-actions">
       {siteConfig.linkedin && <a class="icon-button" data-parallax href={siteConfig.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>}
-      <a class="locale-chip" data-parallax href={onBlog ? localeMeta[other].blog : localeMeta[other].home}>{other.toUpperCase()}</a>
+      <a class="locale-chip" data-parallax href={onBlog ? localeMeta[other].blog : localeMeta[other].home} aria-label={locale === 'pt' ? 'Ver em inglês, Estados Unidos e Reino Unido' : 'View in Portuguese'} title={locale === 'pt' ? 'English, US and UK' : 'Português'}><Icon name="language" size={19} /></a>
       <ThemeControl client:load label={t.theme} />
     </div>
   </nav>

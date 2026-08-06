@@ -7,11 +7,11 @@ export const localeMeta = {
 
 export const ui = {
   pt: {
-    skip: 'Pular para o conteúdo', work: 'Trabalhos', about: 'Sobre', contact: 'Contato', blog: 'Blog',
+    skip: 'Pular para o conteúdo', work: 'Trabalhos', about: 'Sobre', contact: 'Contato', blog: 'O que há de novo',
     role: 'Designer Gráfico Pleno', heroIntro: 'Campanhas digitais, direção visual e IA aplicada ao design com clareza, ritmo e repertório de mercado.',
     seeWork: 'Ver trabalhos', resume: 'Currículo', talk: 'Entrar em contato', language: 'View portfolio in English',
     galleryEyebrow: 'Trabalhos em movimento', galleryTitle: 'Seleção de campanhas e peças gráficas.',
-    projectsEyebrow: 'Projetos', projectsTitle: 'Projetos e campanhas.', projectsIntro: '',
+    projectsEyebrow: 'Cases', projectsTitle: 'Projetos e campanhas', projectsIntro: '',
     openCase: 'Explorar projeto', roleLabel: 'Minha atuação', deliveries: 'Entregas', more: 'Mais cases em breve', moreText: 'A estrutura está pronta para receber novos clientes e projetos conforme a curadoria avançar.',
     deepTitle: 'Design, IA e processos em construção.', deepText: 'Este futuro ambiente vai reunir estudos, testes, automações e decisões por trás dos projetos. Uma visão mais completa de como cada solução é construída.', deepAction: 'Acessar cases',
     aboutEyebrow: 'Sobre', aboutTitle: 'Design gráfico, campanhas digitais e direção de arte.',
@@ -21,11 +21,11 @@ export const ui = {
     footer: 'Design, conteúdo e desenvolvimento por Lucas Oliveira.', backTop: 'Voltar ao topo', theme: 'Alternar tema', cursor: 'Cursor autoral ativo',
   },
   en: {
-    skip: 'Skip to content', work: 'Work', about: 'About', contact: 'Contact', blog: 'Blog',
+    skip: 'Skip to content', work: 'Work', about: 'About', contact: 'Contact', blog: 'What’s new',
     role: 'Mid-level Graphic Designer', heroIntro: 'Digital campaigns, visual direction and AI applied to design with clarity, rhythm and market experience.',
     seeWork: 'View work', resume: 'Résumé', talk: 'Get in touch', language: 'Ver portfólio em português',
     galleryEyebrow: 'Work in motion', galleryTitle: 'A selection of campaigns and graphic pieces.',
-    projectsEyebrow: 'Projects', projectsTitle: 'Projects and campaigns.', projectsIntro: '',
+    projectsEyebrow: 'Cases', projectsTitle: 'Projects and campaigns', projectsIntro: '',
     openCase: 'Explore project', roleLabel: 'My role', deliveries: 'Deliverables', more: 'More cases coming soon', moreText: 'The structure is ready for new clients and projects as the curation evolves.',
     deepTitle: 'Design, AI and processes in progress.', deepText: 'This future space will bring together studies, tests, automation and the decisions behind the projects. A fuller view of how each solution is built.', deepAction: 'Access cases',
     aboutEyebrow: 'About', aboutTitle: 'Graphic design, digital campaigns and art direction.',

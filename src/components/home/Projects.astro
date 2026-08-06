@@ -24,7 +24,7 @@ const t = ui[locale];
         <details class="project-more">
           <summary><span class="project-expand-cta">{t.openCase}<b>＋</b></span></summary>
           <p>{item.copy.result[locale]}</p>
-          <div class="project-gallery">{item.images.slice(1).map((image, imageIndex) => <img style={`--gallery-index:${imageIndex}`} src={image.src} alt={locale === 'pt' ? `${item.client}: ${image.alt}` : `${item.client} campaign artwork`} loading="lazy" />)}<div class="project-gallery-more" style="--gallery-index:19"><span>LOS®</span><strong>{locale === 'pt' ? 'E diversos outros cards e materiais produzidos.' : 'And many other cards and materials produced.'}</strong></div></div>
+          <div class="project-gallery">{item.images.slice(1).map((image, imageIndex) => <img style={`--gallery-index:${imageIndex}`} src={image.src} alt={locale === 'pt' ? `${item.client}: ${image.alt}` : `${item.client} campaign artwork`} loading="lazy" />)}<div class="project-gallery-more" style="--gallery-index:19"><span>LOS®</span><div><b>+</b><strong>{locale === 'pt' ? 'Diversos outros cards e materiais produzidos' : 'Many other cards and materials produced'}</strong></div></div></div>
         </details>
       </article>
     ))}

@@ -51,10 +51,11 @@ export default function PortfolioModal({ contactTitle, contactIntro, contactLink
 }
 
 function ModalIcon({ name }: { name: IconName }) {
-  return <svg className="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+  const solid = name === 'linkedin';
+  return <svg className="ui-icon" width="20" height="20" viewBox="0 0 24 24" fill={solid ? 'currentColor' : 'none'} stroke={solid ? 'none' : 'currentColor'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     {name === 'mail' && <><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></>}
     {name === 'whatsapp' && <><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.4-4.7A8.5 8.5 0 1 1 20.5 11.6Z"/><path d="M8 8c2 5 4 7 8 8"/></>}
-    {name === 'linkedin' && <><rect x="4" y="9" width="3" height="11"/><path d="M5.5 4.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM11 20V9h3v2c1-2 7-3 7 3v6h-3v-6c0-3-4-3-4 0v6z"/></>}
+    {name === 'linkedin' && <path d="M4 3.5A2.5 2.5 0 1 1 4 8.5a2.5 2.5 0 0 1 0-5zM2 10h4v12H2V10zm6.5 0h3.8v1.7h.1c.5-1 1.8-2.1 3.8-2.1 4 0 4.8 2.7 4.8 6.1V22h-4v-5.6c0-1.3 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V22h-4V10z"/>}
     {name === 'file' && <><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h5M8.5 15h7M8.5 18h5"/></>}
   </svg>;
 }

@@ -40,9 +40,9 @@ export default function AmbientAudioPlayer({ locale, tracks, spotifyUrl }: { loc
 
   if (hidden) return null;
 
-  return <aside className="ambient-player" data-audio-player data-initial-volume="0.18" aria-label={locale === 'pt' ? 'Trilha do portfólio' : 'Portfolio soundtrack'}>
+  return <aside className="ambient-player" data-audio-player data-initial-volume="0.18" aria-label={locale === 'pt' ? 'Playlist do Lucas' : "Lucas's playlist"}>
     {available && <audio ref={audio} src={tracks[index].src} onEnded={next} />}
-    <div><small>{locale === 'pt' ? 'Trilha do portfólio' : 'Portfolio soundtrack'}</small><strong>{available ? tracks[index].title : locale === 'pt' ? 'Player em preparação' : 'Player in preparation'}</strong></div>
+    <div><small>{locale === 'pt' ? 'Recomendação musical' : 'Music recommendation'}</small><strong>{available ? tracks[index].title : locale === 'pt' ? 'Playlist do Lucas' : "Lucas's playlist"}</strong><span>{!available && (locale === 'pt' ? 'Ouça a seleção completa no Spotify.' : 'Listen to the full selection on Spotify.')}</span></div>
     <div className="ambient-controls">
       <button type="button" onClick={toggle} disabled={!available} aria-label={playing ? 'Pausar' : 'Reproduzir'}>{playing ? 'Ⅱ' : '▶'}</button>
       <button type="button" onClick={next} disabled={!available} aria-label={locale === 'pt' ? 'Próxima faixa' : 'Next track'}>›</button>

@@ -12,7 +12,8 @@ describe('case content', () => {
   it('uses direct copy without editorial em dashes', () => {
     const visibleCopy = JSON.stringify(ui);
     expect(visibleCopy).not.toContain('—');
-    expect(ui.pt.projectsTitle).toBe('Projetos e campanhas.');
+    expect(ui.pt.projectsEyebrow).toBe('Cases');
+    expect(ui.pt.projectsTitle).toBe('Projetos e campanhas');
     expect(ui.pt.aboutText).toContain('Direção de Arte');
   });
 
@@ -31,7 +32,7 @@ describe('case content', () => {
   });
 
   it('uses the approved project, process and contact headings', () => {
-    expect(ui.pt.projectsTitle).toBe('Projetos e campanhas.');
+    expect(ui.pt.projectsTitle).toBe('Projetos e campanhas');
     expect(ui.pt.projectsIntro).toBe('');
     expect(ui.pt.deepTitle).toBe('Design, IA e processos em construção.');
     expect(ui.pt.contactTitle).toBe('Vamos conversar.');

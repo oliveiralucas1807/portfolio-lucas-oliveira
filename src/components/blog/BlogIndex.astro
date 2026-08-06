@@ -13,7 +13,13 @@ const { locale } = Astro.props as { locale: Locale };
     <div class="blog-post-meta"><span>{String(index + 1).padStart(2, '0')}</span><span>{post.category[locale]}</span><span>{post.date}</span></div>
     <h2>{post.title[locale]}</h2>
     <p>{post.excerpt[locale]}</p>
-    <span class="blog-post-action">{post.status === 'published' ? (locale === 'pt' ? 'Em desenvolvimento' : 'In development') : (locale === 'pt' ? 'Conteúdo em preparação' : 'Content in preparation')}</span>
+    <details class="blog-post-details">
+      <summary><span>{locale === 'pt' ? 'Ver mais detalhes' : 'View more details'}</span><b>＋</b></summary>
+      <div class="blog-article">
+        <div class="blog-article-copy">{post.body[locale].map((paragraph) => <p>{paragraph}</p>)}</div>
+        <div class="blog-article-images">{post.images.map((image) => <img src={image.src} alt={image.alt[locale]} loading="lazy" />)}</div>
+      </div>
+    </details>
   </article>)}
 </section>
 <nav class="blog-return section-shell"><a href={localeMeta[locale].home}>← {locale === 'pt' ? 'Voltar ao portfólio' : 'Back to portfolio'}</a></nav>

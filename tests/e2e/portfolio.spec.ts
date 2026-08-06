@@ -11,7 +11,8 @@ test('Portuguese home has the complete V2 structure', async ({ page }) => {
   await expect(page.locator('.project')).toHaveCount(6);
   await expect(page.locator('.project-featured')).toHaveCount(6);
   await expect(page.locator('.project-featured').first().locator('img')).toHaveCount(3);
-  await expect(page.locator('.projects-intro')).toContainText('Projetos e campanhas.');
+  await expect(page.locator('.projects-intro')).toContainText('Cases');
+  await expect(page.locator('.projects-intro')).toContainText('Projetos e campanhas');
   await expect(page.locator('.project').first().locator('.project-featured img').nth(1)).toHaveAttribute('src', /dia-do-trabalhador/);
   await expect(page.locator('.project').first().locator('.project-featured img').nth(2)).toHaveAttribute('src', /esmeri/);
   await expect(page.locator('.project-expand-cta').first()).toBeVisible();
@@ -19,6 +20,10 @@ test('Portuguese home has the complete V2 structure', async ({ page }) => {
   await expect(page.locator('body')).not.toContainText('Portfólio light para processos seletivos');
   await expect(page.locator('body')).not.toContainText('Cases selecionados');
   await expect(page.locator('.blog-link')).toHaveAttribute('href', '/blog/');
+  await expect(page.locator('.blog-link')).toHaveText('O que há de novo');
+  await expect(page.locator('.topbar-links a').first()).toHaveCSS('text-transform', 'uppercase');
+  await expect(page.locator('.locale-chip svg')).toHaveCount(1);
+  await expect(page.locator('.hero-kicker')).toHaveText('Manaus · Brasil · Desde 2019');
   await expect(page.locator('.topbar')).not.toContainText('Contato');
   await expect(page.locator('.topbar')).not.toContainText('Laboratório');
   await expect(page.locator('.hero-art img')).toHaveAttribute('src', '/assets/hero/foto-lucas-desktop.webp');
@@ -29,12 +34,17 @@ test('English home is complete and switchable', async ({ page }) => {
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await expect(page.locator('.project')).toHaveCount(6);
   await expect(page.getByText('Ver portfólio em português')).toBeVisible();
+  await expect(page.locator('.hero-kicker')).toHaveText('Manaus · Brazil · Since 2019');
 });
 
 test('theme persists and blog is localized', async ({ page }) => {
   await page.goto('/blog/');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('O que está acontecendo agora.');
   await expect(page.locator('.blog-post')).toHaveCount(3);
+  const firstUpdate = page.locator('.blog-post-details').first();
+  await firstUpdate.locator('summary').click();
+  await expect(firstUpdate.locator('.blog-article-copy p')).toHaveCount(2);
+  await expect(firstUpdate.locator('.blog-article-images img')).toHaveCount(2);
   await page.getByRole('button', { name: 'Alternar tema' }).click();
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
   await page.goto('/en/blog/');
@@ -51,6 +61,7 @@ test('contact opens a centered accessible modal', async ({ page }) => {
   const viewport = page.viewportSize();
   expect(dialogBox && viewport && Math.abs(dialogBox.x + dialogBox.width / 2 - viewport.width / 2)).toBeLessThan(8);
   await expect(contactDialog.locator('svg')).toHaveCount(4);
+  await expect(contactDialog.locator('.modal-links a').nth(2).locator('svg')).toHaveAttribute('fill', 'currentColor');
   await page.keyboard.press('Escape');
   await expect(contactDialog).toBeHidden();
   await expect(contactTrigger).toBeFocused();
@@ -66,6 +77,8 @@ test('about and prepared ambient player expose the revised assets', async ({ pag
   const player = page.locator('[data-audio-player]');
   await expect(player).toBeVisible();
   await expect(player).toHaveAttribute('data-initial-volume', '0.18');
+  await expect(player).toContainText('Playlist do Lucas');
+  await expect(player).not.toContainText('preparação');
   await expect(player.locator('iframe')).toHaveCount(0);
   await expect(player.getByRole('button', { name: 'Reproduzir' })).toBeDisabled();
   await expect(player.getByRole('link', { name: 'Abrir playlist no Spotify' })).toHaveAttribute('href', /2OfZT7teUPaGjHWRgGqMta/);
@@ -81,7 +94,9 @@ test('expanded projects reveal a complete five-row gallery', async ({ page }) =>
   const first = page.locator('.project-more').first();
   await first.locator('summary').click();
   await expect(first.locator('.project-gallery img')).toHaveCount(19);
-  await expect(first.locator('.project-gallery-more')).toContainText('E diversos outros cards');
+  await expect(first.locator('.project-gallery-more')).toContainText('Diversos outros cards');
+  await expect(first.locator('.project-gallery-more')).not.toContainText('E diversos');
+  await expect(first.locator('.project-gallery-more')).toContainText('+');
   await expect(first.locator('.project-gallery > *')).toHaveCount(20);
 });
 
