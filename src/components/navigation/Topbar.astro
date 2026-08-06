@@ -10,6 +10,7 @@ const other = locale === 'pt' ? 'en' : 'pt';
 const onBlog = Astro.url.pathname.includes('/blog');
 const homeLink = localeMeta[locale].home;
 const localeFlag = sitePath(locale === 'pt' ? '/assets/icons/idioma-estados-unidos.svg' : '/assets/icons/idioma-brasil.svg');
+const compactMenuIcon = sitePath('/assets/icons/menu-principal.svg');
 ---
 <header class="topbar-wrap">
   <nav class="topbar" aria-label={locale === 'pt' ? 'Navegação principal' : 'Primary navigation'}>
@@ -20,7 +21,7 @@ const localeFlag = sitePath(locale === 'pt' ? '/assets/icons/idioma-estados-unid
       <a class="blog-link" data-parallax href={localeMeta[locale].blog}>{t.blog}</a>
     </div>
     <div class="topbar-actions">
-      <CompactMenu client:load locale={locale} homeLink={homeLink} />
+      <CompactMenu client:load locale={locale} homeLink={homeLink} iconSrc={compactMenuIcon} />
       {siteConfig.linkedin && <a class="icon-button" data-parallax href={siteConfig.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>}
       <a class="locale-chip" data-parallax href={onBlog ? localeMeta[other].blog : localeMeta[other].home} aria-label={locale === 'pt' ? 'Ver em inglês' : 'Ver em português'} title={locale === 'pt' ? 'English' : 'Português'}><img src={localeFlag} alt="" aria-hidden="true" /></a>
       <ThemeControl client:load label={t.theme} />

@@ -149,6 +149,8 @@ test('compact menu exposes work and about on mobile', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/');
   const trigger = page.locator('[data-compact-menu-trigger]');
+  await expect(trigger.locator('img')).toHaveAttribute('src', '/assets/icons/menu-principal.svg');
+  await expect(trigger).not.toContainText('+');
   await expect(trigger).toHaveAttribute('aria-expanded', 'false');
   await trigger.click();
   await expect(trigger).toHaveAttribute('aria-expanded', 'true');
@@ -159,4 +161,18 @@ test('compact menu exposes work and about on mobile', async ({ page }) => {
   await page.keyboard.press('Escape');
   await expect(menu).toBeHidden();
   await expect(trigger).toBeFocused();
+});
+
+test('mobile hero keeps the portrait anchored and raises only the identity block', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/');
+
+  await expect(page.locator('.hero-art img')).toHaveCSS('transform', 'none');
+  await expect(page.locator('.hero-copy')).toHaveCSS('justify-content', 'flex-end');
+
+  const kicker = await page.locator('.hero-kicker').boundingBox();
+  const intro = await page.locator('.hero-intro').boundingBox();
+  expect(kicker).not.toBeNull();
+  expect(intro).not.toBeNull();
+  expect(kicker!.y).toBeLessThan(intro!.y - 150);
 });
