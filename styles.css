@@ -31,46 +31,6 @@ body {
   overflow-x: hidden;
 }
 
-.language-switcher {
-  display: flex;
-  margin-top: 14px;
-}
-
-.language-switcher button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  border: 0;
-  border-bottom: 1px solid currentColor;
-  padding: 4px 0;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.92);
-  font: inherit;
-  font-size: 0.86rem;
-  font-weight: 750;
-  letter-spacing: 0.01em;
-  cursor: pointer;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.34);
-  transition: color 160ms ease, gap 160ms ease;
-}
-
-.language-switcher button:hover {
-  gap: 12px;
-  color: #fff;
-}
-
-.language-switcher button:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 5px;
-}
-
-@media (max-width: 720px) {
-  .language-switcher {
-    justify-content: center;
-    margin-top: 10px;
-  }
-}
-
 body.modal-open {
   overflow: hidden;
 }
@@ -626,7 +586,7 @@ address {
     padding: clamp(70px, 16vw, 88px) clamp(22px, 5vw, 42px) calc(34px + env(safe-area-inset-bottom));
     background:
       linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, rgba(13, 13, 13, 0) 58%, rgba(13, 13, 13, 0.56) 100%),
-      url("assets/foto-lucas-mobile.png") center top / cover no-repeat,
+      url("assets/foto-lucas-mobile-v2-original.png") center top / cover no-repeat,
       var(--gold);
   }
 
@@ -647,7 +607,23 @@ address {
   }
 
   .hero-copy .role {
-    display: none;
+    position: absolute;
+    top: 29.1svh;
+    left: 52vw;
+    display: block;
+    margin: 0;
+    color: var(--paper);
+    font-size: 0;
+    line-height: 1;
+    text-shadow: none;
+    white-space: nowrap;
+  }
+
+  .hero-copy .role::after {
+    content: "\00a0Pleno";
+    font-family: Montserrat, Inter, Arial, sans-serif;
+    font-size: clamp(0.9rem, 4.4vw, 1.15rem);
+    font-weight: 800;
   }
 
   .hero-actions {
@@ -730,7 +706,7 @@ address {
     padding: clamp(70px, 16vw, 88px) 22px calc(26px + env(safe-area-inset-bottom));
     background:
       linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, rgba(13, 13, 13, 0) 58%, rgba(13, 13, 13, 0.56) 100%),
-      url("assets/foto-lucas-mobile.png") center top / cover no-repeat,
+      url("assets/foto-lucas-mobile-v2-original.png") center top / cover no-repeat,
       var(--gold);
   }
 

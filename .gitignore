@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.astro/
+playwright-report/
+test-results/
+.env
+.env.*
+!.env.example
+public/assets/gallery/*
+!public/assets/gallery/*.webp
+docs/processo-v2/screenshots/*.png
+public/assets/hero/*.webp
+docs/processo-v2/lighthouse-*.json

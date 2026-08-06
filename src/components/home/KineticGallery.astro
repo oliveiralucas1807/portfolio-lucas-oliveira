@@ -1,0 +1,26 @@
+---
+import { galleryItems } from '@/data/gallery';
+import { ui, type Locale } from '@/i18n/config';
+const { locale } = Astro.props as { locale: Locale };
+const t = ui[locale];
+const midpoint = Math.ceil(galleryItems.length / 2);
+const rows = [galleryItems.slice(0, midpoint), galleryItems.slice(midpoint)];
+---
+<section class="kinetic-section" aria-label={t.galleryTitle} data-reveal>
+  <div class="kinetic-shell">
+    <div class="kinetic-gallery">
+      {rows.map((row, rowIndex) => (
+        <div class:list={['marquee-row', rowIndex === 1 && 'reverse']}>
+          <div class="marquee-track">
+            {[...row, ...row].map((item, index) => (
+              <figure aria-hidden={index >= row.length ? 'true' : undefined}>
+                <img src={item.src} alt={index >= row.length ? '' : locale === 'pt' ? `${item.client}: ${item.alt}` : `${item.client} campaign artwork`} loading={rowIndex === 0 && index < 3 ? 'eager' : 'lazy'} />
+                <figcaption>{item.client}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
