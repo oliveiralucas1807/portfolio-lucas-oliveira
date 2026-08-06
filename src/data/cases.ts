@@ -62,11 +62,16 @@ const deliveriesEn: Record<string, string[]> = {
 const featuredIndexes: Record<string, number[]> = {
   coimbra: [0, 12, 16],
   'cultura-inglesa': [0, 6, 2],
-  'otica-murano': [0, 1, 11],
+  'otica-murano': [0, 13, 11],
+};
+
+const imageOrderIndexes: Record<string, number[]> = {
+  'otica-murano': [0, 13, 18, 3, 16, 5, 6, 7, 8, 9, 10, 11, 12, 1, 14, 15, 4, 17, 2, 19],
 };
 
 export const cases = source.cases.map((item: SourceCase, index) => {
-  const images = item.images.map((image) => ({ ...image, src: sitePath(`/${image.src.replace(/\.[^.]+$/, '.webp')}`) }));
+  const sourceImages = item.images.map((image) => ({ ...image, src: sitePath(`/${image.src.replace(/\.[^.]+$/, '.webp')}`) }));
+  const images = (imageOrderIndexes[item.id] ?? sourceImages.map((_, imageIndex) => imageIndex)).map((imageIndex) => sourceImages[imageIndex]);
   const selectedIndexes = featuredIndexes[item.id] ?? [0, 1, 2];
   return {
     ...item,

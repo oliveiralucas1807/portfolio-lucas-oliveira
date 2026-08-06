@@ -45,6 +45,12 @@ describe('case content', () => {
     expect(byId.coimbra.featured.map((image) => image.src).join(' ')).toMatch(/escalcao-campea.*dia-do-trabalhador.*esmeri/);
     expect(byId['cultura-inglesa'].featured.map((image) => image.src).join(' ')).toMatch(/st-patrick.*pascoa.*dica-de-ingles/);
     expect(byId['otica-murano'].featured.map((image) => image.src).join(' ')).toMatch(/mes-da-maes.*diabo-veste-prato.*dia-dos-namorados/);
+    expect(byId['otica-murano'].images.slice(1, 5).map((image) => image.campaign)).toEqual([
+      '04 Dia do Consumidor',
+      '02 CUIDADOS',
+      '09 Diabo veste prato',
+      '06 ABRIL MARROMM',
+    ]);
   });
 });
 
