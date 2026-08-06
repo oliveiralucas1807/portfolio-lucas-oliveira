@@ -44,7 +44,7 @@ test('theme persists and blog is localized', async ({ page }) => {
   await page.goto('/blog/');
   await expect(page.locator('.locale-chip img')).toHaveAttribute('src', '/assets/icons/idioma-estados-unidos.svg');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('O que está acontecendo agora.');
-  await expect(page.locator('.blog-post')).toHaveCount(3);
+  await expect(page.locator('.blog-post')).toHaveCount(8);
   const firstUpdate = page.locator('.blog-post-details').first();
   await firstUpdate.locator('summary').click();
   await expect(firstUpdate.locator('.blog-article-copy p')).toHaveCount(2);
