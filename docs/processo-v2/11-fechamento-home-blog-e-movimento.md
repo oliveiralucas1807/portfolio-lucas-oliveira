@@ -14,9 +14,11 @@
 
 ## Decisão sobre áudio
 
-O embed do Spotify pode reproduzir somente uma prévia curta em determinadas condições. A alternativa Web Playback SDK exige autenticação, conta Premium e ainda está sujeita às regras de autoplay. A documentação do Spotify também restringe integrações comerciais de streaming e sincronização de áudio com conteúdo visual.
+O primeiro lançamento usou um player local vazio porque o embed do Spotify pode reproduzir somente uma prévia curta em determinadas condições. Como esse estado deixava controles desativados e não entregava música, a decisão foi revista após a publicação.
 
-Por isso, a V2 usa um player local preparado para faixas que Lucas tenha autorização para hospedar. O volume inicial é `0.18`, equivalente a uma presença baixa. O componente possui reproduzir, pausar, avançar, volume, fechamento e link externo para a playlist, mas não simula reprodução enquanto a lista estiver vazia.
+A V2 passa a usar o embed oficial da playlist `2OfZT7teUPaGjHWRgGqMta`, com a permissão `encrypted-media` exigida para reprodução completa nos navegadores compatíveis. O painel continua flutuante, fechável e persistente durante a sessão, além de manter um link externo para o Spotify. Não há autoplay ou volume inicial artificial: reprodução, disponibilidade da faixa e volume são controlados pelo Spotify e pelo navegador.
+
+O Web Playback SDK continua descartado porque exige autenticação, uma conta Premium e uma infraestrutura de autorização desproporcional ao portfólio. Nenhuma credencial do Spotify é armazenada no site.
 
 Referências oficiais:
 

@@ -32,25 +32,25 @@
 - Consumes: `spotifyUrl: string`, `locale: 'pt' | 'en'`.
 - Produces: painel `[data-audio-player]` com `iframe[title]`, link externo e botão de fechamento.
 
-- [ ] **Step 1: Escrever o teste de interface que exige o embed oficial**
+- [x] **Step 1: Escrever o teste de interface que exige o embed oficial**
 
 Atualizar o teste do player para exigir um iframe com `src` contendo `/embed/playlist/2OfZT7teUPaGjHWRgGqMta`, `allow` contendo `encrypted-media`, ausência do atributo `autoplay` e funcionamento do fechamento.
 
-- [ ] **Step 2: Executar o teste e confirmar a falha correta**
+- [x] **Step 2: Executar o teste e confirmar a falha correta**
 
 Run: `npx playwright test tests/e2e/portfolio.spec.ts --grep "official Spotify embed" --project=desktop-chromium`
 
 Expected: FAIL porque o componente atual não renderiza iframe.
 
-- [ ] **Step 3: Implementar o mínimo necessário**
+- [x] **Step 3: Implementar o mínimo necessário**
 
 Remover `tracks`, `<audio>` e controles locais. Derivar a URL oficial de embed a partir da configuração, renderizar o iframe com permissões completas, conservar o link externo e o fechamento via `sessionStorage`.
 
-- [ ] **Step 4: Ajustar o CSS responsivo e a documentação do processo**
+- [x] **Step 4: Ajustar o CSS responsivo e a documentação do processo**
 
 Usar painel de uma coluna, iframe com altura compacta, ações abaixo do embed e largura segura em mobile. Registrar que o Spotify controla disponibilidade de reprodução integral e volume.
 
-- [ ] **Step 5: Verificar o ciclo verde e a regressão completa**
+- [x] **Step 5: Verificar o ciclo verde e a regressão completa**
 
 Run: `npx playwright test tests/e2e/portfolio.spec.ts --grep "official Spotify embed" --project=desktop-chromium`
 

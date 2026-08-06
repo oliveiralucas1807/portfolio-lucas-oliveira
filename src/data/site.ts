@@ -11,6 +11,5 @@ export const siteConfig = {
     pdfEn: 'https://oliveiralucas1807.github.io/curriculo/curriculo-lucas-oliveira-en.pdf',
   },
   spotifyPlaylist: 'https://open.spotify.com/playlist/2OfZT7teUPaGjHWRgGqMta?si=d1f7ccffe77a435e',
-  audioTracks: [] as readonly { title: string; src: string }[],
   deepCasesUrl: '',
 } as const;
