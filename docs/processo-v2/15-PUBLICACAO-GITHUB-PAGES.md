@@ -35,3 +35,7 @@ O workflow `.github/workflows/deploy-pages.yml` executa:
 ## Retorno para a V1
 
 Em caso de regressão, a versão anterior pode ser recuperada a partir da tag `portfolio-v1-final-2026-08-06` ou da branch `legacy-v1-2026-08-06`.
+
+## Incidente de fila em 2026-08-06
+
+Na publicação do embed oficial do Spotify, o build e o upload do artefato passaram, mas o serviço do GitHub Pages permaneceu em `deployment_queued` até o timeout de dez minutos. Reexecutar somente o job reutilizou o deployment cancelado e falhou imediatamente. A recuperação correta foi gerar um novo commit documental, produzindo um novo `pages_build_version` sem alterar o código validado do site.
