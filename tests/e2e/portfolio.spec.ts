@@ -76,7 +76,7 @@ test('contact opens a centered accessible modal', async ({ page }) => {
 
 });
 
-test('about and prepared ambient player expose the revised assets', async ({ page }) => {
+test('about and official Spotify embed expose the revised assets', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('.about-portrait img')).toBeVisible();
   await expect(page.locator('.skill-chip')).toHaveCount(6);
@@ -85,11 +85,12 @@ test('about and prepared ambient player expose the revised assets', async ({ pag
   const player = page.locator('[data-audio-player]');
   await expect(player).toHaveAttribute('data-ready', 'true');
   await expect(player).toBeVisible();
-  await expect(player).toHaveAttribute('data-initial-volume', '0.18');
   await expect(player).toContainText('Playlist do Lucas');
   await expect(player).not.toContainText('preparação');
-  await expect(player.locator('iframe')).toHaveCount(0);
-  await expect(player.getByRole('button', { name: 'Reproduzir' })).toBeDisabled();
+  const embed = player.locator('iframe[title="Playlist do Lucas no Spotify"]');
+  await expect(embed).toHaveAttribute('src', /\/embed\/playlist\/2OfZT7teUPaGjHWRgGqMta/);
+  await expect(embed).toHaveAttribute('allow', /encrypted-media/);
+  await expect(embed).not.toHaveAttribute('autoplay', /.*/);
   await expect(player.getByRole('link', { name: 'Abrir playlist no Spotify' })).toHaveAttribute('href', /2OfZT7teUPaGjHWRgGqMta/);
   await expect(player.getByRole('button', { name: 'Fechar player' })).toBeVisible();
   await player.getByRole('button', { name: 'Fechar player' }).click();
