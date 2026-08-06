@@ -130,3 +130,33 @@ test('mobile layout does not overflow horizontally', async ({ page }) => {
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth);
   expect(overflow).toBe(false);
 });
+
+test('case artwork opens in an accessible navigable lightbox', async ({ page }) => {
+  await page.goto('/');
+  const trigger = page.locator('[data-lightbox-id]').first();
+  await trigger.click();
+  const dialog = page.getByRole('dialog', { name: 'Visualizador de artes' });
+  await expect(dialog).toBeVisible();
+  await expect(dialog.locator('[data-lightbox-counter]')).toContainText('1 /');
+  await page.keyboard.press('ArrowRight');
+  await expect(dialog.locator('[data-lightbox-counter]')).toContainText('2 /');
+  await page.keyboard.press('Escape');
+  await expect(dialog).toBeHidden();
+  await expect(trigger).toBeFocused();
+});
+
+test('compact menu exposes work and about on mobile', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/');
+  const trigger = page.locator('[data-compact-menu-trigger]');
+  await expect(trigger).toHaveAttribute('aria-expanded', 'false');
+  await trigger.click();
+  await expect(trigger).toHaveAttribute('aria-expanded', 'true');
+  const menu = page.locator('[data-compact-menu]');
+  await expect(menu).toBeVisible();
+  await expect(menu).toContainText('TRABALHOS');
+  await expect(menu).toContainText('SOBRE');
+  await page.keyboard.press('Escape');
+  await expect(menu).toBeHidden();
+  await expect(trigger).toBeFocused();
+});
