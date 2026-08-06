@@ -2,12 +2,13 @@
 import ThemeControl from '@/components/islands/ThemeControl';
 import { localeMeta, ui, type Locale } from '@/i18n/config';
 import { siteConfig } from '@/data/site';
+import { sitePath } from '@/utils/paths';
 const { locale } = Astro.props as { locale: Locale };
 const t = ui[locale];
 const other = locale === 'pt' ? 'en' : 'pt';
 const onBlog = Astro.url.pathname.includes('/blog');
 const homeLink = localeMeta[locale].home;
-const localeFlag = locale === 'pt' ? '/assets/icons/idioma-estados-unidos.svg' : '/assets/icons/idioma-brasil.svg';
+const localeFlag = sitePath(locale === 'pt' ? '/assets/icons/idioma-estados-unidos.svg' : '/assets/icons/idioma-brasil.svg');
 ---
 <header class="topbar-wrap">
   <nav class="topbar" aria-label={locale === 'pt' ? 'Navegação principal' : 'Primary navigation'}>

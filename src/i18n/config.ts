@@ -1,8 +1,10 @@
+import { sitePath } from '@/utils/paths';
+
 export type Locale = 'pt' | 'en';
 
 export const localeMeta = {
-  pt: { lang: 'pt-BR', home: '/', blog: '/blog/' },
-  en: { lang: 'en', home: '/en/', blog: '/en/blog/' },
+  pt: { lang: 'pt-BR', home: sitePath('/'), blog: sitePath('/blog/') },
+  en: { lang: 'en', home: sitePath('/en/'), blog: sitePath('/en/blog/') },
 } as const;
 
 export const ui = {

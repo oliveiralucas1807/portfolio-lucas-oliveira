@@ -3,6 +3,7 @@ import { ui, type Locale } from '@/i18n/config';
 import { siteConfig } from '@/data/site';
 import Icon from '@/components/ui/Icon.astro';
 import AmbientAudioPlayer from '@/components/islands/AmbientAudioPlayer';
+import { sitePath } from '@/utils/paths';
 const { locale } = Astro.props as { locale: Locale };
 const t = ui[locale];
 const skills = [
@@ -13,7 +14,7 @@ const skills = [
 <section class="about section-shell" id="sobre" data-reveal>
   <div class="about-heading-line"><p class="eyebrow">{t.aboutEyebrow}</p><span></span></div>
   <div class="about-layout">
-    <figure class="about-portrait"><img src="/assets/about/lucas-oliveira-retrato.webp" alt={locale === 'pt' ? 'Retrato de Lucas Oliveira' : 'Portrait of Lucas Oliveira'} loading="lazy" /></figure>
+    <figure class="about-portrait"><img src={sitePath('/assets/about/lucas-oliveira-retrato.webp')} alt={locale === 'pt' ? 'Retrato de Lucas Oliveira' : 'Portrait of Lucas Oliveira'} loading="lazy" /></figure>
     <div class="about-content"><h2>{t.aboutTitle}</h2><p class="about-lead">{t.aboutText}</p><div class="experience"><h3>{t.experienceTitle}</h3><p>{t.experienceText}</p></div>
       <div class="skill-chips">{skills.map(([icon, label]) => <span class="skill-chip" data-parallax><Icon name={icon} />{label}</span>)}</div>
     </div>

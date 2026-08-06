@@ -1,5 +1,6 @@
 import source from '../../data/cases.json';
 import type { Locale } from '@/i18n/config';
+import { sitePath } from '@/utils/paths';
 
 type Localized = Record<Locale, string>;
 type SourceCase = (typeof source.cases)[number];
@@ -65,7 +66,7 @@ const featuredIndexes: Record<string, number[]> = {
 };
 
 export const cases = source.cases.map((item: SourceCase, index) => {
-  const images = item.images.map((image) => ({ ...image, src: `/${image.src.replace(/\.[^.]+$/, '.webp')}` }));
+  const images = item.images.map((image) => ({ ...image, src: sitePath(`/${image.src.replace(/\.[^.]+$/, '.webp')}`) }));
   const selectedIndexes = featuredIndexes[item.id] ?? [0, 1, 2];
   return {
     ...item,

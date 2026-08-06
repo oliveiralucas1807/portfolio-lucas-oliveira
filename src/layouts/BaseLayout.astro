@@ -5,12 +5,13 @@ import Footer from '@/components/navigation/Footer.astro';
 import CustomCursor from '@/components/islands/CustomCursor';
 import MotionLayer from '@/components/islands/MotionLayer';
 import { localeMeta, ui, type Locale } from '@/i18n/config';
+import { sitePath } from '@/utils/paths';
 const { locale, title, description } = Astro.props as { locale: Locale; title: string; description: string };
-const canonicalBase = 'https://oliveiralucas1807.github.io/portfolio-lucas-oliveira';
 const route = Astro.url.pathname;
 const onBlog = route.includes('/blog');
-const ptPath = onBlog ? '/blog/' : '/';
-const enPath = onBlog ? '/en/blog/' : '/en/';
+const ptPath = onBlog ? localeMeta.pt.blog : localeMeta.pt.home;
+const enPath = onBlog ? localeMeta.en.blog : localeMeta.en.home;
+const siteOrigin = Astro.site ?? new URL('https://oliveiralucas1807.github.io');
 ---
 <!doctype html>
 <html lang={localeMeta[locale].lang} data-theme="light">
@@ -18,12 +19,12 @@ const enPath = onBlog ? '/en/blog/' : '/en/';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
-    <meta name="robots" content="noindex,nofollow" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="canonical" href={`${canonicalBase}${locale === 'pt' ? ptPath : enPath}`} />
-    <link rel="alternate" hreflang="pt-BR" href={`${canonicalBase}${ptPath}`} />
-    <link rel="alternate" hreflang="en" href={`${canonicalBase}${enPath}`} />
-    <link rel="alternate" hreflang="x-default" href={`${canonicalBase}${ptPath}`} />
+    <meta name="robots" content={import.meta.env.PUBLIC_SITE_STAGE === 'production' ? 'index,follow' : 'noindex,nofollow'} />
+    <link rel="icon" href={sitePath('/favicon.svg')} type="image/svg+xml" />
+    <link rel="canonical" href={new URL(locale === 'pt' ? ptPath : enPath, siteOrigin)} />
+    <link rel="alternate" hreflang="pt-BR" href={new URL(ptPath, siteOrigin)} />
+    <link rel="alternate" hreflang="en" href={new URL(enPath, siteOrigin)} />
+    <link rel="alternate" hreflang="x-default" href={new URL(ptPath, siteOrigin)} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />

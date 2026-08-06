@@ -1,9 +1,10 @@
 import { cases } from './cases';
+import { sitePath } from '@/utils/paths';
 
 const caseItems = cases.flatMap((item) => item.images.slice(0, 2).map((image, index) => ({
   id: `${item.id}-${index + 1}`,
   client: item.client,
-  src: `/assets/gallery-cases/${item.id}/${image.src.split('/').at(-1)}`,
+  src: sitePath(`/assets/gallery-cases/${item.id}/${image.src.split('/').at(-1)}`),
   alt: image.alt,
 })));
 
@@ -24,4 +25,4 @@ const externalItems = [
   { id: 'vitali-prancheta', client: 'Restaurante Vitali', src: '/assets/gallery/vitali-prancheta.webp', alt: 'Peça gastronômica do Restaurante Vitali' },
 ];
 
-export const galleryItems = [...caseItems, ...externalItems];
+export const galleryItems = [...caseItems, ...externalItems.map((item) => ({ ...item, src: sitePath(item.src) }))];

@@ -1,4 +1,5 @@
 import type { Locale } from '@/i18n/config';
+import { sitePath } from '@/utils/paths';
 
 type Localized = Record<Locale, string>;
 
@@ -13,7 +14,7 @@ export type BlogPost = {
   status: 'published' | 'preparing';
 };
 
-export const blogPosts: BlogPost[] = [
+const posts: BlogPost[] = [
   {
     slug: 'portfolio-v2-em-movimento', date: '05 AGO 2026', status: 'published',
     category: { pt: 'Desenvolvimento', en: 'Development' },
@@ -57,3 +58,8 @@ export const blogPosts: BlogPost[] = [
     ],
   },
 ];
+
+export const blogPosts = posts.map((post) => ({
+  ...post,
+  images: post.images.map((image) => ({ ...image, src: sitePath(image.src) })),
+}));

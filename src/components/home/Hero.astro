@@ -1,13 +1,14 @@
 ---
 import { localeMeta, ui, type Locale } from '@/i18n/config';
 import { siteConfig } from '@/data/site';
+import { sitePath } from '@/utils/paths';
 const { locale } = Astro.props as { locale: Locale };
 const t = ui[locale];
 ---
 <section class="hero" aria-labelledby="hero-title">
   <picture class="hero-art">
-    <source media="(max-width: 700px)" srcset="/assets/hero/foto-lucas-mobile-sem-texto.webp" type="image/webp" />
-    <img src="/assets/hero/foto-lucas-desktop.webp" alt="Lucas Oliveira, Designer Gráfico Pleno" fetchpriority="high" />
+    <source media="(max-width: 700px)" srcset={sitePath('/assets/hero/foto-lucas-mobile-sem-texto.webp')} type="image/webp" />
+    <img src={sitePath('/assets/hero/foto-lucas-desktop.webp')} alt="Lucas Oliveira, Designer Gráfico Pleno" fetchpriority="high" />
   </picture>
   <div class="hero-overlay"></div>
   <div class="hero-copy">
