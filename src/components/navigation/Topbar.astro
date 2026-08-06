@@ -15,7 +15,7 @@ const homeLink = localeMeta[locale].home;
     <div class="topbar-links">
       <a data-parallax href={`${homeLink}#trabalhos`}>{t.work}</a>
       <a data-parallax href={`${homeLink}#sobre`}>{t.about}</a>
-      <a class="blog-link" href={localeMeta[locale].blog}>{t.blog}</a>
+      <a class="blog-link" data-parallax href={localeMeta[locale].blog}>{t.blog}</a>
     </div>
     <div class="topbar-actions">
       {siteConfig.linkedin && <a class="icon-button" data-parallax href={siteConfig.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>}

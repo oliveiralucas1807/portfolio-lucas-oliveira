@@ -17,10 +17,12 @@ test('Portuguese home has the complete V2 structure', async ({ page }) => {
   await expect(page.locator('.project').first().locator('.project-featured img').nth(2)).toHaveAttribute('src', /esmeri/);
   await expect(page.locator('.project-expand-cta').first()).toBeVisible();
   await expect(page.locator('.future-card')).toContainText('Mais cases em breve');
+  await expect(page.locator('.future-card')).not.toContainText('A estrutura está pronta');
   await expect(page.locator('body')).not.toContainText('Portfólio light para processos seletivos');
   await expect(page.locator('body')).not.toContainText('Cases selecionados');
   await expect(page.locator('.blog-link')).toHaveAttribute('href', '/blog/');
   await expect(page.locator('.blog-link')).toHaveText('O que há de novo');
+  await expect(page.locator('.blog-link')).toHaveAttribute('data-parallax', '');
   await expect(page.locator('.topbar-links a').first()).toHaveCSS('text-transform', 'uppercase');
   await expect(page.locator('.locale-chip svg')).toHaveCount(1);
   await expect(page.locator('.hero-kicker')).toHaveText('Manaus · Brasil · Desde 2019');
@@ -54,6 +56,7 @@ test('theme persists and blog is localized', async ({ page }) => {
 test('contact opens a centered accessible modal', async ({ page }) => {
   await page.goto('/');
   const contactTrigger = page.getByRole('button', { name: 'Entrar em contato' });
+  await expect(page.locator('.portfolio-modal')).toHaveAttribute('data-ready', 'true');
   await contactTrigger.click();
   const contactDialog = page.getByRole('dialog', { name: 'Opções de contato' });
   await expect(contactDialog).toBeVisible();
@@ -61,6 +64,8 @@ test('contact opens a centered accessible modal', async ({ page }) => {
   const viewport = page.viewportSize();
   expect(dialogBox && viewport && Math.abs(dialogBox.x + dialogBox.width / 2 - viewport.width / 2)).toBeLessThan(8);
   await expect(contactDialog.locator('svg')).toHaveCount(4);
+  await expect(contactDialog.locator('[data-icon-source="lucas-email"]')).toHaveCount(1);
+  await expect(contactDialog.locator('[data-icon-source="lucas-whatsapp"]')).toHaveCount(1);
   await expect(contactDialog.locator('.modal-links a').nth(2).locator('svg')).toHaveAttribute('fill', 'currentColor');
   await page.keyboard.press('Escape');
   await expect(contactDialog).toBeHidden();
@@ -75,6 +80,7 @@ test('about and prepared ambient player expose the revised assets', async ({ pag
   await expect(page.locator('.skill-chip .ui-icon')).toHaveCount(6);
   await expect(page.locator('.about-portrait img')).toHaveAttribute('src', '/assets/about/lucas-oliveira-retrato.webp');
   const player = page.locator('[data-audio-player]');
+  await expect(player).toHaveAttribute('data-ready', 'true');
   await expect(player).toBeVisible();
   await expect(player).toHaveAttribute('data-initial-volume', '0.18');
   await expect(player).toContainText('Playlist do Lucas');
@@ -102,6 +108,11 @@ test('expanded projects reveal a complete five-row gallery', async ({ page }) =>
 
 test('scroll motion reveals content and respects reduced motion', async ({ page }) => {
   await page.goto('/');
+  const blogLink = page.locator('.blog-link');
+  const blogBox = await blogLink.boundingBox();
+  if (!blogBox) throw new Error('Blog link has no visible bounding box');
+  await page.mouse.move(blogBox.x + blogBox.width - 2, blogBox.y + 2);
+  await expect.poll(() => blogLink.evaluate((element) => element.style.getPropertyValue('--motion-x'))).not.toBe('0px');
   const firstProject = page.locator('.project').first();
   await firstProject.scrollIntoViewIfNeeded();
   await expect(firstProject).toHaveClass(/is-visible/);

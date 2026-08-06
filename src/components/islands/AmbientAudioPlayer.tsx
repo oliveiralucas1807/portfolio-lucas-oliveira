@@ -7,10 +7,12 @@ export default function AmbientAudioPlayer({ locale, tracks, spotifyUrl }: { loc
   const [index, setIndex] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const [ready, setReady] = useState(false);
   const available = tracks.length > 0;
 
   useEffect(() => {
     setHidden(sessionStorage.getItem('portfolio-audio-hidden') === 'true');
+    setReady(true);
     if (!audio.current || !available) return;
     audio.current.volume = 0.18;
     audio.current.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
@@ -40,7 +42,7 @@ export default function AmbientAudioPlayer({ locale, tracks, spotifyUrl }: { loc
 
   if (hidden) return null;
 
-  return <aside className="ambient-player" data-audio-player data-initial-volume="0.18" aria-label={locale === 'pt' ? 'Playlist do Lucas' : "Lucas's playlist"}>
+  return <aside className="ambient-player" data-audio-player data-ready={ready ? 'true' : 'false'} data-initial-volume="0.18" aria-label={locale === 'pt' ? 'Playlist do Lucas' : "Lucas's playlist"}>
     {available && <audio ref={audio} src={tracks[index].src} onEnded={next} />}
     <div><small>{locale === 'pt' ? 'Recomendação musical' : 'Music recommendation'}</small><strong>{available ? tracks[index].title : locale === 'pt' ? 'Playlist do Lucas' : "Lucas's playlist"}</strong><span>{!available && (locale === 'pt' ? 'Ouça a seleção completa no Spotify.' : 'Listen to the full selection on Spotify.')}</span></div>
     <div className="ambient-controls">
