@@ -1,5 +1,6 @@
 ---
 import ThemeControl from '@/components/islands/ThemeControl';
+import CompactMenu from '@/components/islands/CompactMenu';
 import { localeMeta, ui, type Locale } from '@/i18n/config';
 import { siteConfig } from '@/data/site';
 import { sitePath } from '@/utils/paths';
@@ -19,6 +20,7 @@ const localeFlag = sitePath(locale === 'pt' ? '/assets/icons/idioma-estados-unid
       <a class="blog-link" data-parallax href={localeMeta[locale].blog}>{t.blog}</a>
     </div>
     <div class="topbar-actions">
+      <CompactMenu client:load locale={locale} homeLink={homeLink} />
       {siteConfig.linkedin && <a class="icon-button" data-parallax href={siteConfig.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>}
       <a class="locale-chip" data-parallax href={onBlog ? localeMeta[other].blog : localeMeta[other].home} aria-label={locale === 'pt' ? 'Ver em inglês' : 'Ver em português'} title={locale === 'pt' ? 'English' : 'Português'}><img src={localeFlag} alt="" aria-hidden="true" /></a>
       <ThemeControl client:load label={t.theme} />

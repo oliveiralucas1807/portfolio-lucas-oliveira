@@ -5,7 +5,10 @@ import KineticGallery from '@/components/home/KineticGallery.astro';
 import Projects from '@/components/home/Projects.astro';
 import AboutContact from '@/components/home/AboutContact.astro';
 import ModalLayer from '@/components/home/ModalLayer.astro';
+import CaseLightbox from '@/components/islands/CaseLightbox';
+import { cases } from '@/data/cases';
+const lightboxImages = cases.flatMap((item) => item.images.map((image, index) => ({ id: `${item.id}:${index}`, group: item.id, src: image.src, alt: `${item.client} campaign artwork`, client: item.client })));
 ---
 <BaseLayout locale="en" title="Lucas Oliveira | Graphic Designer" description="Graphic design, digital campaigns and AI applied to design.">
-  <Hero locale="en" /><KineticGallery locale="en" /><Projects locale="en" /><AboutContact locale="en" /><ModalLayer locale="en" />
+  <Hero locale="en" /><KineticGallery locale="en" /><Projects locale="en" /><AboutContact locale="en" /><ModalLayer locale="en" /><CaseLightbox client:load locale="en" images={lightboxImages} />
 </BaseLayout>
