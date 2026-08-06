@@ -9,7 +9,7 @@ const { locale } = Astro.props as { locale: Locale };
   <p>{locale === 'pt' ? 'Projetos em andamento, decisões de processo e experimentos que estão transformando meu jeito de criar.' : 'Current projects, process decisions and experiments shaping how I create.'}</p>
 </section>
 <section class="blog-list section-shell" aria-label={locale === 'pt' ? 'Publicações recentes' : 'Recent posts'}>
-  {blogPosts.map((post, index) => <article class:list={['blog-post', { 'is-preparing': post.status === 'preparing' }]} data-reveal>
+  {blogPosts.map((post, index) => <article class="blog-post" data-reveal>
     <div class="blog-post-meta"><span>{String(index + 1).padStart(2, '0')}</span><span>{post.category[locale]}</span><span>{post.date}</span></div>
     <h2>{post.title[locale]}</h2>
     <p>{post.excerpt[locale]}</p>

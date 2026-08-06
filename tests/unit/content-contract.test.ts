@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { cases } from '@/data/cases';
 import { ui } from '@/i18n/config';
+import { blogPosts } from '@/data/blog';
 
 describe('case content', () => {
   it('preserves six bilingual projects', () => {
@@ -44,5 +45,14 @@ describe('case content', () => {
     expect(byId.coimbra.featured.map((image) => image.src).join(' ')).toMatch(/escalcao-campea.*dia-do-trabalhador.*esmeri/);
     expect(byId['cultura-inglesa'].featured.map((image) => image.src).join(' ')).toMatch(/st-patrick.*pascoa.*dica-de-ingles/);
     expect(byId['otica-murano'].featured.map((image) => image.src).join(' ')).toMatch(/mes-da-maes.*diabo-veste-prato.*dia-dos-namorados/);
+  });
+});
+
+describe('editorial timeline', () => {
+  it('uses sourced milestones instead of provisional posts', () => {
+    expect(blogPosts.length).toBeGreaterThanOrEqual(6);
+    expect(blogPosts.every((post) => post.status === 'published')).toBe(true);
+    expect(blogPosts.every((post) => post.sourceRef.length > 0)).toBe(true);
+    expect(JSON.stringify(blogPosts)).not.toContain('EM BREVE');
   });
 });
