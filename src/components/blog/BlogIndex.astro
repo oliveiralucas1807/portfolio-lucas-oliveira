@@ -1,15 +1,31 @@
 ---
 import { blogPosts } from '@/data/blog';
 import { localeMeta, type Locale } from '@/i18n/config';
+import CaseLightbox from '@/components/islands/CaseLightbox';
 const { locale } = Astro.props as { locale: Locale };
+const posts = [...blogPosts].sort((a, b) => b.dateISO.localeCompare(a.dateISO));
+const topicLabels = {
+  portfolio: { pt: 'Portfólio', en: 'Portfolio' },
+  'creative-workbench': { pt: 'Bancada de criação', en: 'Creative workbench' },
+  'applied-ai': { pt: 'IA aplicada', en: 'Applied AI' },
+  research: { pt: 'Pesquisa', en: 'Research' },
+} as const;
+const topicLinks = Object.entries(topicLabels).flatMap(([topic, label]) => {
+  const post = posts.find((item) => item.topics.includes(topic as keyof typeof topicLabels));
+  return post ? [{ label: label[locale], slug: post.slug }] : [];
+});
+const lightboxImages = posts.flatMap((post) => post.images.map((image, index) => ({ id: `blog:${post.slug}:${index}`, group: `blog:${post.slug}`, src: image.src, alt: image.alt[locale], client: post.title[locale] })));
 ---
 <section class="blog-hero section-shell" data-reveal>
   <p class="eyebrow">{locale === 'pt' ? 'Atualizações' : 'Updates'}</p>
   <h1>{locale === 'pt' ? 'O que está acontecendo agora.' : 'What is happening now.'}</h1>
   <p>{locale === 'pt' ? 'Projetos em andamento, decisões de processo e experimentos que estão transformando meu jeito de criar.' : 'Current projects, process decisions and experiments shaping how I create.'}</p>
 </section>
+<nav class="blog-topic-nav section-shell" aria-label={locale === 'pt' ? 'Ir para a atualização mais recente por tema' : 'Go to the latest update by topic'}>
+  {topicLinks.map((item) => <a href={`#${item.slug}`}>{item.label}</a>)}
+</nav>
 <section class="blog-list section-shell" aria-label={locale === 'pt' ? 'Publicações recentes' : 'Recent posts'}>
-  {blogPosts.map((post, index) => <article class="blog-post" data-reveal>
+  {posts.map((post, index) => <article id={post.slug} class="blog-post" data-reveal>
     <div class="blog-post-meta"><span>{String(index + 1).padStart(2, '0')}</span><span>{post.category[locale]}</span><span>{post.date}</span></div>
     <h2>{post.title[locale]}</h2>
     <p>{post.excerpt[locale]}</p>
@@ -17,9 +33,10 @@ const { locale } = Astro.props as { locale: Locale };
       <summary><span>{locale === 'pt' ? 'Ver mais detalhes' : 'View more details'}</span><b>＋</b></summary>
       <div class="blog-article">
         <div class="blog-article-copy">{post.body[locale].map((paragraph) => <p>{paragraph}</p>)}</div>
-        <div class="blog-article-images">{post.images.map((image) => <img src={image.src} alt={image.alt[locale]} loading="lazy" />)}</div>
+        {post.images.length > 0 && <div class="blog-article-images">{post.images.map((image, imageIndex) => <button type="button" data-lightbox-id={`blog:${post.slug}:${imageIndex}`} aria-label={`${locale === 'pt' ? 'Ampliar' : 'Enlarge'}: ${image.alt[locale]}`}><img src={image.src} alt={image.alt[locale]} loading="lazy" /></button>)}</div>}
       </div>
     </details>
   </article>)}
 </section>
+<CaseLightbox client:load locale={locale} images={lightboxImages} dialogLabel={locale === 'pt' ? 'Visualizador de imagens do blog' : 'Blog image viewer'} />
 <nav class="blog-return section-shell"><a href={localeMeta[locale].home}>← {locale === 'pt' ? 'Voltar ao portfólio' : 'Back to portfolio'}</a></nav>

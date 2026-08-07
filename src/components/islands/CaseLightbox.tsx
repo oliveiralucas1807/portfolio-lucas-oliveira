@@ -3,7 +3,7 @@ import type { Locale } from '@/i18n/config';
 
 export type LightboxImage = { id: string; group: string; src: string; alt: string; client: string };
 
-export default function CaseLightbox({ locale, images }: { locale: Locale; images: LightboxImage[] }) {
+export default function CaseLightbox({ locale, images, dialogLabel }: { locale: Locale; images: LightboxImage[]; dialogLabel?: string }) {
   const [activeId, setActiveId] = useState<string | null>(null);
   const opener = useRef<HTMLElement | null>(null);
   const closeButton = useRef<HTMLButtonElement | null>(null);
@@ -57,8 +57,8 @@ export default function CaseLightbox({ locale, images }: { locale: Locale; image
     };
   }, [activeId, index, group.length]);
 
-  if (!active) return null;
-  return <div className="case-lightbox" role="dialog" aria-modal="true" aria-label={locale === 'pt' ? 'Visualizador de artes' : 'Artwork viewer'} onMouseDown={(event) => { if (event.target === event.currentTarget) close(); }} onTouchStart={(event) => { touchStart.current = event.touches[0]?.clientX ?? null; }} onTouchEnd={(event) => { const end = event.changedTouches[0]?.clientX; if (touchStart.current == null || end == null) return; const distance = end - touchStart.current; if (Math.abs(distance) > 55) move(distance < 0 ? 1 : -1); touchStart.current = null; }}>
+  if (!active) return <span data-lightbox-ready hidden />;
+  return <div className="case-lightbox" role="dialog" aria-modal="true" aria-label={dialogLabel ?? (locale === 'pt' ? 'Visualizador de artes' : 'Artwork viewer')} onMouseDown={(event) => { if (event.target === event.currentTarget) close(); }} onTouchStart={(event) => { touchStart.current = event.touches[0]?.clientX ?? null; }} onTouchEnd={(event) => { const end = event.changedTouches[0]?.clientX; if (touchStart.current == null || end == null) return; const distance = end - touchStart.current; if (Math.abs(distance) > 55) move(distance < 0 ? 1 : -1); touchStart.current = null; }}>
     <header className="case-lightbox-bar"><div><strong>{active.client}</strong><span data-lightbox-counter>{index + 1} / {group.length}</span></div><button ref={closeButton} type="button" onClick={close} aria-label={locale === 'pt' ? 'Fechar visualizador' : 'Close viewer'}>×</button></header>
     <button className="case-lightbox-nav is-previous" type="button" onClick={() => move(-1)} aria-label={locale === 'pt' ? 'Arte anterior' : 'Previous artwork'}>‹</button>
     <figure><img src={active.src} alt={active.alt} /><figcaption>{active.alt}</figcaption></figure>
