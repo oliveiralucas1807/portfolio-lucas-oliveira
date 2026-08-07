@@ -56,3 +56,5 @@ Cada entrada publicada possui `sourceRef`. O blog não contém posts marcados co
 ## Ajuste final no Samsung S24 FE
 
 Na validação em aparelho físico Samsung S24 FE, o bloco de identidade ainda coincidia com o rosto no hero. Somente o chapéu, o nome e o cargo receberam mais 60 px de deslocamento visual, passando de `-132px` para `-192px`. A introdução, os botões e o acesso à versão em inglês mantiveram suas posições. O cargo `Designer Gráfico Pleno` também passou a branco no mobile para preservar contraste e hierarquia.
+
+Após a medição da versão publicada em viewport de 360 × 800, o respiro entre o final da topbar e o início do chapéu foi reduzido de aproximadamente 157 px para 90 px. Para isso, o deslocamento exclusivo do bloco de identidade passou a `-259px`, mantendo os demais elementos do hero intactos.
