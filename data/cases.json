@@ -139,6 +139,18 @@
           "alt": "Arte para 23 Escalção campeã",
           "campaign": "23 Escalção campeã",
           "modified": "2026-06-03"
+        },
+        {
+          "src": "assets/cases/coimbra/21-festival-do-marceneiro.jpg",
+          "alt": "Campanha Festival do Marceneiro da Coimbra",
+          "campaign": "Festival do Marceneiro",
+          "modified": "2026-02-28"
+        },
+        {
+          "src": "assets/cases/coimbra/22-campanha-bosch.jpg",
+          "alt": "Registro de cliente da campanha Bosch na Coimbra",
+          "campaign": "Campanha Bosch",
+          "modified": "2026-02-16"
         }
       ]
     },
@@ -279,6 +291,18 @@
           "alt": "Arte para 41 RESERVA",
           "campaign": "41 RESERVA",
           "modified": "2026-03-03"
+        },
+        {
+          "src": "assets/cases/tacolibre/21-yo-soy-taco-crispy.jpg",
+          "alt": "Apresentação do taco crispy do Taco Libre",
+          "campaign": "Yo soy Taco Crispy",
+          "modified": "2026-05-27"
+        },
+        {
+          "src": "assets/cases/tacolibre/22-passe-no-vestibular.jpg",
+          "alt": "Campanha de incentivo para o vestibular do Taco Libre",
+          "campaign": "Passe no vestibular",
+          "modified": "2026-02-05"
         }
       ]
     },
@@ -419,6 +443,18 @@
           "alt": "Arte para Dia dos namorados",
           "campaign": "Dia dos namorados",
           "modified": "2026-05-22"
+        },
+        {
+          "src": "assets/cases/natura/21-vem-ai-shopping-cidade-manoa.jpg",
+          "alt": "Anúncio de nova loja Natura no Shopping Cidade Manoa",
+          "campaign": "Nova loja Shopping Cidade Manoa",
+          "modified": "2025-12-20"
+        },
+        {
+          "src": "assets/cases/natura/22-dia-do-trabalhador-equipe.jpg",
+          "alt": "Homenagem da Natura para o Dia do Trabalhador",
+          "campaign": "Dia do Trabalhador",
+          "modified": "2026-04-30"
         }
       ]
     },
@@ -559,6 +595,18 @@
           "alt": "Arte para ADULTO QUE DEIXA PRA LÁ",
           "campaign": "ADULTO QUE DEIXA PRA LÁ",
           "modified": "2026-03-18"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/21-tres-series-para-aprender-ingles.jpg",
+          "alt": "Três séries para aprender inglês sem sofrer",
+          "campaign": "Séries para aprender inglês",
+          "modified": "2026-06-15"
+        },
+        {
+          "src": "assets/cases/cultura-inglesa/22-conheca-nossas-escolas.jpg",
+          "alt": "Apresentação das unidades da Cultura Inglesa",
+          "campaign": "Conheça nossas escolas",
+          "modified": "2026-05-08"
         }
       ]
     },
@@ -705,6 +753,12 @@
           "alt": "Capa educativa sobre quatro tratamentos para melhorar as lentes",
           "campaign": "Tratamentos para lentes",
           "modified": "2025-11-08"
+        },
+        {
+          "src": "assets/cases/otica-murano/22-carnaval-balai-da-sorte.jpg",
+          "alt": "Campanha de Carnaval Balai da Sorte da Ótica Murano",
+          "campaign": "Carnaval Balai da Sorte",
+          "modified": "2026-01-27"
         }
       ]
     },
@@ -845,6 +899,18 @@
           "alt": "Arte para 23 checklist",
           "campaign": "23 checklist",
           "modified": "2026-03-12"
+        },
+        {
+          "src": "assets/cases/la-pizza/21-primeira-compra-15-off.jpg",
+          "alt": "Oferta de quinze por cento na primeira compra da La Pizza",
+          "campaign": "Primeira compra com 15% OFF",
+          "modified": "2026-04-09"
+        },
+        {
+          "src": "assets/cases/la-pizza/22-aniversario-nonato-caldeira.jpg",
+          "alt": "Homenagem da La Pizza ao aniversário de Nonato Caldeira",
+          "campaign": "Aniversário Nonato Caldeira",
+          "modified": "2026-04-20"
         }
       ]
     }

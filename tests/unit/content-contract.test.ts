@@ -32,6 +32,16 @@ describe('case content', () => {
     expect(cases.every((item) => item.gallery.length === 19)).toBe(true);
   });
 
+  it('keeps every featured artwork out of its expanded gallery', () => {
+    for (const item of cases) {
+      const featuredSources = new Set(item.featured.map((image) => image.src));
+      const gallerySources = item.gallery.map((image) => image.src);
+
+      expect(gallerySources.some((src) => featuredSources.has(src)), item.client).toBe(false);
+      expect(new Set(gallerySources).size, item.client).toBe(gallerySources.length);
+    }
+  });
+
   it('uses the approved project, process and contact headings', () => {
     expect(ui.pt.projectsTitle).toBe('Projetos e campanhas');
     expect(ui.pt.projectsIntro).toBe('');

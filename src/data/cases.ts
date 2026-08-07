@@ -66,7 +66,7 @@ const featuredIndexes: Record<string, number[]> = {
 };
 
 const imageOrderIndexes: Record<string, number[]> = {
-  'otica-murano': [0, 13, 18, 3, 16, 5, 6, 7, 8, 9, 10, 11, 12, 1, 14, 15, 4, 17, 2, 19, 20],
+  'otica-murano': [0, 13, 18, 3, 16, 5, 6, 7, 8, 9, 10, 11, 12, 1, 14, 15, 4, 17, 2, 19, 20, 21],
 };
 
 export const cases = source.cases.map((item: SourceCase, index) => {
@@ -74,9 +74,8 @@ export const cases = source.cases.map((item: SourceCase, index) => {
   const images = (imageOrderIndexes[item.id] ?? sourceImages.map((_, imageIndex) => imageIndex)).map((imageIndex) => sourceImages[imageIndex]);
   const selectedIndexes = featuredIndexes[item.id] ?? [0, 1, 2];
   const featured = selectedIndexes.map((imageIndex) => images[imageIndex]);
-  const gallery = item.id === 'otica-murano'
-    ? images.filter((image, imageIndex) => imageIndex > 0 && image.src !== featured[1].src)
-    : images.slice(1);
+  const featuredSources = new Set(featured.map((image) => image.src));
+  const gallery = images.filter((image) => !featuredSources.has(image.src));
   return {
     ...item,
     order: index + 1,
