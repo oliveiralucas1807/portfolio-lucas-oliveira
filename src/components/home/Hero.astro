@@ -14,12 +14,14 @@ const t = ui[locale];
   <div class="hero-copy">
     <p class="hero-kicker">{locale === 'pt' ? 'Manaus · Brasil · Desde 2019' : 'Manaus · Brazil · Since 2019'}</p>
     <h1 id="hero-title">Lucas Oliveira<br /><span>{t.role}</span></h1>
-    <p class="hero-intro">{t.heroIntro}</p>
-    <div class="hero-actions">
-      <a class="button button-accent" data-parallax href="#trabalhos">{t.seeWork} ↘</a>
-      <a class="button" data-parallax href={siteConfig.resume[locale]} target="_blank" rel="noreferrer">{t.resume}</a>
-      <button class="button button-ghost" data-parallax type="button" data-modal-open="contact">{t.talk}</button>
+    <div class="hero-lower">
+      <p class="hero-intro">{t.heroIntro}</p>
+      <div class="hero-actions">
+        <a class="button button-accent" data-parallax href="#trabalhos">{t.seeWork} ↘</a>
+        <a class="button" data-parallax href={siteConfig.resume[locale]} target="_blank" rel="noreferrer">{t.resume}</a>
+        <button class="button button-ghost" data-parallax type="button" data-modal-open="contact">{t.talk}</button>
+      </div>
+      <a class="language-call" data-parallax href={localeMeta[locale === 'pt' ? 'en' : 'pt'].home}>{t.language} →</a>
     </div>
-    <a class="language-call" data-parallax href={localeMeta[locale === 'pt' ? 'en' : 'pt'].home}>{t.language} →</a>
   </div>
 </section>
