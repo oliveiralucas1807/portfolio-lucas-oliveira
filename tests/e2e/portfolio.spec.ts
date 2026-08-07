@@ -164,11 +164,14 @@ test('compact menu exposes work and about on mobile', async ({ page }) => {
 });
 
 test('mobile hero keeps the portrait anchored and raises only the identity block', async ({ page }) => {
-  await page.setViewportSize({ width: 390, height: 844 });
+  await page.setViewportSize({ width: 360, height: 800 });
   await page.goto('/');
 
   await expect(page.locator('.hero-art img')).toHaveCSS('transform', 'none');
   await expect(page.locator('.hero-copy')).toHaveCSS('justify-content', 'flex-end');
+  await expect(page.locator('.hero-kicker')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, -192)');
+  await expect(page.locator('.hero h1')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, -192)');
+  await expect(page.locator('.hero h1 span')).toHaveCSS('color', 'rgb(255, 255, 255)');
 
   const kicker = await page.locator('.hero-kicker').boundingBox();
   const intro = await page.locator('.hero-intro').boundingBox();
