@@ -66,18 +66,23 @@ const featuredIndexes: Record<string, number[]> = {
 };
 
 const imageOrderIndexes: Record<string, number[]> = {
-  'otica-murano': [0, 13, 18, 3, 16, 5, 6, 7, 8, 9, 10, 11, 12, 1, 14, 15, 4, 17, 2, 19],
+  'otica-murano': [0, 13, 18, 3, 16, 5, 6, 7, 8, 9, 10, 11, 12, 1, 14, 15, 4, 17, 2, 19, 20],
 };
 
 export const cases = source.cases.map((item: SourceCase, index) => {
   const sourceImages = item.images.map((image) => ({ ...image, src: sitePath(`/${image.src.replace(/\.[^.]+$/, '.webp')}`) }));
   const images = (imageOrderIndexes[item.id] ?? sourceImages.map((_, imageIndex) => imageIndex)).map((imageIndex) => sourceImages[imageIndex]);
   const selectedIndexes = featuredIndexes[item.id] ?? [0, 1, 2];
+  const featured = selectedIndexes.map((imageIndex) => images[imageIndex]);
+  const gallery = item.id === 'otica-murano'
+    ? images.filter((image, imageIndex) => imageIndex > 0 && image.src !== featured[1].src)
+    : images.slice(1);
   return {
     ...item,
     order: index + 1,
     cover: images[0].src,
-    featured: selectedIndexes.map((imageIndex) => images[imageIndex]),
+    featured,
+    gallery,
     images,
     deliveriesLocalized: { pt: item.deliveries, en: deliveriesEn[item.id] },
     copy: copy[item.id],

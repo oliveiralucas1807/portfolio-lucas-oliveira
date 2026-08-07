@@ -47,6 +47,8 @@ Na revisão de 06/08/2026, a primeira linha expandida concentrava quatro peças 
 
 Uma segunda revisão visual identificou que a campanha ainda ocupava quatro posições no conjunto completo. As peças individuais de Miranda Priestly e Emily Charlton foram então substituídas por duas artes abertas e conferidas na pasta histórica `F:\SERV INSPIRA\ÓTICA MURANO\2025`: `Black das Black`, de novembro de 2025, e `Aniversário de Manaus`, de outubro de 2025. O case passou a manter somente a capa e a peça de Andrea Sachs da campanha `O Diabo Veste Prada`.
 
+Na revisão seguinte, a capa de `O Diabo Veste Prada` foi preservada apenas no conjunto de três destaques e retirada da grade de `Explorar projeto`. A posição foi preenchida pela capa educativa `4 tratamentos para melhorar sua lente`, também conferida na pasta histórica de 2025. A galeria continua com 19 imagens, mas sem repetir a capa destacada.
+
 ## Contrato editorial
 
 Cada entrada publicada possui `sourceRef`. O blog não contém posts marcados como “em breve”. Projetos ainda incompletos são descritos como pesquisa ou candidato a case, sem resultados inventados.

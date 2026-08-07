@@ -24,7 +24,7 @@ const t = ui[locale];
         <details class="project-more">
           <summary><span class="project-expand-cta">{t.openCase}<b>＋</b></span></summary>
           <p>{item.copy.result[locale]}</p>
-          <div class="project-gallery">{item.images.slice(1).map((image, imageIndex) => { const alt = locale === 'pt' ? `${item.client}: ${image.alt}` : `${item.client} campaign artwork`; return <button class="project-image-trigger" style={`--gallery-index:${imageIndex}`} type="button" data-lightbox-id={`${item.id}:${imageIndex + 1}`} aria-label={`${locale === 'pt' ? 'Ampliar' : 'Enlarge'}: ${alt}`}><img src={image.src} alt={alt} loading="lazy" /></button>; })}<div class="project-gallery-more" style="--gallery-index:19"><span>LOS®</span><div><b>+</b><strong>{locale === 'pt' ? 'Diversos outros cards e materiais produzidos' : 'Many other cards and materials produced'}</strong></div></div></div>
+          <div class="project-gallery">{item.gallery.map((image, galleryIndex) => { const imageIndex = item.images.findIndex((candidate) => candidate.src === image.src); const alt = locale === 'pt' ? `${item.client}: ${image.alt}` : `${item.client} campaign artwork`; return <button class="project-image-trigger" style={`--gallery-index:${galleryIndex}`} type="button" data-lightbox-id={`${item.id}:${imageIndex}`} aria-label={`${locale === 'pt' ? 'Ampliar' : 'Enlarge'}: ${alt}`}><img src={image.src} alt={alt} loading="lazy" /></button>; })}<div class="project-gallery-more" style={`--gallery-index:${item.gallery.length}`}><span>LOS®</span><div><b>+</b><strong>{locale === 'pt' ? 'Diversos outros cards e materiais produzidos' : 'Many other cards and materials produced'}</strong></div></div></div>
         </details>
       </article>
     ))}

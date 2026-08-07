@@ -29,7 +29,7 @@ describe('case content', () => {
   });
 
   it('provides enough source material for nineteen expanded artworks', () => {
-    expect(cases.every((item) => item.images.slice(1).length === 19)).toBe(true);
+    expect(cases.every((item) => item.gallery.length === 19)).toBe(true);
   });
 
   it('uses the approved project, process and contact headings', () => {
@@ -56,6 +56,9 @@ describe('case content', () => {
       'Black das Black',
       'Aniversário de Manaus',
     ]));
+    expect(byId['otica-murano'].gallery).toHaveLength(19);
+    expect(byId['otica-murano'].gallery.map((image) => image.src)).not.toContain(byId['otica-murano'].featured[1].src);
+    expect(byId['otica-murano'].gallery.map((image) => image.campaign)).toContain('Tratamentos para lentes');
   });
 });
 

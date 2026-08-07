@@ -577,7 +577,7 @@
         "comunicação de varejo"
       ],
       "period": "Março a junho de 2026",
-      "imageCount": 20,
+      "imageCount": 21,
       "note": "A amostra prioriza campanhas de varejo, composições de produto e conteúdos com leitura rápida para redes sociais.",
       "images": [
         {
@@ -699,6 +699,12 @@
           "alt": "Arte para 14 CAMP JUNHO",
           "campaign": "14 CAMP JUNHO",
           "modified": "2026-05-19"
+        },
+        {
+          "src": "assets/cases/otica-murano/21-36-tratamentos-para-lentes-feed.jpg",
+          "alt": "Capa educativa sobre quatro tratamentos para melhorar as lentes",
+          "campaign": "Tratamentos para lentes",
+          "modified": "2025-11-08"
         }
       ]
     },
