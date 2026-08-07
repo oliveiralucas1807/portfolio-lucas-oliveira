@@ -169,9 +169,14 @@ test('mobile hero keeps the portrait anchored and raises only the identity block
 
   await expect(page.locator('.hero-art img')).toHaveCSS('transform', 'none');
   await expect(page.locator('.hero-copy')).toHaveCSS('justify-content', 'flex-end');
-  await expect(page.locator('.hero-kicker')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, -259)');
-  await expect(page.locator('.hero h1')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, -259)');
+  await expect(page.locator('.hero-kicker')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, -283)');
+  await expect(page.locator('.hero h1')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, -283)');
   await expect(page.locator('.hero h1 span')).toHaveCSS('color', 'rgb(255, 255, 255)');
+  const roleScale = await page.locator('.hero h1').evaluate((heading) => {
+    const role = heading.querySelector('span');
+    return Number.parseFloat(getComputedStyle(role!).fontSize) / Number.parseFloat(getComputedStyle(heading).fontSize);
+  });
+  expect(roleScale).toBeCloseTo(0.304, 3);
 
   const topbar = await page.locator('.topbar').boundingBox();
 
@@ -180,6 +185,6 @@ test('mobile hero keeps the portrait anchored and raises only the identity block
   expect(kicker).not.toBeNull();
   expect(intro).not.toBeNull();
   expect(topbar).not.toBeNull();
-  expect(kicker!.y - (topbar!.y + topbar!.height)).toBeCloseTo(90, 0);
+  expect(kicker!.y - (topbar!.y + topbar!.height)).toBeCloseTo(70, 0);
   expect(kicker!.y).toBeLessThan(intro!.y - 150);
 });
