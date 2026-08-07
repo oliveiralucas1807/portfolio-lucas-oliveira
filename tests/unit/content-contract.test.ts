@@ -51,6 +51,11 @@ describe('case content', () => {
       '09 Diabo veste prato',
       '06 ABRIL MARROMM',
     ]);
+    expect(byId['otica-murano'].images.filter((image) => image.campaign === '09 Diabo veste prato')).toHaveLength(2);
+    expect(byId['otica-murano'].images.map((image) => image.campaign)).toEqual(expect.arrayContaining([
+      'Black das Black',
+      'Aniversário de Manaus',
+    ]));
   });
 });
 
