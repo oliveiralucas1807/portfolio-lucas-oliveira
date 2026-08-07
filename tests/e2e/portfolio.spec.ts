@@ -169,9 +169,11 @@ test('mobile hero keeps the portrait anchored and raises only the identity block
 
   await expect(page.locator('.hero-art img')).toHaveCSS('transform', 'none');
   await expect(page.locator('.hero-copy')).toHaveCSS('justify-content', 'flex-end');
-  await expect(page.locator('.hero-kicker')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, -297.438)');
-  await expect(page.locator('.hero h1')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, -297.438)');
-  await expect(page.locator('.hero-lower')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, -100)');
+  await expect(page.locator('.hero-kicker')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, -316.469)');
+  await expect(page.locator('.hero h1')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, -316.469)');
+  await expect(page.locator('.hero-lower')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, -60)');
+  await expect(page.locator('.hero-actions .button').first()).toHaveCSS('font-size', '10.88px');
+  await expect(page.locator('.hero-actions .button').first()).toHaveCSS('padding-left', '14.72px');
   await expect(page.locator('.hero h1 span')).toHaveCSS('color', 'rgb(255, 255, 255)');
   const roleScale = await page.locator('.hero h1').evaluate((heading) => {
     const role = heading.querySelector('span');

@@ -64,3 +64,5 @@ Na revisão seguinte, o respiro foi refinado para aproximadamente 70 px com desl
 O ajuste final reduziu o respiro real para 55 px no viewport de referência, usando deslocamento de `-298.25px` no bloco de identidade mobile.
 
 Na etapa seguinte, o conjunto inferior do hero, formado pela descrição, pelos três botões e pelo link de idioma, foi agrupado e deslocado 100 px para cima exclusivamente no mobile. O bloco de identidade superior e o layout desktop não foram alterados.
+
+Na revisão posterior, esse conjunto desceu 40 px, passando ao deslocamento de `-60px`. Os três botões do hero receberam redução mobile de 20% em tipografia e espaçamento interno, sem afetar botões de outras seções ou o desktop.
