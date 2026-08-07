@@ -45,6 +45,11 @@ test('theme persists and blog is localized', async ({ page }) => {
   await expect(page.locator('.locale-chip img')).toHaveAttribute('src', '/assets/icons/idioma-estados-unidos.svg');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('O que está acontecendo agora.');
   await expect(page.locator('.blog-post')).toHaveCount(8);
+  await expect(page.locator('.blog-post').first()).toHaveAttribute('id', 'publicacao-recuperacao-e-spotify');
+  await expect(page.locator('.blog-post').last()).toHaveAttribute('id', 'primeiro-link-publico');
+  await expect(page.locator('.blog-topic-nav a')).toHaveCount(4);
+  await expect(page.locator('.blog-topic-nav')).not.toContainText('Dashboard financeiro');
+  await expect(page.locator('.blog-topic-nav a', { hasText: 'Portfólio' })).toHaveAttribute('href', '#publicacao-recuperacao-e-spotify');
   const firstUpdate = page.locator('.blog-post-details').first();
   await firstUpdate.locator('summary').click();
   await expect(firstUpdate.locator('.blog-article-copy p')).toHaveCount(2);
@@ -131,6 +136,19 @@ test('mobile layout does not overflow horizontally', async ({ page }) => {
   expect(overflow).toBe(false);
 });
 
+test('blog evidence opens in its localized lightbox', async ({ page }) => {
+  await page.goto('/blog/');
+  await page.locator('[data-lightbox-ready]').waitFor({ state: 'attached' });
+  const firstUpdate = page.locator('.blog-post').first();
+  await firstUpdate.locator('summary').click();
+  await firstUpdate.locator('[data-lightbox-id]').first().click();
+  const dialog = page.getByRole('dialog', { name: 'Visualizador de imagens do blog' });
+  await expect(dialog).toBeVisible();
+  await expect(dialog.locator('[data-lightbox-counter]')).toContainText('1 / 2');
+  await page.keyboard.press('Escape');
+  await expect(dialog).toBeHidden();
+});
+
 test('case artwork opens in an accessible navigable lightbox', async ({ page }) => {
   await page.goto('/');
   const trigger = page.locator('[data-lightbox-id]').first();
@@ -169,9 +187,9 @@ test('mobile hero keeps the portrait anchored and raises only the identity block
 
   await expect(page.locator('.hero-art img')).toHaveCSS('transform', 'none');
   await expect(page.locator('.hero-copy')).toHaveCSS('justify-content', 'flex-end');
-  await expect(page.locator('.hero-kicker')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, -316.469)');
-  await expect(page.locator('.hero h1')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, -316.469)');
-  await expect(page.locator('.hero-lower')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, -60)');
+  await expect(page.locator('.hero-kicker')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, -366.922)');
+  await expect(page.locator('.hero h1')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, -366.922)');
+  await expect(page.locator('.hero-lower')).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, -110.453)');
   await expect(page.locator('.hero-actions .button').first()).toHaveCSS('font-size', '10.88px');
   await expect(page.locator('.hero-actions .button').first()).toHaveCSS('padding-left', '14.72px');
   await expect(page.locator('.hero h1 span')).toHaveCSS('color', 'rgb(255, 255, 255)');
@@ -185,9 +203,11 @@ test('mobile hero keeps the portrait anchored and raises only the identity block
 
   const kicker = await page.locator('.hero-kicker').boundingBox();
   const intro = await page.locator('.hero-intro').boundingBox();
+  const actionButtons = await page.locator('.hero-actions .button').evaluateAll((buttons) => buttons.map((button) => button.getBoundingClientRect().top));
   expect(kicker).not.toBeNull();
   expect(intro).not.toBeNull();
   expect(topbar).not.toBeNull();
+  expect(Math.max(...actionButtons) - Math.min(...actionButtons)).toBeLessThan(1);
   expect(kicker!.y - (topbar!.y + topbar!.height)).toBeCloseTo(55, 1);
   expect(kicker!.y).toBeLessThan(intro!.y - 150);
 });

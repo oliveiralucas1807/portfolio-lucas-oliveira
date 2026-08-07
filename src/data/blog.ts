@@ -7,6 +7,8 @@ type Image = { src: string; alt: Localized };
 export type BlogPost = {
   slug: string;
   date: string;
+  dateISO: string;
+  topics: BlogTopic[];
   category: Localized;
   title: Localized;
   excerpt: Localized;
@@ -16,63 +18,63 @@ export type BlogPost = {
   sourceRef: string;
 };
 
+export type BlogTopic = 'portfolio' | 'creative-workbench' | 'applied-ai' | 'research';
+
 const hero: Image = { src: '/assets/hero/foto-lucas-desktop.webp', alt: { pt: 'Hero do portfólio de Lucas Oliveira', en: 'Lucas Oliveira portfolio hero' } };
 const movingGallery: Image = { src: '/assets/gallery/mivybook-destaque.webp', alt: { pt: 'Peça gráfica na galeria do Portfólio V2', en: 'Graphic artwork in the Portfolio V2 gallery' } };
-const coimbra: Image = { src: '/assets/cases/coimbra/01-23-escalcao-campea-feed-copa-cta1.webp', alt: { pt: 'Campanha Escalação Campeã da Coimbra', en: 'Coimbra Escalação Campeã campaign' } };
-
 const posts: BlogPost[] = [
   {
-    slug: 'primeiro-link-publico', date: '13 JUN 2026', status: 'published',
+    slug: 'primeiro-link-publico', date: '13 JUN 2026', dateISO: '2026-06-13', topics: ['portfolio'], status: 'published',
     category: { pt: 'Portfólio V1', en: 'Portfolio V1' }, sourceRef: 'git:7b797f4; obsidian:deep-projeto-portfolio-lucas-coimbra',
     title: { pt: 'Um portfólio publicável antes de um portfólio perfeito', en: 'A publishable portfolio before a perfect portfolio' },
     excerpt: { pt: 'A urgência por um link compartilhável transformou um acervo disperso em uma primeira versão online.', en: 'The need for a shareable link turned a scattered body of work into a first online version.' },
     body: {
       pt: ['Atualizar o Behance exigia um tempo que não estava disponível. O problema imediato era mais direto: reunir trabalhos, currículo e contato em um endereço que pudesse ser enviado rapidamente.', 'O Codex entrou como apoio de pesquisa, organização e desenvolvimento. A primeira decisão importante foi reduzir o escopo e publicar uma versão Light, reservando a proposta mais ambiciosa para uma etapa posterior.'],
       en: ['Updating Behance required time that was not available. The immediate problem was more direct: bring work, résumé and contact into one address that could be shared quickly.', 'Codex supported research, organization and development. The first important decision was to reduce scope and publish a Light version, leaving the more ambitious proposal for a later stage.'],
-    }, images: [hero, coimbra],
+    }, images: [],
   },
   {
-    slug: 'refino-mobile-v1', date: '15 JUN 2026', status: 'published',
+    slug: 'refino-mobile-v1', date: '15 JUN 2026', dateISO: '2026-06-15', topics: ['portfolio'], status: 'published',
     category: { pt: 'Responsividade', en: 'Responsive design' }, sourceRef: 'git:ad201d4,63e7db0,dff5c98,a0cb483,04897be,fbf02e3,8611117',
     title: { pt: 'Publicar foi o começo: a primeira grande rodada mobile', en: 'Publishing was the beginning: the first major mobile pass' },
     excerpt: { pt: 'Hero, proporção das galerias, contato e currículo foram corrigidos em uma sequência curta de testes reais.', en: 'Hero, gallery proportions, contact and résumé were corrected through a short sequence of real tests.' },
     body: {
       pt: ['O primeiro deploy revelou problemas que a tela de desenvolvimento não mostrava com a mesma clareza. A composição mobile, a qualidade das imagens e o enquadramento das artes pediram várias correções no mesmo dia.', 'A galeria terminou com recortes 3:4 para manter o grid organizado e visualização completa no lightbox. Essa separação entre miniatura e imagem ampliada virou uma regra durável do projeto.'],
       en: ['The first deployment revealed issues that were less visible during development. Mobile composition, image quality and artwork framing required several corrections on the same day.', 'The gallery settled on 3:4 crops for an organized grid and complete images in the lightbox. Separating thumbnails from enlarged artwork became a lasting project rule.'],
-    }, images: [hero, coimbra],
+    }, images: [],
   },
   {
-    slug: 'auditoria-e-novo-posicionamento', date: '26 JUL 2026', status: 'published',
+    slug: 'auditoria-e-novo-posicionamento', date: '26 JUL 2026', dateISO: '2026-07-26', topics: ['portfolio', 'applied-ai'], status: 'published',
     category: { pt: 'Posicionamento', en: 'Positioning' }, sourceRef: 'thread:019fa054-98e4-7761-882a-7dcbcbb0686e; git:5b798c5,617887d',
     title: { pt: 'Do ajuste do LinkedIn à necessidade de provar processo', en: 'From a LinkedIn review to the need to prove process' },
     excerpt: { pt: 'A revisão do perfil mostrou que listar competências não bastava. Era preciso construir evidências públicas de raciocínio e execução.', en: 'The profile review showed that listing skills was not enough. Public evidence of reasoning and execution was needed.' },
     body: {
       pt: ['A auditoria do LinkedIn organizou competências por experiência e removeu associações que não tinham comprovação suficiente. O mesmo critério passou a orientar o portfólio: posicionamento precisava estar apoiado por trabalhos, decisões e resultados verificáveis.', 'Dessa discussão surgiram dois caminhos complementares. A V2 continuaria rápida e visual. Um segundo portfólio, separado, explicaria processos, IA aplicada, automações, testes, erros e revisão humana.'],
       en: ['The LinkedIn review organized skills by experience and removed associations without enough evidence. The same standard began guiding the portfolio: positioning needed support from work, decisions and verifiable outcomes.', 'Two complementary paths emerged. V2 would remain fast and visual. A separate portfolio would explain processes, applied AI, automation, tests, errors and human review.'],
-    }, images: [hero, movingGallery],
+    }, images: [],
   },
   {
-    slug: 'hermes-como-candidato-a-case', date: '26 JUL 2026', status: 'published',
+    slug: 'hermes-como-candidato-a-case', date: '26 JUL 2026', dateISO: '2026-07-26', topics: ['research', 'applied-ai'], status: 'published',
     category: { pt: 'Pesquisa aplicada', en: 'Applied research' }, sourceRef: 'obsidian:projeto-hermes-multiagente-bibliotecario-conteudos',
     title: { pt: 'Hermes: quando uma pesquisa já revela um futuro case', en: 'Hermes: when research already reveals a future case' },
     excerpt: { pt: 'Uma arquitetura para transformar Telegram, agentes especializados e memória em uma biblioteca de conhecimento.', en: 'An architecture for turning Telegram, specialized agents and memory into a knowledge library.' },
     body: {
       pt: ['A pesquisa mapeou uma arquitetura com roteamento, perfis especializados, Kanban e catálogo separado da memória pessoal. O objetivo é receber conteúdos, analisar, classificar e recuperar referências úteis para projetos reais.', 'O projeto ainda não é um case concluído. Ele entra no histórico como pesquisa aplicada e candidato, com problemas, riscos, fontes e próximos testes já documentados.'],
       en: ['The research mapped an architecture with routing, specialized profiles, Kanban and a catalog separate from personal memory. The goal is to receive, analyze, classify and retrieve references useful to real projects.', 'The project is not a completed case yet. It enters the history as applied research and a candidate, with problems, risks, sources and next tests already documented.'],
-    }, images: [movingGallery, hero],
+    }, images: [],
   },
   {
-    slug: 'mivybook-bancada-de-acabamento', date: '29 JUL 2026', status: 'published',
+    slug: 'mivybook-bancada-de-acabamento', date: '29 JUL 2026', dateISO: '2026-07-29', topics: ['creative-workbench', 'applied-ai'], status: 'published',
     category: { pt: 'Creative technology', en: 'Creative technology' }, sourceRef: 'obsidian:portfolio-case-mivybook-megazord-dashboard',
     title: { pt: 'Mivybook: a automação produz, o olhar humano finaliza', en: 'Mivybook: automation produces, human judgment finishes' },
     excerpt: { pt: 'O dashboard nasceu para editar o HTML e CSS real dos carrosséis, sem tentar substituir uma ferramenta gráfica completa.', en: 'The dashboard was created to edit the actual HTML and CSS of carousels without trying to replace a full graphic tool.' },
     body: {
       pt: ['Uma primeira abordagem foi descartada por baixa usabilidade. A nova direção separou geração e acabamento: a automação cria a base e uma bancada controlada permite ajustes finos, persistentes e reversíveis.', 'O material já possui inventário de decisões e uma estrutura inicial de case. Ainda faltam seleção final de screenshots, medições de ganho de tempo e confirmação de quais materiais podem ser publicados.'],
       en: ['An initial approach was discarded because of poor usability. The new direction separated generation and finishing: automation creates the base and a controlled workbench enables fine, persistent and reversible adjustments.', 'The project already has a decision inventory and an initial case structure. Final screenshots, time measurements and confirmation of publishable materials are still required.'],
-    }, images: [movingGallery, coimbra],
+    }, images: [],
   },
   {
-    slug: 'fundacao-da-v2', date: '04 AGO 2026', status: 'published',
+    slug: 'fundacao-da-v2', date: '04 AGO 2026', dateISO: '2026-08-04', topics: ['portfolio', 'applied-ai'], status: 'published',
     category: { pt: 'Portfólio V2', en: 'Portfolio V2' }, sourceRef: 'git:74990c9,5aa9856,b565c66,88d183d,b457535,2189d67,db40afd',
     title: { pt: 'A V2 saiu do planejamento e virou um sistema bilíngue', en: 'V2 moved from planning into a bilingual system' },
     excerpt: { pt: 'Astro, conteúdo estruturado, animações e testes deram forma à evolução do Portfólio Light.', en: 'Astro, structured content, motion and tests shaped the evolution of the Light Portfolio.' },
@@ -82,7 +84,7 @@ const posts: BlogPost[] = [
     }, images: [hero, movingGallery],
   },
   {
-    slug: 'critica-visual-em-ciclos', date: '05 AGO 2026', status: 'published',
+    slug: 'critica-visual-em-ciclos', date: '05 AGO 2026', dateISO: '2026-08-05', topics: ['portfolio'], status: 'published',
     category: { pt: 'Direção visual', en: 'Visual direction' }, sourceRef: 'git:f631eae,d7c8d2f,0c39da5,fc109ba,d54ee35',
     title: { pt: 'A interface evoluiu por crítica visual em contexto real', en: 'The interface evolved through visual critique in real context' },
     excerpt: { pt: 'Topbar, transição diagonal, galerias, Sobre e blog foram refinados a partir da página em uso.', en: 'Topbar, diagonal transition, galleries, About and blog were refined from the page in use.' },
@@ -92,7 +94,7 @@ const posts: BlogPost[] = [
     }, images: [movingGallery, hero],
   },
   {
-    slug: 'publicacao-recuperacao-e-spotify', date: '06 AGO 2026', status: 'published',
+    slug: 'publicacao-recuperacao-e-spotify', date: '06 AGO 2026', dateISO: '2026-08-06', topics: ['portfolio'], status: 'published',
     category: { pt: 'Publicação', en: 'Deployment' }, sourceRef: 'git:0c43de7,9069b66,72e52e7,de9b091,b0d2c7d',
     title: { pt: 'Publicar a V2 também virou parte do case', en: 'Publishing V2 also became part of the case' },
     excerpt: { pt: 'A release reuniu GitHub Pages, recuperação de fila e o embed oficial da playlist do Spotify.', en: 'The release combined GitHub Pages, queue recovery and the official Spotify playlist embed.' },

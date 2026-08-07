@@ -67,6 +67,9 @@ describe('editorial timeline', () => {
     expect(blogPosts.length).toBeGreaterThanOrEqual(6);
     expect(blogPosts.every((post) => post.status === 'published')).toBe(true);
     expect(blogPosts.every((post) => post.sourceRef.length > 0)).toBe(true);
+    expect(blogPosts.every((post) => /^\d{4}-\d{2}-\d{2}$/.test(post.dateISO))).toBe(true);
+    expect(blogPosts.every((post) => post.topics.length > 0)).toBe(true);
+    expect(blogPosts.every((post) => post.images.length <= 6)).toBe(true);
     expect(JSON.stringify(blogPosts)).not.toContain('EM BREVE');
   });
 });
