@@ -60,3 +60,5 @@ Na validação em aparelho físico Samsung S24 FE, o bloco de identidade ainda c
 Após a medição da versão publicada em viewport de 360 × 800, o respiro entre o final da topbar e o início do chapéu foi reduzido de aproximadamente 157 px para 90 px. Para isso, o deslocamento exclusivo do bloco de identidade passou a `-259px`, mantendo os demais elementos do hero intactos.
 
 Na revisão seguinte, o respiro foi refinado para aproximadamente 70 px com deslocamento de `-283px`, compensando a mudança de altura interna do conjunto. O cargo `Designer Gráfico Pleno` recebeu ainda uma redução exclusiva de 20% no mobile, passando de `0.38em` para `0.304em`.
+
+O ajuste final reduziu o respiro real para 55 px no viewport de referência, usando deslocamento de `-298.25px` no bloco de identidade mobile.
