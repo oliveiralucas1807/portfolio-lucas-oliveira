@@ -96,4 +96,16 @@ describe('editorial timeline', () => {
       }
     }
   });
+
+  it('preserves the LinkedIn audit sequence and adds the current profile', () => {
+    const linkedinPost = blogPosts.find((post) => post.slug === 'auditoria-e-novo-posicionamento');
+
+    expect(linkedinPost?.images).toHaveLength(4);
+    expect(linkedinPost?.images.map((image) => image.src)).toEqual(expect.arrayContaining([
+      expect.stringContaining('perfil-linkedin-auditado.webp'),
+      expect.stringContaining('competencias-antes.webp'),
+      expect.stringContaining('competencias-depois.webp'),
+      expect.stringContaining('perfil-linkedin-atual-2026.webp'),
+    ]));
+  });
 });

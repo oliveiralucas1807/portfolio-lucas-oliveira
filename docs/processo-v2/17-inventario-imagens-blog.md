@@ -20,6 +20,7 @@ Atualizado em 7 de agosto de 2026.
 | auditoria-e-novo-posicionamento | `perfil-linkedin-auditado.webp` | Captura da auditoria do perfil; recortada para manter somente a área relevante. |
 | auditoria-e-novo-posicionamento | `competencias-antes.webp` | Estado das competências antes da organização. |
 | auditoria-e-novo-posicionamento | `competencias-depois.webp` | Estado das competências depois da organização. |
+| auditoria-e-novo-posicionamento | `perfil-linkedin-atual-2026.webp` | Captura atual do cartão principal do perfil em 8 de agosto de 2026; registra a capa, a foto e o posicionamento profissional após a revisão. |
 | hermes-como-candidato-a-case | `hermes-resumo-pesquisa.webp` | Resumo executivo do relatório de pesquisa do Hermes. |
 | hermes-como-candidato-a-case | `hermes-arquitetura.webp` | Trecho do relatório que registra a arquitetura multiagente recomendada. |
 | mivybook-bancada-de-acabamento | `dashboard-home.webp` | Tela inicial funcional da bancada de conteúdo. |

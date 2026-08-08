@@ -58,6 +58,7 @@ const posts: BlogPost[] = [
       { src: '/assets/blog/auditoria-e-novo-posicionamento/perfil-linkedin-auditado.webp', alt: { pt: 'Perfil do LinkedIn revisado durante a auditoria de posicionamento', en: 'LinkedIn profile reviewed during the positioning audit' } },
       { src: '/assets/blog/auditoria-e-novo-posicionamento/competencias-antes.webp', alt: { pt: 'Competências associadas ao perfil antes da organização', en: 'Skills associated with the profile before organization' } },
       { src: '/assets/blog/auditoria-e-novo-posicionamento/competencias-depois.webp', alt: { pt: 'Competências reorganizadas após a auditoria', en: 'Skills reorganized after the audit' } },
+      { src: '/assets/blog/auditoria-e-novo-posicionamento/perfil-linkedin-atual-2026.webp', alt: { pt: 'Perfil atual do LinkedIn com posicionamento profissional atualizado', en: 'Current LinkedIn profile with updated professional positioning' } },
     ],
   },
   {
