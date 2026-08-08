@@ -82,4 +82,18 @@ describe('editorial timeline', () => {
     expect(blogPosts.every((post) => post.images.length <= 6)).toBe(true);
     expect(JSON.stringify(blogPosts)).not.toContain('EM BREVE');
   });
+
+  it('uses only article-specific evidence in the editorial timeline', () => {
+    const genericArtwork = /foto-lucas-desktop|mivybook-destaque|assets\/cases\//;
+
+    for (const post of blogPosts) {
+      expect(post.images.length, post.slug).toBeLessThanOrEqual(6);
+      for (const image of post.images) {
+        expect(image.src, post.slug).toContain(`/assets/blog/${post.slug}/`);
+        expect(image.src, post.slug).not.toMatch(genericArtwork);
+        expect(image.alt.pt.trim().length, post.slug).toBeGreaterThan(0);
+        expect(image.alt.en.trim().length, post.slug).toBeGreaterThan(0);
+      }
+    }
+  });
 });
