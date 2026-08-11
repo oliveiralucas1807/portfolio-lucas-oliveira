@@ -33,6 +33,12 @@ Atualizado em 7 de agosto de 2026.
 | critica-visual-em-ciclos | `v2-interface-publicada.webp` | Estado publicado após os ciclos de crítica visual. |
 | publicacao-recuperacao-e-spotify | `spotify-player-oficial.webp` | Componente oficial do Spotify incorporado à página. |
 | publicacao-recuperacao-e-spotify | `github-pages-historico.webp` | Histórico público de commits relacionado à publicação no GitHub Pages. |
+| qa-pos-deploy-dispositivo-real | `hero-mobile-antes.webp` | Captura real do hero no Samsung S24 FE antes do reposicionamento do bloco de identidade. |
+| qa-pos-deploy-dispositivo-real | `hero-mobile-depois.webp` | Captura em viewport mobile do estado publicado depois do ajuste. |
+| qa-pos-deploy-dispositivo-real | `curriculo-mobile-antes.webp` | Recorte sanitizado da fotografia comprimida antes da correção responsiva. |
+| qa-pos-deploy-dispositivo-real | `curriculo-mobile-depois.webp` | Recorte sanitizado da fotografia com proporção corrigida. |
+
+O artigo `dashboard-financeiro-em-construcao` usa `images: []`. Nenhuma captura da aplicação real foi publicada para impedir a exposição de informações financeiras pessoais. O futuro case usará somente uma duplicata demonstrativa com dados fictícios.
 
 ## Fontes preservadas
 

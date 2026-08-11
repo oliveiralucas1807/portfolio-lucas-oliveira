@@ -128,6 +128,51 @@ const posts: BlogPost[] = [
       { src: '/assets/blog/publicacao-recuperacao-e-spotify/github-pages-historico.webp', alt: { pt: 'Histórico de commits usados na publicação pelo GitHub Pages', en: 'Commit history used for the GitHub Pages deployment' } },
     ],
   },
+  {
+    slug: 'qa-pos-deploy-dispositivo-real', date: '07 AGO 2026', dateISO: '2026-08-07', topics: ['portfolio'], status: 'published',
+    category: { pt: 'QA e responsividade', en: 'QA and responsive design' },
+    sourceRef: 'git:6ffcd89,20a77e1,d063fee,ab4c5c4,39b9398,bfa43cd,9d756c7; docs:16-qa-lightbox-mobile-e-blog,2026-08-07-auditoria-galerias',
+    title: { pt: 'Depois do deploy: o que o celular real revelou sobre o Portfólio V2', en: 'After deployment: what a real phone revealed about Portfolio V2' },
+    excerpt: { pt: 'A publicação expôs diferenças de enquadramento, escala e ritmo que levaram a uma rodada de ajustes mobile, revisão das galerias e novos testes.', en: 'Publishing exposed differences in framing, scale and rhythm that led to mobile refinements, a gallery review and new tests.' },
+    body: {
+      pt: [
+        'O modo responsivo do navegador ajudou durante a construção, mas o uso em um Samsung S24 FE revelou diferenças de enquadramento e ritmo que pediam outra rodada de revisão. Hero, distância da topbar, botões, menu compacto e fotografia do currículo foram ajustados a partir da tela real.',
+        'A revisão também chegou às galerias. Uma arte usada entre os três destaques não deveria reaparecer dentro do conteúdo expandido do mesmo case. A regra virou um teste automatizado e orientou uma substituição sistemática nos seis projetos.',
+        'O aprendizado foi simples: colocar o site no ar não encerrou o trabalho. A publicação criou o contexto necessário para observar, comparar e refinar decisões que ainda não estavam claras no ambiente de desenvolvimento.',
+      ],
+      en: [
+        'The browser responsive mode helped during development, but using the site on a Samsung S24 FE revealed framing and rhythm differences that required another review. The hero, topbar spacing, buttons, compact menu and résumé portrait were adjusted from the real screen.',
+        'The review also reached the galleries. Artwork used among the three highlights should not appear again inside the expanded content of the same case. This rule became an automated test and guided a systematic replacement across all six projects.',
+        'The lesson was simple: putting the site online did not end the work. Publishing created the context needed to observe, compare and refine decisions that were not yet clear in development.',
+      ],
+    },
+    images: [
+      { src: '/assets/blog/qa-pos-deploy-dispositivo-real/hero-mobile-antes.webp', alt: { pt: 'Hero mobile antes do reposicionamento do bloco de identidade', en: 'Mobile hero before repositioning the identity block' } },
+      { src: '/assets/blog/qa-pos-deploy-dispositivo-real/hero-mobile-depois.webp', alt: { pt: 'Hero mobile depois do ajuste validado em celular real', en: 'Mobile hero after the adjustment validated on a real phone' } },
+      { src: '/assets/blog/qa-pos-deploy-dispositivo-real/curriculo-mobile-antes.webp', alt: { pt: 'Currículo mobile antes da correção da proporção da fotografia', en: 'Mobile résumé before correcting the portrait proportions' } },
+      { src: '/assets/blog/qa-pos-deploy-dispositivo-real/curriculo-mobile-depois.webp', alt: { pt: 'Currículo mobile depois da correção da fotografia', en: 'Mobile résumé after correcting the portrait' } },
+    ],
+  },
+  {
+    slug: 'dashboard-financeiro-em-construcao', date: '10 AGO 2026', dateISO: '2026-08-10', topics: ['creative-workbench', 'applied-ai'], status: 'published',
+    category: { pt: 'Projeto em desenvolvimento', en: 'Work in progress' },
+    sourceRef: 'local:dashboard-financeiro-lucas; tests:3-files-12-tests; obsidian:decisao-dashboard-financeiro-case-demonstrativo',
+    title: { pt: 'Um dashboard financeiro para entender decisões, não apenas mostrar números', en: 'A financial dashboard for understanding decisions, not just displaying numbers' },
+    excerpt: { pt: 'Um projeto pessoal em construção reúne planejamento, histórico e testes para transformar informações dispersas em decisões explicáveis.', en: 'A personal project in progress brings planning, history and tests together to turn scattered information into explainable decisions.' },
+    body: {
+      pt: [
+        'O projeto começou com uma pergunta direta: como reunir informações financeiras espalhadas sem misturar previsão com o que realmente aconteceu? O dashboard está sendo construído para conectar planejamento, histórico, simulações e registro de decisões em uma visão mais clara.',
+        'Parte do trabalho está em transformar regras financeiras em testes. O objetivo é preservar a origem dos números, reduzir inconsistências e permitir que cada mudança possa ser explicada. A aplicação permanece privada enquanto essa estrutura evolui.',
+        'Este ainda não é um case concluído. O processo está sendo documentado e, no futuro, será apresentado por meio de uma versão demonstrativa com dados inteiramente fictícios, separada das informações pessoais usadas no projeto real.',
+      ],
+      en: [
+        'The project started with a direct question: how can scattered financial information be brought together without mixing forecasts with what actually happened? The dashboard is being built to connect planning, history, simulations and decision records in a clearer view.',
+        'Part of the work involves turning financial rules into tests. The goal is to preserve where each number came from, reduce inconsistencies and make every change explainable. The application remains private while this structure evolves.',
+        'This is not a completed case yet. The process is being documented and will later be presented through a demonstration version with entirely fictional data, kept separate from the personal information used in the real project.',
+      ],
+    },
+    images: [],
+  },
 ];
 
 export const blogPosts = posts.map((post) => ({ ...post, images: post.images.map((image) => ({ ...image, src: sitePath(image.src) })) }));
