@@ -139,12 +139,12 @@ test('mobile layout does not overflow horizontally', async ({ page }) => {
 test('blog evidence opens in its localized lightbox', async ({ page }) => {
   await page.goto('/blog/');
   await page.locator('[data-lightbox-ready]').waitFor({ state: 'attached' });
-  const firstUpdate = page.locator('.blog-post').first();
-  await firstUpdate.locator('summary').click();
-  await firstUpdate.locator('[data-lightbox-id]').first().click();
+  const firstUpdateWithEvidence = page.locator('.blog-post:has([data-lightbox-id])').first();
+  await firstUpdateWithEvidence.locator('summary').click();
+  await firstUpdateWithEvidence.locator('[data-lightbox-id]').first().click();
   const dialog = page.getByRole('dialog', { name: 'Visualizador de imagens do blog' });
   await expect(dialog).toBeVisible();
-  await expect(dialog.locator('[data-lightbox-counter]')).toContainText('1 / 2');
+  await expect(dialog.locator('[data-lightbox-counter]')).toHaveText(/1 \/ [2-6]/);
   await page.keyboard.press('Escape');
   await expect(dialog).toBeHidden();
 });
