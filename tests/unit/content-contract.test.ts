@@ -108,4 +108,23 @@ describe('editorial timeline', () => {
       expect.stringContaining('perfil-linkedin-atual-2026.webp'),
     ]));
   });
+
+  it('adds the approved post-deploy QA and dashboard progress milestones', () => {
+    const qa = blogPosts.find((post) => post.slug === 'qa-pos-deploy-dispositivo-real');
+    const dashboard = blogPosts.find((post) => post.slug === 'dashboard-financeiro-em-construcao');
+
+    expect(qa).toMatchObject({ dateISO: '2026-08-07', topics: ['portfolio'] });
+    expect(qa?.images.length).toBeGreaterThanOrEqual(3);
+    expect(qa?.images.length).toBeLessThanOrEqual(6);
+    expect(dashboard).toMatchObject({ dateISO: '2026-08-10', topics: ['creative-workbench', 'applied-ai'], images: [] });
+  });
+
+  it('keeps the dashboard progress article free from personal financial data', () => {
+    const dashboard = blogPosts.find((post) => post.slug === 'dashboard-financeiro-em-construcao');
+    const copy = JSON.stringify(dashboard);
+
+    expect(copy).not.toMatch(/R\$|Inter|PicPay|Mercado Pago|InfinitePay|Tailscale|tailnet|\.db|sqlite/i);
+    expect(copy).not.toContain('—');
+    expect(copy).toContain('em construção');
+  });
 });
