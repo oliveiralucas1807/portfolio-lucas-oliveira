@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { cases } from '@/data/cases';
 import { ui } from '@/i18n/config';
 import { blogPosts } from '@/data/blog';
+import { galleryItems } from '@/data/gallery';
 
 describe('case content', () => {
   it('preserves six bilingual projects', () => {
@@ -59,6 +60,13 @@ describe('case content', () => {
     expect(byId['otica-murano'].gallery).toHaveLength(19);
     expect(byId['otica-murano'].gallery.map((image) => image.src)).not.toContain(byId['otica-murano'].featured[1].src);
     expect(byId['otica-murano'].gallery.map((image) => image.campaign)).toContain('Tratamentos para lentes');
+  });
+
+  it('uses published case asset paths in the homepage carousel', () => {
+    const consumerArtwork = galleryItems.find((item) => item.id === 'otica-murano-2');
+
+    expect(consumerArtwork?.src).toContain('/assets/cases/otica-murano/14-04-dia-do-consumidor');
+    expect(galleryItems.every((item) => !item.src.includes('/assets/gallery-cases/'))).toBe(true);
   });
 });
 

@@ -4,7 +4,7 @@ import { sitePath } from '@/utils/paths';
 const caseItems = cases.flatMap((item) => item.images.slice(0, 2).map((image, index) => ({
   id: `${item.id}-${index + 1}`,
   client: item.client,
-  src: sitePath(`/assets/gallery-cases/${item.id}/${image.src.split('/').at(-1)}`),
+  src: image.src,
   alt: image.alt,
 })));
 
