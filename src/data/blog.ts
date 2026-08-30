@@ -20,8 +20,6 @@ export type BlogPost = {
 
 export type BlogTopic = 'portfolio' | 'creative-workbench' | 'applied-ai' | 'research';
 
-const hero: Image = { src: '/assets/hero/foto-lucas-desktop.webp', alt: { pt: 'Hero do portfólio de Lucas Oliveira', en: 'Lucas Oliveira portfolio hero' } };
-const movingGallery: Image = { src: '/assets/gallery/mivybook-destaque.webp', alt: { pt: 'Peça gráfica na galeria do Portfólio V2', en: 'Graphic artwork in the Portfolio V2 gallery' } };
 const posts: BlogPost[] = [
   {
     slug: 'primeiro-link-publico', date: '13 JUN 2026', dateISO: '2026-06-13', topics: ['portfolio'], status: 'published',
@@ -31,7 +29,9 @@ const posts: BlogPost[] = [
     body: {
       pt: ['Atualizar o Behance exigia um tempo que não estava disponível. O problema imediato era mais direto: reunir trabalhos, currículo e contato em um endereço que pudesse ser enviado rapidamente.', 'O Codex entrou como apoio de pesquisa, organização e desenvolvimento. A primeira decisão importante foi reduzir o escopo e publicar uma versão Light, reservando a proposta mais ambiciosa para uma etapa posterior.'],
       en: ['Updating Behance required time that was not available. The immediate problem was more direct: bring work, résumé and contact into one address that could be shared quickly.', 'Codex supported research, organization and development. The first important decision was to reduce scope and publish a Light version, leaving the more ambitious proposal for a later stage.'],
-    }, images: [],
+    }, images: [
+      { src: '/assets/blog/primeiro-link-publico/v1-desktop.webp', alt: { pt: 'Primeira versão pública do portfólio em desktop', en: 'First public desktop version of the portfolio' } },
+    ],
   },
   {
     slug: 'refino-mobile-v1', date: '15 JUN 2026', dateISO: '2026-06-15', topics: ['portfolio'], status: 'published',
@@ -41,7 +41,10 @@ const posts: BlogPost[] = [
     body: {
       pt: ['O primeiro deploy revelou problemas que a tela de desenvolvimento não mostrava com a mesma clareza. A composição mobile, a qualidade das imagens e o enquadramento das artes pediram várias correções no mesmo dia.', 'A galeria terminou com recortes 3:4 para manter o grid organizado e visualização completa no lightbox. Essa separação entre miniatura e imagem ampliada virou uma regra durável do projeto.'],
       en: ['The first deployment revealed issues that were less visible during development. Mobile composition, image quality and artwork framing required several corrections on the same day.', 'The gallery settled on 3:4 crops for an organized grid and complete images in the lightbox. Separating thumbnails from enlarged artwork became a lasting project rule.'],
-    }, images: [],
+    }, images: [
+      { src: '/assets/blog/refino-mobile-v1/v1-mobile.webp', alt: { pt: 'Hero da primeira versão do portfólio adaptado para celular', en: 'First portfolio hero adapted for mobile' } },
+      { src: '/assets/blog/refino-mobile-v1/v1-cases-mobile.webp', alt: { pt: 'Seção de cases da primeira versão em tela mobile', en: 'First version case section on a mobile screen' } },
+    ],
   },
   {
     slug: 'auditoria-e-novo-posicionamento', date: '26 JUL 2026', dateISO: '2026-07-26', topics: ['portfolio', 'applied-ai'], status: 'published',
@@ -51,7 +54,12 @@ const posts: BlogPost[] = [
     body: {
       pt: ['A auditoria do LinkedIn organizou competências por experiência e removeu associações que não tinham comprovação suficiente. O mesmo critério passou a orientar o portfólio: posicionamento precisava estar apoiado por trabalhos, decisões e resultados verificáveis.', 'Dessa discussão surgiram dois caminhos complementares. A V2 continuaria rápida e visual. Um segundo portfólio, separado, explicaria processos, IA aplicada, automações, testes, erros e revisão humana.'],
       en: ['The LinkedIn review organized skills by experience and removed associations without enough evidence. The same standard began guiding the portfolio: positioning needed support from work, decisions and verifiable outcomes.', 'Two complementary paths emerged. V2 would remain fast and visual. A separate portfolio would explain processes, applied AI, automation, tests, errors and human review.'],
-    }, images: [],
+    }, images: [
+      { src: '/assets/blog/auditoria-e-novo-posicionamento/perfil-linkedin-auditado.webp', alt: { pt: 'Perfil do LinkedIn revisado durante a auditoria de posicionamento', en: 'LinkedIn profile reviewed during the positioning audit' } },
+      { src: '/assets/blog/auditoria-e-novo-posicionamento/competencias-antes.webp', alt: { pt: 'Competências associadas ao perfil antes da organização', en: 'Skills associated with the profile before organization' } },
+      { src: '/assets/blog/auditoria-e-novo-posicionamento/competencias-depois.webp', alt: { pt: 'Competências reorganizadas após a auditoria', en: 'Skills reorganized after the audit' } },
+      { src: '/assets/blog/auditoria-e-novo-posicionamento/perfil-linkedin-atual-2026.webp', alt: { pt: 'Perfil atual do LinkedIn com posicionamento profissional atualizado', en: 'Current LinkedIn profile with updated professional positioning' } },
+    ],
   },
   {
     slug: 'hermes-como-candidato-a-case', date: '26 JUL 2026', dateISO: '2026-07-26', topics: ['research', 'applied-ai'], status: 'published',
@@ -61,7 +69,10 @@ const posts: BlogPost[] = [
     body: {
       pt: ['A pesquisa mapeou uma arquitetura com roteamento, perfis especializados, Kanban e catálogo separado da memória pessoal. O objetivo é receber conteúdos, analisar, classificar e recuperar referências úteis para projetos reais.', 'O projeto ainda não é um case concluído. Ele entra no histórico como pesquisa aplicada e candidato, com problemas, riscos, fontes e próximos testes já documentados.'],
       en: ['The research mapped an architecture with routing, specialized profiles, Kanban and a catalog separate from personal memory. The goal is to receive, analyze, classify and retrieve references useful to real projects.', 'The project is not a completed case yet. It enters the history as applied research and a candidate, with problems, risks, sources and next tests already documented.'],
-    }, images: [],
+    }, images: [
+      { src: '/assets/blog/hermes-como-candidato-a-case/hermes-resumo-pesquisa.webp', alt: { pt: 'Resumo executivo da pesquisa do projeto Hermes', en: 'Executive summary of the Hermes project research' } },
+      { src: '/assets/blog/hermes-como-candidato-a-case/hermes-arquitetura.webp', alt: { pt: 'Trecho da arquitetura multiagente recomendada para o Hermes', en: 'Excerpt from the recommended multi-agent architecture for Hermes' } },
+    ],
   },
   {
     slug: 'mivybook-bancada-de-acabamento', date: '29 JUL 2026', dateISO: '2026-07-29', topics: ['creative-workbench', 'applied-ai'], status: 'published',
@@ -71,7 +82,11 @@ const posts: BlogPost[] = [
     body: {
       pt: ['Uma primeira abordagem foi descartada por baixa usabilidade. A nova direção separou geração e acabamento: a automação cria a base e uma bancada controlada permite ajustes finos, persistentes e reversíveis.', 'O material já possui inventário de decisões e uma estrutura inicial de case. Ainda faltam seleção final de screenshots, medições de ganho de tempo e confirmação de quais materiais podem ser publicados.'],
       en: ['An initial approach was discarded because of poor usability. The new direction separated generation and finishing: automation creates the base and a controlled workbench enables fine, persistent and reversible adjustments.', 'The project already has a decision inventory and an initial case structure. Final screenshots, time measurements and confirmation of publishable materials are still required.'],
-    }, images: [],
+    }, images: [
+      { src: '/assets/blog/mivybook-bancada-de-acabamento/dashboard-home.webp', alt: { pt: 'Dashboard da bancada de conteúdo Mivybook', en: 'Mivybook content workbench dashboard' } },
+      { src: '/assets/blog/mivybook-bancada-de-acabamento/editor-canvas.webp', alt: { pt: 'Editor visual da bancada de acabamento Mivybook', en: 'Visual editor in the Mivybook finishing workbench' } },
+      { src: '/assets/blog/mivybook-bancada-de-acabamento/project-slides.webp', alt: { pt: 'Visão dos slides de um projeto na bancada Mivybook', en: 'Project slide overview in the Mivybook workbench' } },
+    ],
   },
   {
     slug: 'fundacao-da-v2', date: '04 AGO 2026', dateISO: '2026-08-04', topics: ['portfolio', 'applied-ai'], status: 'published',
@@ -81,7 +96,10 @@ const posts: BlogPost[] = [
     body: {
       pt: ['A implementação preservou a força do hero e substituiu a seção redundante de atalhos por duas faixas cinéticas de trabalhos. Os seis cases ganharam dados estruturados, conteúdo em português e inglês e expansão progressiva.', 'A V2 nasceu animada, mas com movimento reduzido respeitado desde a base. Testes automatizados passaram a verificar conteúdo, responsividade, temas, modais e integridade das galerias.'],
       en: ['The implementation preserved the strength of the hero and replaced the redundant shortcut section with two kinetic streams of work. Six cases gained structured data, Portuguese and English content and progressive expansion.', 'V2 was built with motion from the start while respecting reduced-motion preferences. Automated tests began checking content, responsiveness, themes, modals and gallery integrity.'],
-    }, images: [hero, movingGallery],
+    }, images: [
+      { src: '/assets/blog/fundacao-da-v2/v2-home-desktop.webp', alt: { pt: 'Home publicada do Portfólio V2 em português', en: 'Published Portfolio V2 home page in Portuguese' } },
+      { src: '/assets/blog/fundacao-da-v2/v2-home-english.webp', alt: { pt: 'Versão em inglês da home do Portfólio V2', en: 'English version of the Portfolio V2 home page' } },
+    ],
   },
   {
     slug: 'critica-visual-em-ciclos', date: '05 AGO 2026', dateISO: '2026-08-05', topics: ['portfolio'], status: 'published',
@@ -91,7 +109,11 @@ const posts: BlogPost[] = [
     body: {
       pt: ['As decisões não vieram de uma única entrega fechada. Cada revisão apontou problemas de ritmo, alinhamento, contraste, viúvas, hierarquia e clareza das interações.', 'A transição diagonal conectou hero e galeria, as peças ganharam mais altura, os cases passaram a mostrar três destaques e galerias completas, e o blog entrou como espaço para registrar o desenvolvimento.'],
       en: ['The decisions did not come from one closed delivery. Each review revealed issues with rhythm, alignment, contrast, widows, hierarchy and interaction clarity.', 'The diagonal transition connected hero and gallery, artwork gained height, cases received three highlights and complete galleries, and the blog became a space for documenting development.'],
-    }, images: [movingGallery, hero],
+    }, images: [
+      { src: '/assets/blog/critica-visual-em-ciclos/anotacao-topbar.webp', alt: { pt: 'Anotação visual usada para ajustar a largura da topbar', en: 'Visual annotation used to adjust the topbar width' } },
+      { src: '/assets/blog/critica-visual-em-ciclos/anotacao-transicao-carrossel.webp', alt: { pt: 'Anotação visual da transição diagonal entre hero e carrossel', en: 'Visual annotation of the diagonal transition between hero and carousel' } },
+      { src: '/assets/blog/critica-visual-em-ciclos/v2-interface-publicada.webp', alt: { pt: 'Interface da V2 após os ciclos de crítica visual', en: 'V2 interface after the visual critique cycles' } },
+    ],
   },
   {
     slug: 'publicacao-recuperacao-e-spotify', date: '06 AGO 2026', dateISO: '2026-08-06', topics: ['portfolio'], status: 'published',
@@ -101,7 +123,95 @@ const posts: BlogPost[] = [
     body: {
       pt: ['Depois de validar quatro rotas, temas, modais e galerias, a V2 substituiu a versão anterior no mesmo endereço público. O player provisório foi trocado pelo embed oficial do Spotify, sem autoplay e com controle do visitante.', 'O backend do Pages reteve deployments em fila. A recuperação exigiu cancelar registros órfãos pela API e publicar o build estático pela branch gh-pages. O incidente foi documentado porque operação, verificação e recuperação também fazem parte do trabalho.'],
       en: ['After validating four routes, themes, modals and galleries, V2 replaced the previous version at the same public address. The provisional player was replaced by the official Spotify embed, without autoplay and under visitor control.', 'The Pages backend retained deployments in its queue. Recovery required canceling orphaned records through the API and publishing the static build from the gh-pages branch. The incident was documented because operation, verification and recovery are also part of the work.'],
-    }, images: [hero, movingGallery],
+    }, images: [
+      { src: '/assets/blog/publicacao-recuperacao-e-spotify/spotify-player-oficial.webp', alt: { pt: 'Player oficial do Spotify incorporado ao Portfólio V2', en: 'Official Spotify player embedded in Portfolio V2' } },
+      { src: '/assets/blog/publicacao-recuperacao-e-spotify/github-pages-historico.webp', alt: { pt: 'Histórico de commits usados na publicação pelo GitHub Pages', en: 'Commit history used for the GitHub Pages deployment' } },
+    ],
+  },
+  {
+    slug: 'qa-pos-deploy-dispositivo-real', date: '07 AGO 2026', dateISO: '2026-08-07', topics: ['portfolio'], status: 'published',
+    category: { pt: 'QA e responsividade', en: 'QA and responsive design' },
+    sourceRef: 'git:6ffcd89,20a77e1,d063fee,ab4c5c4,39b9398,bfa43cd,9d756c7; docs:16-qa-lightbox-mobile-e-blog,2026-08-07-auditoria-galerias',
+    title: { pt: 'Depois do deploy: o que o celular real revelou sobre o Portfólio V2', en: 'After deployment: what a real phone revealed about Portfolio V2' },
+    excerpt: { pt: 'A publicação expôs diferenças de enquadramento, escala e ritmo que levaram a uma rodada de ajustes mobile, revisão das galerias e novos testes.', en: 'Publishing exposed differences in framing, scale and rhythm that led to mobile refinements, a gallery review and new tests.' },
+    body: {
+      pt: [
+        'O modo responsivo do navegador ajudou durante a construção, mas o uso em um Samsung S24 FE revelou diferenças de enquadramento e ritmo que pediam outra rodada de revisão. Hero, distância da topbar, botões, menu compacto e fotografia do currículo foram ajustados a partir da tela real.',
+        'A revisão também chegou às galerias. Uma arte usada entre os três destaques não deveria reaparecer dentro do conteúdo expandido do mesmo case. A regra virou um teste automatizado e orientou uma substituição sistemática nos seis projetos.',
+        'O aprendizado foi simples: colocar o site no ar não encerrou o trabalho. A publicação criou o contexto necessário para observar, comparar e refinar decisões que ainda não estavam claras no ambiente de desenvolvimento.',
+      ],
+      en: [
+        'The browser responsive mode helped during development, but using the site on a Samsung S24 FE revealed framing and rhythm differences that required another review. The hero, topbar spacing, buttons, compact menu and résumé portrait were adjusted from the real screen.',
+        'The review also reached the galleries. Artwork used among the three highlights should not appear again inside the expanded content of the same case. This rule became an automated test and guided a systematic replacement across all six projects.',
+        'The lesson was simple: putting the site online did not end the work. Publishing created the context needed to observe, compare and refine decisions that were not yet clear in development.',
+      ],
+    },
+    images: [
+      { src: '/assets/blog/qa-pos-deploy-dispositivo-real/hero-mobile-antes.webp', alt: { pt: 'Hero mobile antes do reposicionamento do bloco de identidade', en: 'Mobile hero before repositioning the identity block' } },
+      { src: '/assets/blog/qa-pos-deploy-dispositivo-real/hero-mobile-depois.webp', alt: { pt: 'Hero mobile depois do ajuste validado em celular real', en: 'Mobile hero after the adjustment validated on a real phone' } },
+      { src: '/assets/blog/qa-pos-deploy-dispositivo-real/curriculo-mobile-antes.webp', alt: { pt: 'Currículo mobile antes da correção da proporção da fotografia', en: 'Mobile résumé before correcting the portrait proportions' } },
+      { src: '/assets/blog/qa-pos-deploy-dispositivo-real/curriculo-mobile-depois.webp', alt: { pt: 'Currículo mobile depois da correção da fotografia', en: 'Mobile résumé after correcting the portrait' } },
+    ],
+  },
+  {
+    slug: 'dashboard-financeiro-em-construcao', date: '10 AGO 2026', dateISO: '2026-08-10', topics: ['creative-workbench', 'applied-ai'], status: 'published',
+    category: { pt: 'Projeto em desenvolvimento', en: 'Work in progress' },
+    sourceRef: 'local:dashboard-financeiro-lucas; tests:3-files-12-tests; obsidian:decisao-dashboard-financeiro-case-demonstrativo',
+    title: { pt: 'Um dashboard financeiro para entender decisões, não apenas mostrar números', en: 'A financial dashboard for understanding decisions, not just displaying numbers' },
+    excerpt: { pt: 'Um projeto pessoal em construção reúne planejamento, histórico e testes para transformar informações dispersas em decisões explicáveis.', en: 'A personal project in progress brings planning, history and tests together to turn scattered information into explainable decisions.' },
+    body: {
+      pt: [
+        'O projeto começou com uma pergunta direta: como reunir informações financeiras espalhadas sem misturar previsão com o que realmente aconteceu? O dashboard está sendo construído para conectar planejamento, histórico, simulações e registro de decisões em uma visão mais clara.',
+        'Parte do trabalho está em transformar regras financeiras em testes. O objetivo é preservar a origem dos números, reduzir inconsistências e permitir que cada mudança possa ser explicada. A aplicação permanece privada enquanto essa estrutura evolui.',
+        'Este ainda não é um case concluído. O processo está sendo documentado e, no futuro, será apresentado por meio de uma versão demonstrativa com dados inteiramente fictícios, separada das informações pessoais usadas no projeto real.',
+      ],
+      en: [
+        'The project started with a direct question: how can scattered financial information be brought together without mixing forecasts with what actually happened? The dashboard is being built to connect planning, history, simulations and decision records in a clearer view.',
+        'Part of the work involves turning financial rules into tests. The goal is to preserve where each number came from, reduce inconsistencies and make every change explainable. The application remains private while this structure evolves.',
+        'This is not a completed case yet. The process is being documented and will later be presented through a demonstration version with entirely fictional data, kept separate from the personal information used in the real project.',
+      ],
+    },
+    images: [],
+  },
+  {
+    slug: 'bancada-conteudo-piloto-externo', date: '10 AGO 2026', dateISO: '2026-08-10', topics: ['creative-workbench', 'applied-ai'], status: 'published',
+    category: { pt: 'Teste em outras mãos', en: 'Testing in other hands' },
+    sourceRef: 'obsidian:portfolio-case-mivybook-megazord-dashboard; milestone:external-pilot-2026-08-10',
+    title: { pt: 'A Bancada de Conteúdo começou a ser testada fora do seu ambiente de criação', en: 'The Content Workbench started being tested outside its original environment' },
+    excerpt: { pt: 'Quatro profissionais receberam um pacote sanitizado para avaliar instalação, onboarding e primeiro uso sem confundir envio com adoção.', en: 'Four professionals received a sanitized package to evaluate installation, onboarding and first use without treating delivery as adoption.' },
+    body: {
+      pt: [
+        'A Bancada de Conteúdo nasceu dentro de um fluxo específico. O novo passo foi preparar uma versão sanitizada e entregá-la a quatro profissionais com repertórios complementares em criação, conteúdo, mídia e automação.',
+        'O teste separa marcos que parecem iguais, mas não são: receber o pacote, instalar, concluir o onboarding, criar o primeiro conteúdo e voltar a usar. Por enquanto, somente o envio foi comprovado. Instalação e adoção ainda não foram confirmadas.',
+        'Essa etapa amplia o case porque desloca a pergunta. O foco deixa de ser apenas se a ferramenta funciona para quem a criou e passa a observar onde outra pessoa entende o fluxo, encontra atrito e percebe valor.',
+      ],
+      en: [
+        'The Content Workbench was created inside a specific workflow. The next step was to prepare a sanitized version and deliver it to four professionals with complementary experience in creative work, content, media and automation.',
+        'The test separates milestones that may look similar but are not: receiving the package, installing it, completing onboarding, creating the first piece of content and returning to use it. So far, only delivery has been verified. Installation and adoption are still unconfirmed.',
+        'This stage expands the case by changing the question. The focus is no longer only whether the tool works for its creator, but where another person understands the flow, encounters friction and recognizes value.',
+      ],
+    },
+    images: [],
+  },
+  {
+    slug: 'psd-after-effects-arquitetura', date: '21 AGO 2026', dateISO: '2026-08-21', topics: ['research', 'applied-ai'], status: 'published',
+    category: { pt: 'Pesquisa e automação criativa', en: 'Research and creative automation' },
+    sourceRef: 'obsidian:projeto-automacao-psd-after-effects-chatgpt; local:static-audit-2026-08-21',
+    title: { pt: 'Do PSD ao motion editável: a arquitetura veio antes da automação', en: 'From PSD to editable motion: architecture came before automation' },
+    excerpt: { pt: 'A pesquisa definiu como transformar layers em um plano de movimento revisável sem tratar uma arquitetura documentada como ferramenta pronta.', en: 'The research defined how to turn layers into a reviewable motion plan without presenting documented architecture as a finished tool.' },
+    body: {
+      pt: [
+        'O objetivo é usar um PSD organizado como ponto de partida para motion editável no After Effects. Em vez de entregar todo o controle a um agente, a arquitetura separa importação, leitura das layers, proposta de movimento, aprovação humana e aplicação determinística de keyframes.',
+        'O fluxo planejado passa por um manifesto estrutural e um arquivo de motion revisável antes de criar uma nova composição. O original permanece intocado, e o resultado futuro deverá continuar aberto a ajustes no AEP.',
+        'A pesquisa já reuniu schemas, referências técnicas e uma auditoria de segurança e licenças. A execução no After Effects continua pendente. O próximo marco é reproduzir presets simples em uma fixture descartável e verificar composição, frames e render antes de chamar o sistema de funcional.',
+      ],
+      en: [
+        'The goal is to use an organized PSD as the starting point for editable motion in After Effects. Instead of handing full control to an agent, the architecture separates import, layer analysis, motion proposals, human approval and deterministic keyframe application.',
+        'The planned flow moves through a structural manifest and a reviewable motion file before creating a new composition. The original remains untouched, and the future result must stay open to adjustments inside the AEP.',
+        'The research already includes schemas, technical references and a security and license audit. Execution in After Effects is still pending. The next milestone is to reproduce simple presets in a disposable fixture and verify the composition, frames and render before calling the system functional.',
+      ],
+    },
+    images: [],
   },
 ];
 
