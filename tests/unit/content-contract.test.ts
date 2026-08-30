@@ -80,4 +80,43 @@ describe('editorial timeline', () => {
     expect(blogPosts.every((post) => post.images.length <= 6)).toBe(true);
     expect(JSON.stringify(blogPosts)).not.toContain('EM BREVE');
   });
+
+  it('preserves the published QA and dashboard milestones', () => {
+    const bySlug = Object.fromEntries(blogPosts.map((post) => [post.slug, post]));
+
+    expect(bySlug['qa-pos-deploy-dispositivo-real']?.dateISO).toBe('2026-08-07');
+    expect(bySlug['dashboard-financeiro-em-construcao']?.dateISO).toBe('2026-08-10');
+  });
+
+  it('publishes the external pilot without claiming adoption', () => {
+    const post = blogPosts.find((item) => item.slug === 'bancada-conteudo-piloto-externo');
+    const serialized = JSON.stringify(post);
+
+    expect(post?.dateISO).toBe('2026-08-10');
+    expect(post?.images).toEqual([]);
+    expect(post?.title.pt).toBeTruthy();
+    expect(post?.title.en).toBeTruthy();
+    expect(serialized).toContain('ainda não');
+    expect(serialized).not.toMatch(/instalação concluída|adoção comprovada|recurring use confirmed/i);
+  });
+
+  it('publishes the PSD to After Effects research as pending execution', () => {
+    const post = blogPosts.find((item) => item.slug === 'psd-after-effects-arquitetura');
+    const serialized = JSON.stringify(post);
+
+    expect(post?.dateISO).toBe('2026-08-21');
+    expect(post?.images).toEqual([]);
+    expect(post?.title.pt).toBeTruthy();
+    expect(post?.title.en).toBeTruthy();
+    expect(serialized).toMatch(/execução.*pendente|execution.*pending/i);
+    expect(serialized).not.toMatch(/render validado|validated render|fluxo concluído|completed workflow/i);
+  });
+
+  it('keeps the new editorial updates free from private or synthetic proof', () => {
+    const protectedSlugs = ['bancada-conteudo-piloto-externo', 'psd-after-effects-arquitetura'];
+    const serialized = JSON.stringify(blogPosts.filter((post) => protectedSlugs.includes(post.slug)));
+
+    expect(serialized).not.toContain('—');
+    expect(serialized).not.toMatch(/R\$|@gmail|@hotmail|\+55|CPF|CNPJ|Banco Inter|PicPay|Mercado Pago/i);
+  });
 });
